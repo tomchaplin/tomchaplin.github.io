@@ -1,0 +1,375 @@
+---
+---
+
+:root {
+  --muted-blue: #20407c;
+  --muted-blue-light: #8291af;
+  --soft-grey: #c4c4c4;
+  --middle-grey: #666666;
+  --accent-blue: #8eb9ff;
+  --transparent-black: rgba(0, 0, 0, 0.95);
+  --button-transparent: rgba(0, 0, 0, 0.5);
+}
+
+*,*::before,*::after{
+  box-sizing: border-box;
+}
+
+// Site variables
+
+// Menu Variables
+
+$element-fade-in-time: 0.5s;
+$animation-time: 0.2s;
+$half-animation-time: 0.1s;
+$delay: 0.1s;
+$first-func: ease-in;
+$second-func: ease-out;
+$start-color: var(--muted-blue-light);
+$end-color: var(--soft-grey);
+$border-color: var(--muted-blue-light);
+$radius: 0px;
+$thickness: 2px;
+$background-color: white;
+$std-bs: none;
+$nav-font-size: 1.25rem;
+
+// Social variables
+
+$base-size: 70px;
+$start-font-color: var(--middle-grey);
+$end-font-color: var(--muted-blue);
+$start-font-size: 1.75em;
+$end-font-size: 2.25em;
+$start-border-color: var(--soft-grey);
+$end-border-color: var(--muted-blue-light);
+
+body {
+  background-color: $background-color;
+  margin: 0 calc( (2/5) * (100vw - 800px + (0.02 * 800px) ) );
+}
+
+ul.topnav {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  padding-top: 10px;
+
+  a,
+  span {
+    text-decoration: none;
+    color: inherit;
+    font-family: "Montserrat", sans-serif;
+    font-size: $nav-font-size;
+    font-weight: 300;
+    letter-spacing: 2px;
+    cursor: pointer;
+    padding: 5px 10px;
+    &.active_link {
+      font-weight: 500;
+    }
+  }
+
+  li {
+    padding: 0 20px;
+    &.menu_icon {
+      display: none;
+    }
+  }
+}
+
+.box {
+  display: block;
+  background: $background-color;
+  position: relative;
+  border-radius: $radius;
+
+  .border_line {
+    position: absolute;
+    height: 0;
+    width: 0;
+    background-color: $border-color;
+    box-shadow: $std-bs;
+  }
+
+  .bottom_line,
+  .left_line {
+    bottom: 0;
+    left: 0;
+  }
+
+  .bottom_line {
+    transition: width $half-animation-time $first-func;
+    border-radius: 0 0 $radius $radius;
+    background-image: linear-gradient(to right, $start-color, $end-color);
+  }
+
+  .left_line {
+    transition: height $half-animation-time $first-func;
+    border-radius: $radius 0 0 $radius;
+    background-image: linear-gradient($end-color, $start-color);
+  }
+
+  .top_line {
+    top: 0;
+    left: 0;
+    transition: width $half-animation-time $second-func $delay;
+    border-radius: $radius $radius 0 0;
+    background-image: linear-gradient(to right, $end-color, $start-color);
+  }
+
+  .right_line {
+    bottom: 0;
+    right: 0;
+    transition: height $half-animation-time $second-func $delay;
+    border-radius: 0 $radius $radius 0;
+    background-image: linear-gradient($start-color, $end-color);
+  }
+
+  &:hover {
+    .bottom_line,
+    .top_line {
+      width: 100%;
+      height: $thickness;
+    }
+    .left_line,
+    .right_line {
+      height: 100%;
+      width: $thickness;
+    }
+  }
+}
+
+/* Button styling reset */
+
+button {
+  display: inline-block;
+  border: none;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  background: none;
+  color: inherit;
+  font-family: sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+// Preventing selection button when tapping on mobile
+// See https://stackoverflow.com/questions/21003535/anyway-to-prevent-the-blue-highlighting-of-elements-in-chrome-when-clicking-quic
+
+.noSelect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#mobile-indicator{
+  display: none;
+}
+
+@media only screen and (max-width: 800px) {
+  body{
+    margin:0 2%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+
+  #mobile-indicator{
+    display: block;
+  }
+
+  body.openMenu {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  ul.topnav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    height:100vh;
+    width: 0;
+    transition: all $element-fade-in-time;
+
+    &.openMenu {
+      width: 100vw;
+      height: 100vh;
+      background-color: var(--transparent-black);
+      // Bring menu on top of everything in case position relative elements are on same layer
+      z-index: 999;
+
+      li {
+        display: inline;
+        &.menu_icon button {
+          background: none;
+        }
+      }
+    }
+
+    span {
+      display: none;
+    }
+    li {
+      text-align: right;
+      display: none;
+      &.menu_icon {
+         // Use this class to li#menu_button if you want the menu button to appear from the start, i.e. if the title is unimportant
+        &.always_show {
+          display: inline;
+        }
+
+        button {
+          width: 40px;
+          height: 40px;
+          color: white;
+          border-radius: $radius;
+          background-color: var(--button-transparent);
+        }
+      }
+      a.box {
+        color: white;
+        background: none;
+      }
+    }
+  }
+}
+
+/* Socials styling */
+/* This is inspired by  */
+
+
+
+*,*::before,*::after{
+  box-sizing: border-box;
+}
+
+.socials_wrapper{
+  margin:10px 2.5%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  position: relative;
+  width: 95%;
+
+  &::before,&::after {
+    position: absolute;
+    content:"";
+    top:0;
+    width: 50%;
+    height: 100%;
+    background: $background-color;
+    z-index:1;
+    transition: all $element-fade-in-time;
+  }
+
+  &::before{
+    left:0;
+  }
+  &::after{
+    right:0;
+  }
+
+  &.showing{
+    &::before,&::after{
+      width:0;
+    }
+  }
+
+  a{
+    flex: 0 0 $base-size;
+    text-decoration:none;
+    width:$base-size;
+    height:$base-size;
+    color: $start-font-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:$start-font-size;
+    position: relative;
+
+    &::before,&::after {
+      display: block;
+      content:"";
+      position:absolute;
+      width:100%;
+      height:0;
+      transition: all $animation-time;
+    }
+
+    &::before{left:0;
+      top:0;
+      left:0;
+      border-top: 2px solid $start-border-color;
+      border-left: 2px solid $start-border-color;
+    }
+
+    &::after{
+      bottom:0;
+      right:0;
+      border-bottom: 2px solid $start-border-color;
+      border-right: 2px solid $start-border-color;
+    }
+
+    &:hover {
+      color: $end-font-color;
+      font-size: $end-font-size;
+      &::before,&::after{
+        width:0;
+        height:100%;
+        border-color: $end-border-color;
+      }
+    }
+  }
+  span{
+    flex: 1 2 $base-size;
+    height: $base-size;
+    border-top: 2px solid $start-border-color;
+    border-bottom: 2px solid $start-border-color;
+  }
+}
+
+/* Styling for site */
+main {
+  font-family: sans-serif;
+  font-size: 1em;
+  line-height: 1.25em;
+}
+h1.site_title {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 2px;
+  font-weight: 400;
+  color: var(--muted-blue);
+}
+
+@keyframes opacity_fade_in {
+  from { opacity: 0; width: 0; }
+}
+
+hr.toprule {
+  margin-top:1em;
+  width:95%;
+  animation: opacity_fade_in $element-fade-in-time;
+  opacity: 1;
+  border-color: var(--soft-grey);
+}
