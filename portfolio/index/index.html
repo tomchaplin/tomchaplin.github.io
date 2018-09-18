@@ -1,17 +1,19 @@
 ---
 layout: page
 selected: portfolio
-title: Portfolio index
-socials_footer: true
-site_title: true
+title: Portfolio Index
 ---
 
 <!-- This loops through all of the portfolio entries -->
 <table>
-{% for portfolio in site.portfolio_entries %}
-<tr>
-    <td><a href="{{ portfolio.url }}">{{ portfolio.title }}</a></td>
-    <td>{{ portfolio.date | date_to_long_string: "ordinal" }}</td>
-</tr>
-{% endfor %}
+    <tr>
+        <th>Title</th>
+        <th>Date Published</th>
+    </tr>
+    {% for portfolio in site.portfolio_entries %}
+    <tr>
+        <td><a href="{{ portfolio.url }}">{{ portfolio.title }}</a></td>
+        <td>{{ portfolio.date | date_to_long_string: "ordinal" }}</td>
+    </tr>
+    {% endfor %}
 </table>
