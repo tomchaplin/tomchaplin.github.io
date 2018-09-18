@@ -21,11 +21,13 @@ var fadeInTime = 500;
 var $elemToAvoid = $('#site_title');
 
 function checkAddMenu() {
+    // Either we need to have scrolled past the getElementById
+    // or the document is so small that we can not scroll 100 pixels past it
+    // and we need to be in mobile mode
     if ( ($win.scrollTop() > $elemToAvoid.offset().top + $elemToAvoid.height() ||
-          getDocumentHeight() <= getWindowHeight() ) && isMobile() ) {
+          getDocumentHeight() <= getWindowHeight() + $elemToAvoid.height() + 100 ) && isMobile() ) {
       $('#menu_button').fadeIn(fadeInTime);
     }
-    console.log(getDocumentHeight() + " : " + getWindowHeight() + " : " + isMobile());
 }
 
 // Check if social div is initially on screen
