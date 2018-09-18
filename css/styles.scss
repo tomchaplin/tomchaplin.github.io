@@ -209,14 +209,15 @@ button:focus {
     align-items: flex-end;
     height:100vh;
     width: 0;
+    // Bring menu on top of everything in case position relative elements are on same layer
+    z-index: 999;
     transition: all $element-fade-in-time;
 
     &.openMenu {
       width: 100vw;
       height: 100vh;
       background-color: var(--transparent-black);
-      // Bring menu on top of everything in case position relative elements are on same layer
-      z-index: 999;
+
 
       li {
         display: inline;
