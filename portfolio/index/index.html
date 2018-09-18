@@ -13,7 +13,7 @@ title: Portfolio Index
     {% for portfolio in site.portfolio_entries %}
     <tr>
         <td><a href="{{ portfolio.url }}">{{ portfolio.title }}</a></td>
-        <td>{{ portfolio.date | date_to_long_string: "ordinal" }}</td>
+        <td>{{ portfolio.date | date_to_long_string }}</td>
     </tr>
     {% endfor %}
 </table>
