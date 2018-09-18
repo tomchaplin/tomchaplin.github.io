@@ -8,15 +8,18 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ page.title }}</title>
+    <title>{{ page.title }} | {{site.title}}</title>
 </head>
 
 <body id="myBody">
+    {% unless page.site_title == false %}
+        <h1 class="site_title" id="site_title"><a href="/">{{ site.title }}</a></h1>
+    {% endunless %}
     {{ content }}
     <footer>
-        {% if page.socials_footer %}
+        {% unless page.socials_footer == false %}
             {% include socials_footer.html %}
-        {% endif %}
+        {% endunless %}
         <div id="mobile-indicator"></div>
     </footer>
 </body>
@@ -24,8 +27,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/jquery.documentsize.js"></script>
 <script src="/js/functions.js"></script>
-{% if page.socials_footer %}
+{% unless page.socials_footer == false %}
     <script src="/js/socials_footer.js"></script>
-{% endif %}
+{% endunless %}
 <script src="/js/main.js"></script>
 </html>
