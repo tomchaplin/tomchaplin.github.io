@@ -42,4 +42,6 @@
         </li>
     </ul>
 </nav>
-<hr class="toprule">
+{% if page.site_title or include.site_title %}
+    <hr class="toprule">
+{% endif %}

@@ -1,6 +1,9 @@
 ---
 layout: default
 ---
-
-{% include topnav.html selected="blog" %}
+<h1 class="site_title" id="site_title"><a href="/">{{ site.title }}</a></h1>
+{% include topnav.html selected="blog" site_title = true %}
+<main>
+<h2>{{ page.title }}</h2>
 {{content}}
+</main>

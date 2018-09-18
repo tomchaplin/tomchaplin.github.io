@@ -13,10 +13,19 @@
 
 <body id="myBody">
     {{ content }}
+    <footer>
+        {% if page.socials_footer %}
+            {% include socials_footer.html %}
+        {% endif %}
+        <div id="mobile-indicator"></div>
+    </footer>
 </body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/jquery.documentsize.js"></script>
+<script src="/js/functions.js"></script>
+{% if page.socials_footer %}
+    <script src="/js/socials_footer.js"></script>
+{% endif %}
 <script src="/js/main.js"></script>
-<div id="mobile-indicator"></div>
 </html>

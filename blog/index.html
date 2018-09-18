@@ -8,10 +8,8 @@ site_title: true
 
 <!-- This loops through the paginated posts -->
 {% for post in paginator.posts %}
-  <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-  <p class="author">
-    <span class="date">{{ post.date }}</span>
-  </p>
+  <a class="post_title_link" href="{{ post.url }}"><h2>{{ post.title }}</h2></a>
+  <div class="post_excerpt">{{ post.excerpt }}</div>
 {% endfor %}
 
 <!-- Pagination links -->
