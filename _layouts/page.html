@@ -1,0 +1,12 @@
+---
+layout: default
+---
+
+{% if page.site_title %}
+    <h1 class="site_title" id="site_title"><a href="/">{{ site.title }}</a></h1>
+{% endif %}
+{% include topnav.html selected = page.selected %}
+{{content}}
+{% if page.socials_footer %}
+    {% include footer.html %}
+{% endif %}

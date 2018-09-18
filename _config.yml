@@ -1,3 +1,26 @@
+title: Thomas Chaplin
+
 plugins:
 - jekyll-autoprefixer
-- jekyll-minifier
+- jekyll-redirect-from
+- jekyll-paginate
+
+paginate: 5
+
+paginate_path: "/blog/page:num/"
+
+sass:
+    style: compressed
+
+
+collections:
+    posts:
+        output: true
+        permalink: /blog/:year_:month_:day/:title/
+    portfolio_entries:
+        output: true
+        permalink: /portfolio/:year_:month_:day/:title/
+
+kramdown:
+  # Use GitHub flavored markdown, including triple backtick fenced code blocks
+  input: GFM

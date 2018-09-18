@@ -1,0 +1,45 @@
+<nav>
+    <ul class="topnav" id="topnav">
+        <li class="menu_icon" id="menu_button"><button class="noSelect" type="button" onclick="toggleMenu()"><i class="material-icons" id="menu_icon">menu</i></button></li>
+        <li>
+            <a class="box{% if include.selected=="blog"%} active_link{% endif %} noSelect" href="/blog">
+      Blog
+      <div class="bottom_line border_line"></div>
+      <div class="top_line border_line"></div>
+      <div class="left_line border_line"></div>
+      <div class="right_line border_line"></div>
+    </a>
+        </li>
+        <span class="noSelect">|</span>
+        <li>
+            <a class="box{% if include.selected=="portfolio"%} active_link{% endif %} noSelect" href="/portfolio">
+      Portfolio
+      <div class="bottom_line border_line"></div>
+      <div class="top_line border_line"></div>
+      <div class="left_line border_line"></div>
+      <div class="right_line border_line"></div>
+    </a>
+        </li>
+        <span class="noSelect">|</span>
+        <li>
+            <a class="box{% if include.selected=="about"%} active_link{% endif %} noSelect" href="/about">
+      About
+      <div class="bottom_line border_line"></div>
+      <div class="top_line border_line"></div>
+      <div class="left_line border_line"></div>
+      <div class="right_line border_line"></div>
+    </a>
+        </li>
+        <span class="noSelect">|</span>
+        <li>
+            <a class="box{% if include.selected=="contact"%} active_link{% endif %} noSelect" href="/contact">
+      Contact
+      <div class="bottom_line border_line"></div>
+      <div class="top_line border_line"></div>
+      <div class="left_line border_line"></div>
+      <div class="right_line border_line"></div>
+    </a>
+        </li>
+    </ul>
+</nav>
+<hr class="toprule">

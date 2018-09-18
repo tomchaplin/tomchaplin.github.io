@@ -21,35 +21,43 @@ function isMobile() {
   return $('#mobile-indicator').is(':visible');
 }
 
+function getWindowHeight() {
+    return $.windowHeight();
+}
+
+function getDocumentHeight() {
+    return $.documentHeight();
+}
+
 var $win = $(window);
 var fadeInTime = 500;
 var $socialDiv = $('#footer_socials');
 var $elemToAvoid = $('#site_title');
 
 function checkAddSocial() {
-    console.log($.windowHeight());
-    var out1 = $win.scrollTop() + $.windowHeight();
+    var out1 = $win.scrollTop() + getWindowHeight();
     var out2 = $socialDiv.offset().top + ( $socialDiv.outerHeight(true) / 2.0 );
     var outStr = out1 + " : " + out2;
-    //console.log(outStr);
-  if($win.scrollTop() + $.windowHeight() > $socialDiv.offset().top + ( $socialDiv.outerHeight(true) / 2.0 ) ) {
+    if(out1 > out2 ) {
     $socialDiv.addClass("showing");
-  }
+    }
+}
+
+function checkAddMenu() {
+    if ( ($win.scrollTop() > $elemToAvoid.offset().top + $elemToAvoid.height() ||
+          getDocumentHeight() <= getWindowHeight() ) && isMobile() ) {
+      $('#menu_button').fadeIn(fadeInTime);
+    }
 }
 
 // Check if social div is initially on screen
 checkAddSocial();
+checkAddMenu();
 
 $win.scroll(function(){
   // Fade the menu icon in after scrolling so we don't black any important titles
   // If we can't scroll then we fade in
-
-
-
-  if ( ($win.scrollTop() > $elemToAvoid.offset().top + $elemToAvoid.height() ||
-        $.documentHeight()<$.windowHeight() ) && isMobile() ) {
-    $('#menu_button').fadeIn(fadeInTime);
-  }
+  checkAddMenu();
   // Fade the socials in when they appear on screen
   checkAddSocial();
 });

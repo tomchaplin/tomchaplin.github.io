@@ -360,6 +360,10 @@ h1.site_title {
   letter-spacing: 2px;
   font-weight: 400;
   color: var(--muted-blue);
+  a {
+      text-decoration: none;
+      color: inherit;
+  }
 }
 
 @keyframes opacity_fade_in {
