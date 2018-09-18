@@ -23,5 +23,4 @@ collections:
         permalink: /portfolio/:year_:month_:day/:title/
 
 kramdown:
-  # Use GitHub flavored markdown, including triple backtick fenced code blocks
-  input: GFM
+ input: markdown
