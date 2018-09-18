@@ -1,7 +1,7 @@
 title: Thomas Chaplin
 
 plugins:
-- jekyll-autoprefixer
+#- jekyll-autoprefixer
 - jekyll-redirect-from
 - jekyll-paginate
 
