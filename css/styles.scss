@@ -17,9 +17,11 @@
 
 // Site variables
 
+$rule-thickness: 1px;
+
 // Menu Variables
 
-$element-fade-in-time: 0.5s;
+$element-fade-in-time: 0.2s;
 $animation-time: 0.2s;
 $half-animation-time: 0.1s;
 $delay: 0.1s;
@@ -33,6 +35,7 @@ $thickness: 1px;
 $background-color: white;
 $std-bs: none;
 $nav-font-size: 1.25rem;
+$menu-time: 0.5s;
 
 // Social variables
 
@@ -212,7 +215,7 @@ button:focus {
     width: 0;
     // Bring menu on top of everything in case position relative elements are on same layer
     z-index: 999;
-    transition: all $element-fade-in-time;
+    transition: all $menu-time;
 
     &.openMenu {
       width: 100vw;
@@ -376,7 +379,7 @@ hr.toprule {
   width:95%;
   animation: opacity_fade_in $element-fade-in-time;
   opacity: 1;
-  height: 1px;
+  height: $rule-thickness;
   border: 0;
   background: var(--soft-grey);
 }
@@ -386,7 +389,7 @@ hr.midrule {
     width:50%;
     background: var(--soft-grey);
     border: 0;
-    height: 1px;
+    height: $rule-thickness;
 }
 
 // Blogpost page
