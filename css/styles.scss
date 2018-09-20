@@ -29,7 +29,7 @@ $start-color: var(--muted-blue-light);
 $end-color: var(--soft-grey);
 $border-color: var(--muted-blue-light);
 $radius: 0px;
-$thickness: 2px;
+$thickness: 1px;
 $background-color: white;
 $std-bs: none;
 $nav-font-size: 1.25rem;
@@ -43,6 +43,7 @@ $start-font-size: 1.75em;
 $end-font-size: 2.25em;
 $start-border-color: var(--soft-grey);
 $end-border-color: var(--muted-blue-light);
+$socials-thickness: 1px;
 
 body {
   background-color: $background-color;
@@ -257,9 +258,6 @@ button:focus {
 
 /* Socials styling */
 /* This is inspired by  */
-
-
-
 *,*::before,*::after{
   box-sizing: border-box;
 }
@@ -320,15 +318,15 @@ button:focus {
     &::before{left:0;
       top:0;
       left:0;
-      border-top: 2px solid $start-border-color;
-      border-left: 2px solid $start-border-color;
+      border-top: $socials-thickness solid $start-border-color;
+      border-left: $socials-thickness solid $start-border-color;
     }
 
     &::after{
       bottom:0;
       right:0;
-      border-bottom: 2px solid $start-border-color;
-      border-right: 2px solid $start-border-color;
+      border-bottom: $socials-thickness solid $start-border-color;
+      border-right: $socials-thickness solid $start-border-color;
     }
 
     &:hover {
@@ -344,8 +342,8 @@ button:focus {
   span{
     flex: 1 2 $base-size;
     height: $base-size;
-    border-top: 2px solid $start-border-color;
-    border-bottom: 2px solid $start-border-color;
+    border-top: $socials-thickness solid $start-border-color;
+    border-bottom: $socials-thickness solid $start-border-color;
   }
 }
 
@@ -378,13 +376,17 @@ hr.toprule {
   width:95%;
   animation: opacity_fade_in $element-fade-in-time;
   opacity: 1;
-  border-color: var(--soft-grey);
+  height: 1px;
+  border: 0;
+  background: var(--soft-grey);
 }
 
 hr.midrule {
     margin-top:1em;
     width:50%;
-    border-color: var(--soft-grey);
+    background: var(--soft-grey);
+    border: 0;
+    height: 1px;
 }
 
 // Blogpost page
