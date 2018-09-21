@@ -397,3 +397,15 @@ hr.midrule {
 h2.post_title{
     text-align:center;
 }
+
+// Portfolio page
+
+.portfolio_card {
+    display: block;
+    img{
+        float:left;
+        margin-right:1em;
+        display:inline-block;
+        width:25%;
+    }
+}
