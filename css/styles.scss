@@ -107,13 +107,13 @@ ul.topnav {
 
   .bottom_line {
     transition: width $half-animation-time $first-func;
-    border-radius: 0 0 $radius $radius;
+    //border-radius: 0 0 $radius $radius;
     background-image: linear-gradient(to right, $start-color, $end-color);
   }
 
   .left_line {
     transition: height $half-animation-time $first-func;
-    border-radius: $radius 0 0 $radius;
+    //border-radius: $radius 0 0 $radius;
     background-image: linear-gradient($end-color, $start-color);
   }
 
@@ -121,7 +121,7 @@ ul.topnav {
     top: 0;
     left: 0;
     transition: width $half-animation-time $second-func $delay;
-    border-radius: $radius $radius 0 0;
+    //border-radius: $radius $radius 0 0;
     background-image: linear-gradient(to right, $end-color, $start-color);
   }
 
@@ -129,7 +129,7 @@ ul.topnav {
     bottom: 0;
     right: 0;
     transition: height $half-animation-time $second-func $delay;
-    border-radius: 0 $radius $radius 0;
+    //border-radius: 0 $radius $radius 0;
     background-image: linear-gradient($start-color, $end-color);
   }
 
