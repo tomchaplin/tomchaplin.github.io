@@ -403,9 +403,9 @@ h2.post_title{
 .portfolio_card {
     display: grid;
     height: 100%;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 2fr;
     grid-template-rows: max-content max-content;
-    grid-gap: 1em;
+    grid-gap: 0 1em;
     grid-template-areas: "portfolio_card_title portfolio_card_title" "portfolio_card_img portfolio_card_text";
   
     .portfolio_card_title {
@@ -427,7 +427,9 @@ h2.post_title{
       
       p.portfolio_card_link {
         text-align: right;
-        color: var(--muted-blue-light);
+        a {
+          color: var(--muted-blue-light);
+        }
       }
     }
 }
