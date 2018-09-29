@@ -410,6 +410,9 @@ h2.post_title{
   
     .portfolio_card_title {
       grid-area: portfolio_card_title;
+      a {
+        color: var(--muted-blue);
+      }
     }
   
     .portfolio_card_img {
@@ -421,5 +424,10 @@ h2.post_title{
   
     .portfolio_card_text {
       grid-area: portfolio_card_text;
+      
+      p.portfolio_card_link {
+        text-align: right;
+        color: var(--muted-blue-light);
+      }
     }
 }
