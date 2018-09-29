@@ -24,13 +24,13 @@ At this point, the website could have gone live; although it was missing some fe
 
 After considering the various options, we decided on using PHP for the server-side logic and MySQL for storing the content. This website is not designed to produce a large revenue so would likely be hosted on a shared hosting platform. The majority of these platforms provided MySQL databases and PHP without any additional setup or cost so this was the clear choice. Moreover, PHP provides easy, secure communication with databases through the PDO extension which was used throughout the project. In addition, the language is well documented through the [PHP Manual](http://php.net/manual/en/index.php) and the large, well-established community.
 
-This approach also enabled us to implement a tagging system for the recipes, allowing users to more easily search for recipes relevant to them.
+This approach also enabled us to implement a tagging system for the recipes, allowing users to more easily search for recipes relevant to them. Implementing this system presented a design decision as there are a number of approaches to take, each with their own strengths and weaknesses. Philli
 
 ### Admin Section
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA2MjIxMzc5NSwtMzEyNTkzNDI1LC05MT
-A5OTg5NDYsLTIwNTM2ODk2NDUsMTA3NzI2OTc5OSwxNTc0Mjky
-ODM2XX0=
+eyJoaXN0b3J5IjpbLTE4MjE0ODY2NTQsMjA2MjIxMzc5NSwtMz
+EyNTkzNDI1LC05MTA5OTg5NDYsLTIwNTM2ODk2NDUsMTA3NzI2
+OTc5OSwxNTc0MjkyODM2XX0=
 -->
