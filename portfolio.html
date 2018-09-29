@@ -14,8 +14,10 @@ title: Portfolio
     </div>
     {% endif %}
     <div class="portfolio_card_text">
-        <p>{{ portfolio.excerpt }}</p>
+        {{ portfolio.excerpt }}
         <p><a href="{{ portfolio.url }}">Read more...</a></p>
+        {% if portfolio.external_link %}
+        <p><a href="{{ portfolio.external_link }}">View project live</a></p>
     </div>
 </div>
 {% endfor %}
