@@ -433,3 +433,12 @@ h2.post_title{
       }
     }
 }
+
+// Portfolio entry page
+
+p.portfolio_external_link {
+  text-align: right;
+  a {
+    color: var(--muted-blue-light);
+  }
+}
