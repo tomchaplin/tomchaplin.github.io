@@ -8,7 +8,7 @@ layout: default
     <hr class="midrule">
 {% endunless %}
 {% if page.external_link %}
-    <p class="portfolio_external_link"><a href="{% page.external_link %}">View project live</a></p>
+    <p class="portfolio_external_link"><a href="{{ page.external_link }}">View project live</a></p>
 {% endif %}
 {{content}}
 </main>
