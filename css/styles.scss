@@ -401,11 +401,25 @@ h2.post_title{
 // Portfolio page
 
 .portfolio_card {
-    display: block;
-    img{
-        float:left;
-        margin-right:1em;
-        display:inline-block;
-        width:25%;
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: max-content max-content;
+    grid-gap: 1em;
+    grid-template-areas: "portfolio_card_title portfolio_card_title" "portfolio_card_img portfolio_card_text";
+  
+    .portfolio_card_title {
+      grid-area: portfolio_card_title;
+    }
+  
+    .portfolio_card_img {
+      grid-area: portfolio_card_img;
+      img {
+        width:100%;
+      }
+    }
+  
+    .portfolio_card_text {
+      grid-area: portfolio_card_text;
     }
 }
