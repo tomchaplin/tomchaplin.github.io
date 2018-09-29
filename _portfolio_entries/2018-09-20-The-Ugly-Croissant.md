@@ -17,7 +17,7 @@ Whilst the blog only has one author, it was still necessary to create a scalable
 
 As this was my first web development project, we started out by creating a static site using basic HTML, CSS and some Javascript. This allowed us to develop both the aesthetic design for the website and the structure behind the content displayed on the website. We arrived at the initial design for the website, and decided that content would be classified as either a blog post or recipe. This gave us the framework around which we could build the database and server-side logic.
 
-At this point, the website could have gone live; the content was displayed a
+At this point, the website could have gone live; although it was missing some features, the content was displayed almost exactly as it would in the final version. The website was certainly not scaleable as new post required copying and editing previous posts and
 
 ### Database Approach
 
@@ -25,6 +25,6 @@ At this point, the website could have gone live; the content was displayed a
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3Mzc4MTk4MzAsMTA3NzI2OTc5OSwxNT
-c0MjkyODM2XX0=
+eyJoaXN0b3J5IjpbMTc0NjQ2NDg5NywxMDc3MjY5Nzk5LDE1Nz
+QyOTI4MzZdfQ==
 -->
