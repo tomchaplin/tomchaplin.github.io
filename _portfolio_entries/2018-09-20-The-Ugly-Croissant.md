@@ -15,7 +15,7 @@ Whilst the blog only has one author, it was still necessary to create a scalable
 
 ### Early Development
 
-As this was my first web development project, we started out by creating a static site using 
+As this was my first web development project, we started out by creating a static site using basic HTML, CSS and some Javascript. This allowed us to develop both the aesthetic design for the website and the structure behind the content displayed on the website befo. We arrived at the
 
 ### Database Approach
 
@@ -23,5 +23,5 @@ As this was my first web development project, we started out by creating a stati
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgyMzA0NDUxLDE1NzQyOTI4MzZdfQ==
+eyJoaXN0b3J5IjpbMTMwMzg2MDI4LDE1NzQyOTI4MzZdfQ==
 -->
