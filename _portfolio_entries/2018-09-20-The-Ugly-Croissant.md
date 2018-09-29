@@ -11,11 +11,11 @@ From the start of the project, responsive design was at the top of the agenda. T
 
 [Research](https://www.thinkwithgoogle.com/marketing-resources/data-measurement/mobile-page-speed-new-industry-benchmarks/) has time and again shown that fast page load speed is vital to decreasing bounce rate so this was an ongoing pirority throughout the project. Its no secret that good photos sell food, so in order to engage the largest audience possible good quality photos had to be front and centre. To allow for the highest quality photos possible the rest of the website had to be lightweight and fast. Throughout development we conducted page load tests using [Google's Lighthouse Tool](https://developers.google.com/web/tools/lighthouse/). Moreover, in order to keep the website lightweight and flexible we implemented a custom content management system to serve the content quickly.
 
-Whilst the blog only has one author, it was still necessary to create a scalable solution to allow for content to be effortlessly published on the website. This is achievable with a static site through a smart naming scheme and structured file system. However, storing the content on a database and using PHP to load the content posed a much more robust, scalable solution. Moreover, this would allow for easier implementation of features as recipe tagging, searching and commenting in the future. Also, using PHP would help prevent repeated code in the website and make it easier to change the site throughout development and in the future.
+Whilst the blog only has one author, it was still necessary to create a scalable solution to allow for content to be effortlessly published on the website. This is achievable with a static site through a smart naming scheme and structured file system. However, storing the content on a database and using PHP to load the content posed a much more robust, scalable solution. Moreover, this would allow for easier implementation of features as recipe tagging, searching and commenting in the future. Also, using PHP would help prevent repeated code in the website, thus saving work and make it easier to change the site throughout development and in the future.
 
 ### Early Development
 
-
+As this was my first web development project, we started out by creating a static site using 
 
 ### Database Approach
 
@@ -23,5 +23,5 @@ Whilst the blog only has one author, it was still necessary to create a scalable
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU3NDI5MjgzNl19
+eyJoaXN0b3J5IjpbLTgyMzA0NDUxLDE1NzQyOTI4MzZdfQ==
 -->
