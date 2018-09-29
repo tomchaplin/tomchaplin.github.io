@@ -1,6 +1,7 @@
 ---
 layout: portfolio
 featured_img: /assets/portfolio/2018-09-20-The-Ugly-Croissant/desktop_index.png
+external_link: https://www.theuglycroissant.com
 ---
 The Ugly Croissant presented the opportunity to learn the fundamentals of the web, focusing on responsive design. We used PHP to produce a content management system which could handle both recipes and blog posts, and implemented a tagging system to help organise the content. Throughout the process we worked closely with the client to get the design right for her and her audience.
 <!--more-->
@@ -21,12 +22,12 @@ At this point, the website could have gone live; although it was missing some fe
 
 ### Database Approach
 
-After considering the various options, we decided on using PHP for the server-side logic and MySQL for storing the content. This website is not designed to produce a large revenue so would likely be hosted on a shared hosting platform. The majority of these platforms provided MySQL databases and PHP without any additional setup or cost so this was the clear choice. Moreover, PHP provides easy, secure communication with databases through the PDO extension which was used throughout the project. In addition, the language is well documented through the [PHP Manual](http://php.net/manual/en/index.php) and the large co
+After considering the various options, we decided on using PHP for the server-side logic and MySQL for storing the content. This website is not designed to produce a large revenue so would likely be hosted on a shared hosting platform. The majority of these platforms provided MySQL databases and PHP without any additional setup or cost so this was the clear choice. Moreover, PHP provides easy, secure communication with databases through the PDO extension which was used throughout the project. In addition, the language is well documented through the [PHP Manual](http://php.net/manual/en/index.php) and the large, well-established community.
 
 ### Admin Section
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjkyNjgzNzgwLC05MTA5OTg5NDYsLTIwNT
-M2ODk2NDUsMTA3NzI2OTc5OSwxNTc0MjkyODM2XX0=
+eyJoaXN0b3J5IjpbLTMxMjU5MzQyNSwtOTEwOTk4OTQ2LC0yMD
+UzNjg5NjQ1LDEwNzcyNjk3OTksMTU3NDI5MjgzNl19
 -->
