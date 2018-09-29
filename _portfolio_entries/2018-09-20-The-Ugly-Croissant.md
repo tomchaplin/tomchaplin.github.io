@@ -28,9 +28,9 @@ This approach also enabled us to implement a tagging system for the recipes, all
 
 ### Admin Section
 
-
+At this stage, a basic form for recipe and blog post entry had been created but editing and deleting posts as well as adding tags had to be done manually within phpMyAdmin. Although, the client was technically literate, this was not ideal and certainly not a long-term solution. The next step of the project was to create an admin section for the website, which would be password protected and pro
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM1NTMwNzc2NywyMDYyMjEzNzk1LC0zMT
-I1OTM0MjUsLTkxMDk5ODk0NiwtMjA1MzY4OTY0NSwxMDc3MjY5
-Nzk5LDE1NzQyOTI4MzZdfQ==
+eyJoaXN0b3J5IjpbMTYyMzU2ODQ4NiwtMzU1MzA3NzY3LDIwNj
+IyMTM3OTUsLTMxMjU5MzQyNSwtOTEwOTk4OTQ2LC0yMDUzNjg5
+NjQ1LDEwNzcyNjk3OTksMTU3NDI5MjgzNl19
 -->
