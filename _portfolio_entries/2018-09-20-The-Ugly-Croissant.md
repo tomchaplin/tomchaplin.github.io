@@ -21,12 +21,12 @@ At this point, the website could have gone live; although it was missing some fe
 
 ### Database Approach
 
-After considering the various options, we decided on using PHP for the server-side logic and MySQL for storing the content. This website is not designed to produce a large revenue so would likely be hosted on a shared hosting platform. The majority of these platforms provided MySQL databases and PHP without any additional setup or cost so this was the clear choice. Moreover, 
+After considering the various options, we decided on using PHP for the server-side logic and MySQL for storing the content. This website is not designed to produce a large revenue so would likely be hosted on a shared hosting platform. The majority of these platforms provided MySQL databases and PHP without any additional setup or cost so this was the clear choice. Moreover, PHP provides easy, sec communication with databases 
 
 ### Admin Section
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkxMDk5ODk0NiwtMjA1MzY4OTY0NSwxMD
-c3MjY5Nzk5LDE1NzQyOTI4MzZdfQ==
+eyJoaXN0b3J5IjpbMTUyNDE3NjkwNywtOTEwOTk4OTQ2LC0yMD
+UzNjg5NjQ1LDEwNzcyNjk3OTksMTU3NDI5MjgzNl19
 -->
