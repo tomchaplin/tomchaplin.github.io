@@ -21,12 +21,12 @@ At this point, the website could have gone live; although it was missing some fe
 
 ### Database Approach
 
-
+After considering the various options, we decided on using PHP for the server-side logic and 
 
 ### Admin Section
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNTM2ODk2NDUsMTA3NzI2OTc5OSwxNT
-c0MjkyODM2XX0=
+eyJoaXN0b3J5IjpbMTM2OTU5NjMyNSwtMjA1MzY4OTY0NSwxMD
+c3MjY5Nzk5LDE1NzQyOTI4MzZdfQ==
 -->
