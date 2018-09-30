@@ -21,7 +21,7 @@ $rule-thickness: 1px;
 
 // Menu Variables
 
-$element-fade-in-time: 0.2s;
+$element-fade-in-time: 0.5s;
 $animation-time: 0.2s;
 $half-animation-time: 0.1s;
 $delay: 0.1s;
@@ -432,6 +432,12 @@ h2.post_title{
         }
       }
     }
+}
+
+@media only screen and (max-width: 650px) {
+  grid-template-columns: 1fr;
+  grid-template-row: max-content max-content max-content;
+  grid-template-areas: "portfolio_card_title" "portfolio_card_img" "portfolio_card_text"
 }
 
 // Portfolio entry page
