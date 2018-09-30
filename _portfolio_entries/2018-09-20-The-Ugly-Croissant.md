@@ -24,7 +24,7 @@ Whilst the blog only has one author, it was still necessary to create a scalable
 
 ### Early Development
 
-As this was my first web development project, we started out by creating a static site using basic HTML, CSS and some Javascript. This allowed us to develop both the aesthetic design for the website and the structure behind the content displayed on the website. We arrived at the initial design for the website, and decided that content would be classified as either a blog post or recipe. This gave us the framework around which we could build the database and server-side logic.
+As this was my first web development project, we started out by creating a static site using basic HTML, CSS and some JavaScript. This allowed us to develop both the aesthetic design for the website and the structure behind the content displayed on the website. We arrived at the initial design for the website, and decided that content would be classified as either a blog post or recipe. This gave us the framework around which we could build the database and server-side logic.
 
 At this point, the website could have gone live; although it was missing some features, the content was displayed almost exactly as it would in the final version. The website was certainly not scaleable as new post required copying and editing previous posts into a new folder then adding the relevant links to other pages. However, the client had not yet finalised the content they wished to publish so we decided to start development of the database and server-side logic.
 
@@ -46,14 +46,21 @@ At this stage, a basic form for recipe and blog post entry had been created but 
 
 To store recipe content, the new entry form features three Markdown editors using [SimpleMDE](https://simplemde.com/) allowing the author to tailor the introduction, ingredients and method of the recipe. Markdown was chose as it allows the author to focus on writing the content and prevents any issues that asking the author to write HTML may cause with the rest of the site. This Markdown is converted into safe HTML by Emanuil Rusev's [Parsedown](www.parsedown.org) and the two formats are stored in the database. This allows the content to be quickly loaded to the website, whilst allowing for future editing of the original Markdown.
 
+Some
+
 ### Lessons Learned
 
 * Learnt fundamentals of web and databases
 * Power of CSS grids
 * Strengths and shortcomings of PHP
-* Object-orient
+* Object-oriented PHP is much more organised
+
+Next-time:
+* Object-oriented from start
+* CSS pre-processor
+* More open to using
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MDk3NzY3NjcsMTU0NTI0MzA1NCwtMT
+eyJoaXN0b3J5IjpbLTE3MDkwNTc0MjIsMTU0NTI0MzA1NCwtMT
 g5NzM1NTg4OSwxMDEwNTU0ODU3LDExMTQzMzA4MDgsMTIwMDM0
 Myw5NjU4ODUzMDcsMzY2Mzk0NTExLC0yMDU4MDE3MjU5LC0zNT
 UzMDc3NjcsMjA2MjIxMzc5NSwtMzEyNTkzNDI1LC05MTA5OTg5
