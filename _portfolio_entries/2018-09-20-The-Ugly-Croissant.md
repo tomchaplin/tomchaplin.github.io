@@ -34,13 +34,17 @@ After considering the various options, we decided on using PHP for the server-si
 
 This approach also enabled us to implement a tagging system for the recipes, allowing users to more easily search for recipes relevant to them. Implementing this system presented a design decision as there are a number of approaches to take, each with their own strengths and weaknesses. Phillip Keller has completed [tests on the performance](http://howto.philippkeller.com/2005/06/19/Tagsystems-performance-tests/) of each of these approaches which proved an invaluable resource. As recipes were written rarely, the main focus was on maximising performance for <code>SELECT</code> queries as these would be much more frequent and impact user experience. Thus, based on the expected distribution of our tags, we decided on a three table schema; one for recipes, one for tags and one for tag-maps which list which recipes have which tag (named the "toxi" approach in the linked article). Note, this also the approach used by Wordpress.
 
+#### Pagination
+
 ### Admin Section
 
 At this stage, a basic form for recipe and blog post entry had been created but editing and deleting posts as well as adding tags had to be done manually within phpMyAdmin. Although, the client was technically literate, this was not ideal and certainly not a long-term solution. The next step of the project was to create an admin section for the website, which would be password protected and provide full control over the content. To implement this, PHP sessions were used to identify logged in users and user information was stored in a MySQL table with passwords salted and hashed using PHP's standard <code>password_hash()</code> function.
 
 To store recipe content, the new entry form features three Markdown editors using [SimpleMDE](https://simplemde.com/) allowing the author to tailor the introduction, ingredients and method of the recipe. Markdown was chose as it allows the author to focus on writing the content and prevents any issues that asking the author to write HTML may cause with the rest of the site. This Markdown is converted into safe HTML by Emanuil Rusev's [Parsedown](https://www.parsedown.org) and the two formats are stored in the database. This allows the content to be quickly loaded to the website, whilst allowing for future editing of the original Markdown.
+
+### Lessons Learned
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY1NTEyMDIxNiwxMjAwMzQzLDk2NTg4NT
+eyJoaXN0b3J5IjpbLTc3NDk4NzQ5NSwxMjAwMzQzLDk2NTg4NT
 MwNywzNjYzOTQ1MTEsLTIwNTgwMTcyNTksLTM1NTMwNzc2Nywy
 MDYyMjEzNzk1LC0zMTI1OTM0MjUsLTkxMDk5ODk0NiwtMjA1Mz
 Y4OTY0NSwxMDc3MjY5Nzk5LDE1NzQyOTI4MzZdfQ==
