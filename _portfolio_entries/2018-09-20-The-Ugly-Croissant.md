@@ -36,7 +36,7 @@ This approach also enabled us to implement a tagging system for the recipes, all
 
 #### Pagination and Object-Oriented PHP
 
-With all of the recipes and blog posts stored and tagged in a database, this allowed us to create a search page where users could search the site for recipes that interested them. However, returning these results on one page would lead to long page load times and a cumbersome experience for the user. To solve this issue, we needed to automatically paginate the results from the relevant database query. Aware that this was a common problem that might arise on  
+With all of the recipes and blog posts stored and tagged in a database, this allowed us to create a search page where users could search the site for recipes that interested them. However, returning these results on one page would lead to long page load times and a cumbersome experience for the user. To solve this issue, we needed to automatically paginate the results from the relevant database query. Aware that this was a common problem that might arise on future projects we created a tool for paginating results from a data base query. Using an object-oriented approach, this tool is highly portable and can be integrated into any site  
 
 ### Admin Section
 
@@ -46,7 +46,7 @@ To store recipe content, the new entry form features three Markdown editors usin
 
 ### Lessons Learned
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MjA4OTQ0MjcsMTAxMDU1NDg1NywxMT
+eyJoaXN0b3J5IjpbLTE4OTczNTU4ODksMTAxMDU1NDg1NywxMT
 E0MzMwODA4LDEyMDAzNDMsOTY1ODg1MzA3LDM2NjM5NDUxMSwt
 MjA1ODAxNzI1OSwtMzU1MzA3NzY3LDIwNjIyMTM3OTUsLTMxMj
 U5MzQyNSwtOTEwOTk4OTQ2LC0yMDUzNjg5NjQ1LDEwNzcyNjk3
