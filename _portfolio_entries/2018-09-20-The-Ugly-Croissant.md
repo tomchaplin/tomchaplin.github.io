@@ -48,12 +48,15 @@ To store recipe content, the new entry form features three Markdown editors usin
 
 ### Lessons Learned
 
-* Learnt fundamentals of web
-* 
+* Learnt fundamentals of web and databases
+* Power of CSS grids
+* Strengths and shortcomings of PHP
+* Object-orient
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjkzNTc0NDY3LDE1NDUyNDMwNTQsLTE4OT
-czNTU4ODksMTAxMDU1NDg1NywxMTE0MzMwODA4LDEyMDAzNDMs
-OTY1ODg1MzA3LDM2NjM5NDUxMSwtMjA1ODAxNzI1OSwtMzU1Mz
-A3NzY3LDIwNjIyMTM3OTUsLTMxMjU5MzQyNSwtOTEwOTk4OTQ2
-LC0yMDUzNjg5NjQ1LDEwNzcyNjk3OTksMTU3NDI5MjgzNl19
+eyJoaXN0b3J5IjpbLTE5MDk3NzY3NjcsMTU0NTI0MzA1NCwtMT
+g5NzM1NTg4OSwxMDEwNTU0ODU3LDExMTQzMzA4MDgsMTIwMDM0
+Myw5NjU4ODUzMDcsMzY2Mzk0NTExLC0yMDU4MDE3MjU5LC0zNT
+UzMDc3NjcsMjA2MjIxMzc5NSwtMzEyNTkzNDI1LC05MTA5OTg5
+NDYsLTIwNTM2ODk2NDUsMTA3NzI2OTc5OSwxNTc0MjkyODM2XX
+0=
 -->
