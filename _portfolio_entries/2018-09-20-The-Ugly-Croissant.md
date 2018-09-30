@@ -38,10 +38,10 @@ This approach also enabled us to implement a tagging system for the recipes, all
 
 At this stage, a basic form for recipe and blog post entry had been created but editing and deleting posts as well as adding tags had to be done manually within phpMyAdmin. Although, the client was technically literate, this was not ideal and certainly not a long-term solution. The next step of the project was to create an admin section for the website, which would be password protected and provide full control over the content. To implement this, PHP sessions were used to identify logged in users and user information was stored in a MySQL table with passwords salted and hashed using PHP's standard <code>password_hash()</code> function.
 
-
+This new 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIwMDM0Myw5NjU4ODUzMDcsMzY2Mzk0NT
-ExLC0yMDU4MDE3MjU5LC0zNTUzMDc3NjcsMjA2MjIxMzc5NSwt
-MzEyNTkzNDI1LC05MTA5OTg5NDYsLTIwNTM2ODk2NDUsMTA3Nz
-I2OTc5OSwxNTc0MjkyODM2XX0=
+eyJoaXN0b3J5IjpbMjk2MDI4MTU1LDEyMDAzNDMsOTY1ODg1Mz
+A3LDM2NjM5NDUxMSwtMjA1ODAxNzI1OSwtMzU1MzA3NzY3LDIw
+NjIyMTM3OTUsLTMxMjU5MzQyNSwtOTEwOTk4OTQ2LC0yMDUzNj
+g5NjQ1LDEwNzcyNjk3OTksMTU3NDI5MjgzNl19
 -->
