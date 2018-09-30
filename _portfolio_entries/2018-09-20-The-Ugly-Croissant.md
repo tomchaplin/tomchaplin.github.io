@@ -34,7 +34,7 @@ After considering the various options, we decided on using PHP for the server-si
 
 This approach also enabled us to implement a tagging system for the recipes, allowing users to more easily search for recipes relevant to them. Implementing this system presented a design decision as there are a number of approaches to take, each with their own strengths and weaknesses. Phillip Keller has completed [tests on the performance](http://howto.philippkeller.com/2005/06/19/Tagsystems-performance-tests/) of each of these approaches which proved an invaluable resource. As recipes were written rarely, the main focus was on maximising performance for <code>SELECT</code> queries as these would be much more frequent and impact user experience. Thus, based on the expected distribution of our tags, we decided on a three table schema; one for recipes, one for tags and one for tag-maps which list which recipes have which tag (named the "toxi" approach in the linked article). Note, this also the approach used by Wordpress.
 
-#### Pagination
+#### Pagination and Object-Oriented PHP
 
 ### Admin Section
 
@@ -44,7 +44,7 @@ To store recipe content, the new entry form features three Markdown editors usin
 
 ### Lessons Learned
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc3NDk4NzQ5NSwxMjAwMzQzLDk2NTg4NT
+eyJoaXN0b3J5IjpbMTExNDMzMDgwOCwxMjAwMzQzLDk2NTg4NT
 MwNywzNjYzOTQ1MTEsLTIwNTgwMTcyNTksLTM1NTMwNzc2Nywy
 MDYyMjEzNzk1LC0zMTI1OTM0MjUsLTkxMDk5ODk0NiwtMjA1Mz
 Y4OTY0NSwxMDc3MjY5Nzk5LDE1NzQyOTI4MzZdfQ==
