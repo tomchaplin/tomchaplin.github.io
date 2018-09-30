@@ -46,7 +46,7 @@ At this stage, a basic form for recipe and blog post entry had been created but 
 
 To store recipe content, the new entry form features three Markdown editors using [SimpleMDE](https://simplemde.com/) allowing the author to tailor the introduction, ingredients and method of the recipe. Markdown was chose as it allows the author to focus on writing the content and prevents any issues that asking the author to write HTML may cause with the rest of the site. This Markdown is converted into safe HTML by Emanuil Rusev's [Parsedown](www.parsedown.org) and the two formats are stored in the database. This allows the content to be quickly loaded to the website, whilst allowing for future editing of the original Markdown.
 
-Most of the interface is implemented with PHP but some more complex user interactions were handled with jQuery and jQuery UI. One major downfall of [jQuery UI](http://jqueryui.com/) is its incompatibility with touchscreen devices, 
+Most of the interface is implemented with PHP but some more complex user interactions were handled with jQuery and jQuery UI. One major downfall of [jQuery UI](http://jqueryui.com/) is its incompatibility with touchscreen devices, but this was largely solved by [jQuery UI Touch Punch](http://touchpunch.furf.com/).
 
 ### Lessons Learned
 
@@ -58,9 +58,10 @@ Most of the interface is implemented with PHP but some more complex user interac
 Next-time:
 * Object-oriented from start
 * CSS pre-processor
-* More open to using
+* Font-end JS framework
+* PHP framework?
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQyMTc5NDU5OSwxNTQ1MjQzMDU0LC0xOD
+eyJoaXN0b3J5IjpbMTMzMTE1MTgzMiwxNTQ1MjQzMDU0LC0xOD
 k3MzU1ODg5LDEwMTA1NTQ4NTcsMTExNDMzMDgwOCwxMjAwMzQz
 LDk2NTg4NTMwNywzNjYzOTQ1MTEsLTIwNTgwMTcyNTksLTM1NT
 MwNzc2NywyMDYyMjEzNzk1LC0zMTI1OTM0MjUsLTkxMDk5ODk0
