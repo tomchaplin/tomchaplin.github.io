@@ -56,15 +56,16 @@ Most of the interface is implemented with PHP but some more complex user interac
 * Object-oriented PHP is much more organised
 
 Next-time:
+
 * Object-oriented from start
 * CSS pre-processor
 * Font-end JS framework
 * PHP framework?
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMzMTE1MTgzMiwxNTQ1MjQzMDU0LC0xOD
-k3MzU1ODg5LDEwMTA1NTQ4NTcsMTExNDMzMDgwOCwxMjAwMzQz
-LDk2NTg4NTMwNywzNjYzOTQ1MTEsLTIwNTgwMTcyNTksLTM1NT
-MwNzc2NywyMDYyMjEzNzk1LC0zMTI1OTM0MjUsLTkxMDk5ODk0
-NiwtMjA1MzY4OTY0NSwxMDc3MjY5Nzk5LDE1NzQyOTI4MzZdfQ
-==
+eyJoaXN0b3J5IjpbLTg0NTMxOTQxOCwxMzMxMTUxODMyLDE1ND
+UyNDMwNTQsLTE4OTczNTU4ODksMTAxMDU1NDg1NywxMTE0MzMw
+ODA4LDEyMDAzNDMsOTY1ODg1MzA3LDM2NjM5NDUxMSwtMjA1OD
+AxNzI1OSwtMzU1MzA3NzY3LDIwNjIyMTM3OTUsLTMxMjU5MzQy
+NSwtOTEwOTk4OTQ2LC0yMDUzNjg5NjQ1LDEwNzcyNjk3OTksMT
+U3NDI5MjgzNl19
 -->
