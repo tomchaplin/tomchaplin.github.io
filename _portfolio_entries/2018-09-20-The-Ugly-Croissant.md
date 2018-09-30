@@ -36,7 +36,7 @@ This approach also enabled us to implement a tagging system for the recipes, all
 
 #### Pagination and Object-Oriented PHP
 
-With all of the recipes and blog posts stored and tagged in a database, this allowed us to create a search page where users could search the site for recipes that intereste
+With all of the recipes and blog posts stored and tagged in a database, this allowed us to create a search page where users could search the site for recipes that interested them. However, returning these results on one page would lead to long page load times and a cumbersome experience for the user. To solve this issue, we needed to automatically paginate the results from the relevant database query. Aware that this was a common problem that might arise on  
 
 ### Admin Section
 
@@ -46,9 +46,9 @@ To store recipe content, the new entry form features three Markdown editors usin
 
 ### Lessons Learned
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjU1NzE3MzQxLDEwMTA1NTQ4NTcsMTExND
-MzMDgwOCwxMjAwMzQzLDk2NTg4NTMwNywzNjYzOTQ1MTEsLTIw
-NTgwMTcyNTksLTM1NTMwNzc2NywyMDYyMjEzNzk1LC0zMTI1OT
-M0MjUsLTkxMDk5ODk0NiwtMjA1MzY4OTY0NSwxMDc3MjY5Nzk5
-LDE1NzQyOTI4MzZdfQ==
+eyJoaXN0b3J5IjpbLTE0MjA4OTQ0MjcsMTAxMDU1NDg1NywxMT
+E0MzMwODA4LDEyMDAzNDMsOTY1ODg1MzA3LDM2NjM5NDUxMSwt
+MjA1ODAxNzI1OSwtMzU1MzA3NzY3LDIwNjIyMTM3OTUsLTMxMj
+U5MzQyNSwtOTEwOTk4OTQ2LC0yMDUzNjg5NjQ1LDEwNzcyNjk3
+OTksMTU3NDI5MjgzNl19
 -->
