@@ -3,6 +3,7 @@ layout: portfolio
 featured_img: /assets/portfolio/2018-09-20-The-Ugly-Croissant/desktop_index.png
 external_link: https://www.theuglycroissant.com
 ---
+
 The Ugly Croissant presented the opportunity to learn the fundamentals of the web, focusing on responsive design. We used PHP to produce a content management system which could handle both recipes and blog posts, and implemented a tagging system to help organise the content. Throughout the process we worked closely with the client to get the design right for her and her audience.
 <!--more-->
 
@@ -28,10 +29,10 @@ This approach also enabled us to implement a tagging system for the recipes, all
 
 ### Admin Section
 
-At this stage, a basic form for recipe and blog post entry had been created but editing and deleting posts as well as adding tags had to be done manually within phpMyAdmin. Although, the client was technically literate, this was not ideal and certainly not a long-term solution. The next step of the project was to create an admin section for the website, which would be password protected and provide full control over the content. To implement this, PHP sessions were used throughout and users were stored in a MySQL table with passwords salted and hashed using PHP's standard <code>password_hash()</code> function.
+At this stage, a basic form for recipe and blog post entry had been created but editing and deleting posts as well as adding tags had to be done manually within phpMyAdmin. Although, the client was technically literate, this was not ideal and certainly not a long-term solution. The next step of the project was to create an admin section for the website, which would be password protected and provide full control over the content. To implement this, PHP sessions were used to identify logged in users and user information was stored in a MySQL table with passwords salted and hashed using PHP's standard <code>password_hash()</code> function.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MDczOTQ3NTAsMzY2Mzk0NTExLC0yMD
-U4MDE3MjU5LC0zNTUzMDc3NjcsMjA2MjIxMzc5NSwtMzEyNTkz
-NDI1LC05MTA5OTg5NDYsLTIwNTM2ODk2NDUsMTA3NzI2OTc5OS
-wxNTc0MjkyODM2XX0=
+eyJoaXN0b3J5IjpbMzIzNTkyNTYwLDM2NjM5NDUxMSwtMjA1OD
+AxNzI1OSwtMzU1MzA3NzY3LDIwNjIyMTM3OTUsLTMxMjU5MzQy
+NSwtOTEwOTk4OTQ2LC0yMDUzNjg5NjQ1LDEwNzcyNjk3OTksMT
+U3NDI5MjgzNl19
 -->
