@@ -24,14 +24,14 @@ At this point, the website could have gone live; although it was missing some fe
 
 After considering the various options, we decided on using PHP for the server-side logic and MySQL for storing the content. This website is not designed to produce a large revenue so would likely be hosted on a shared hosting platform. The majority of these platforms provided MySQL databases and PHP without any additional setup or cost so this was the clear choice. Moreover, PHP provides easy, secure communication with databases through the PDO extension which was used throughout the project. In addition, the language is well documented through the [PHP Manual](http://php.net/manual/en/index.php) and the large, well-established community.
 
-This approach also enabled us to implement a tagging system for the recipes, allowing users to more easily search for recipes relevant to them. Implementing this system presented a design decision as there are a number of approaches to take, each with their own strengths and weaknesses. Phillip Keller has completed [tests on the performance](http://howto.philippkeller.com/2005/06/19/Tagsystems-performance-tests/) of each of these approaches which proved an invaluable resource. As recipes were written rarely, the main focus was on maximising performance for <code>SELECT</code> queries as these would be much more frequent and impact user experience. Thus, we decided on a three table schema; one for recipes, one for tags and one for tag-maps which list which recipes have which tag (named the "toxi" approach in the linked article). Note, this also the approach used by Wordpress.
+This approach also enabled us to implement a tagging system for the recipes, allowing users to more easily search for recipes relevant to them. Implementing this system presented a design decision as there are a number of approaches to take, each with their own strengths and weaknesses. Phillip Keller has completed [tests on the performance](http://howto.philippkeller.com/2005/06/19/Tagsystems-performance-tests/) of each of these approaches which proved an invaluable resource. As recipes were written rarely, the main focus was on maximising performance for <code>SELECT</code> queries as these would be much more frequent and impact user experience. Thus, based on the expected distribution of our tags, we decided on a three table schema; one for recipes, one for tags and one for tag-maps which list which recipes have which tag (named the "toxi" approach in the linked article). Note, this also the approach used by Wordpress.
 
 ### Admin Section
 
 At this stage, a basic form for recipe and blog post entry had been created but editing and deleting posts as well as adding tags had to be done manually within phpMyAdmin. Although, the client was technically literate, this was not ideal and certainly not a long-term solution. The next step of the project was to create an admin section for the website, which would be password protected and provide full control over the content. To implement this, PHP sessions were used throughout and users were stored in a MySQL table with passwords salted and hashed using PHP's standard <code>password_hash()</code> function.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzY2Mzk0NTExLC0yMDU4MDE3MjU5LC0zNT
-UzMDc3NjcsMjA2MjIxMzc5NSwtMzEyNTkzNDI1LC05MTA5OTg5
-NDYsLTIwNTM2ODk2NDUsMTA3NzI2OTc5OSwxNTc0MjkyODM2XX
-0=
+eyJoaXN0b3J5IjpbLTE4MDczOTQ3NTAsMzY2Mzk0NTExLC0yMD
+U4MDE3MjU5LC0zNTUzMDc3NjcsMjA2MjIxMzc5NSwtMzEyNTkz
+NDI1LC05MTA5OTg5NDYsLTIwNTM2ODk2NDUsMTA3NzI2OTc5OS
+wxNTc0MjkyODM2XX0=
 -->
