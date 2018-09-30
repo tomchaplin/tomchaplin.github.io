@@ -38,9 +38,9 @@ This approach also enabled us to implement a tagging system for the recipes, all
 
 At this stage, a basic form for recipe and blog post entry had been created but editing and deleting posts as well as adding tags had to be done manually within phpMyAdmin. Although, the client was technically literate, this was not ideal and certainly not a long-term solution. The next step of the project was to create an admin section for the website, which would be password protected and provide full control over the content. To implement this, PHP sessions were used to identify logged in users and user information was stored in a MySQL table with passwords salted and hashed using PHP's standard <code>password_hash()</code> function.
 
-To store recipe content, the new entry form features three Markdown editors using [SimpleMDE](https://simplemde.com/) allowing the author to tailor the introduction, ingredients and method of the recipe. This Markdown is converted into safe HTML by Emanuil Rusev's [Parsedown](https://www.parsedown.org) and the two formats are stored in the
+To store recipe content, the new entry form features three Markdown editors using [SimpleMDE](https://simplemde.com/) allowing the author to tailor the introduction, ingredients and method of the recipe. Markdown was chose as it allows the author to focus on writing the content and prevents any issues that asking the author to write HTML may cause with thThis Markdown is converted into safe HTML by Emanuil Rusev's [Parsedown](https://www.parsedown.org) and the two formats are stored in the database. This allows the content to be quickly loaded to the website by using the HTML while allowing for future editing of the original Markdown.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcwMDA5MjUzNSwxMjAwMzQzLDk2NTg4NT
+eyJoaXN0b3J5IjpbMTA2MDAxMjk2MSwxMjAwMzQzLDk2NTg4NT
 MwNywzNjYzOTQ1MTEsLTIwNTgwMTcyNTksLTM1NTMwNzc2Nywy
 MDYyMjEzNzk1LC0zMTI1OTM0MjUsLTkxMDk5ODk0NiwtMjA1Mz
 Y4OTY0NSwxMDc3MjY5Nzk5LDE1NzQyOTI4MzZdfQ==
