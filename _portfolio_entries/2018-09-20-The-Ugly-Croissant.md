@@ -38,7 +38,7 @@ This approach also enabled us to implement a tagging system for the recipes, all
 
 With all of the recipes and blog posts stored and tagged in a database, this allowed us to create a search page where users could search the site for recipes that interested them. However, returning these results on one page would lead to long page load times and a cumbersome experience for the user. To solve this issue, we needed to automatically paginate the results from the relevant database query. Aware that this was a common problem that might arise on future projects we created a tool for paginating results from a data base query. Using an object-oriented approach, this tool is highly portable and can be integrated into any site in the future. [View the PHP Paginator on GitHub](https://github.com/tomchaplin/PHP_Paginator/).
 
-Using the object-oriented approach was a much more organised approach to PHP  
+Using the object-oriented approach was a much more organised approach to writing PHP, and taking the time to write portable code such as this will definitely pay off in the long run.
 
 ### Admin Section
 
@@ -47,8 +47,10 @@ At this stage, a basic form for recipe and blog post entry had been created but 
 To store recipe content, the new entry form features three Markdown editors using [SimpleMDE](https://simplemde.com/) allowing the author to tailor the introduction, ingredients and method of the recipe. Markdown was chose as it allows the author to focus on writing the content and prevents any issues that asking the author to write HTML may cause with the rest of the site. This Markdown is converted into safe HTML by Emanuil Rusev's [Parsedown](www.parsedown.org) and the two formats are stored in the database. This allows the content to be quickly loaded to the website, whilst allowing for future editing of the original Markdown.
 
 ### Lessons Learned
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0OTIyNTIwOSwtMTg5NzM1NTg4OSwxMD
+eyJoaXN0b3J5IjpbMTU0NTI0MzA1NCwtMTg5NzM1NTg4OSwxMD
 EwNTU0ODU3LDExMTQzMzA4MDgsMTIwMDM0Myw5NjU4ODUzMDcs
 MzY2Mzk0NTExLC0yMDU4MDE3MjU5LC0zNTUzMDc3NjcsMjA2Mj
 IxMzc5NSwtMzEyNTkzNDI1LC05MTA5OTg5NDYsLTIwNTM2ODk2
