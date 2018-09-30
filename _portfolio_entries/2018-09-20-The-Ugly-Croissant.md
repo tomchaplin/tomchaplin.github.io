@@ -36,6 +36,8 @@ This approach also enabled us to implement a tagging system for the recipes, all
 
 #### Pagination and Object-Oriented PHP
 
+With all of the recipes and blog posts stored and tagged in a database, this allowed us to create a search page where users could search the site for recipes that intereste
+
 ### Admin Section
 
 At this stage, a basic form for recipe and blog post entry had been created but editing and deleting posts as well as adding tags had to be done manually within phpMyAdmin. Although, the client was technically literate, this was not ideal and certainly not a long-term solution. The next step of the project was to create an admin section for the website, which would be password protected and provide full control over the content. To implement this, PHP sessions were used to identify logged in users and user information was stored in a MySQL table with passwords salted and hashed using PHP's standard <code>password_hash()</code> function.
@@ -44,9 +46,9 @@ To store recipe content, the new entry form features three Markdown editors usin
 
 ### Lessons Learned
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAxMDU1NDg1NywxMTE0MzMwODA4LDEyMD
-AzNDMsOTY1ODg1MzA3LDM2NjM5NDUxMSwtMjA1ODAxNzI1OSwt
-MzU1MzA3NzY3LDIwNjIyMTM3OTUsLTMxMjU5MzQyNSwtOTEwOT
-k4OTQ2LC0yMDUzNjg5NjQ1LDEwNzcyNjk3OTksMTU3NDI5Mjgz
-Nl19
+eyJoaXN0b3J5IjpbMjU1NzE3MzQxLDEwMTA1NTQ4NTcsMTExND
+MzMDgwOCwxMjAwMzQzLDk2NTg4NTMwNywzNjYzOTQ1MTEsLTIw
+NTgwMTcyNTksLTM1NTMwNzc2NywyMDYyMjEzNzk1LC0zMTI1OT
+M0MjUsLTkxMDk5ODk0NiwtMjA1MzY4OTY0NSwxMDc3MjY5Nzk5
+LDE1NzQyOTI4MzZdfQ==
 -->
