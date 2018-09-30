@@ -435,9 +435,11 @@ h2.post_title{
 }
 
 @media only screen and (max-width: 650px) {
-  grid-template-columns: 1fr;
-  grid-template-row: max-content max-content max-content;
-  grid-template-areas: "portfolio_card_title" "portfolio_card_img" "portfolio_card_text"
+  .portfolio_card {
+    grid-template-columns: 1fr;
+    grid-template-row: max-content max-content max-content;
+    grid-template-areas: "portfolio_card_title" "portfolio_card_img" "portfolio_card_text";
+  }
 }
 
 // Portfolio entry page
