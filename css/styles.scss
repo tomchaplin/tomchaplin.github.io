@@ -21,7 +21,7 @@ $rule-thickness: 1px;
 
 // Menu Variables
 
-$element-fade-in-time: 0.2s;
+$element-fade-in-time: 0.5s;
 $animation-time: 0.2s;
 $half-animation-time: 0.1s;
 $delay: 0.1s;
@@ -95,6 +95,7 @@ ul.topnav {
     position: absolute;
     height: 0;
     width: 0;
+    border: none;
     background-color: $border-color;
     box-shadow: $std-bs;
   }
@@ -107,13 +108,13 @@ ul.topnav {
 
   .bottom_line {
     transition: width $half-animation-time $first-func;
-    border-radius: 0 0 $radius $radius;
+    //border-radius: 0 0 $radius $radius;
     background-image: linear-gradient(to right, $start-color, $end-color);
   }
 
   .left_line {
     transition: height $half-animation-time $first-func;
-    border-radius: $radius 0 0 $radius;
+    //border-radius: $radius 0 0 $radius;
     background-image: linear-gradient($end-color, $start-color);
   }
 
@@ -121,7 +122,7 @@ ul.topnav {
     top: 0;
     left: 0;
     transition: width $half-animation-time $second-func $delay;
-    border-radius: $radius $radius 0 0;
+    //border-radius: $radius $radius 0 0;
     background-image: linear-gradient(to right, $end-color, $start-color);
   }
 
@@ -129,7 +130,7 @@ ul.topnav {
     bottom: 0;
     right: 0;
     transition: height $half-animation-time $second-func $delay;
-    border-radius: 0 $radius $radius 0;
+    //border-radius: 0 $radius $radius 0;
     background-image: linear-gradient($start-color, $end-color);
   }
 
@@ -401,11 +402,52 @@ h2.post_title{
 // Portfolio page
 
 .portfolio_card {
-    display: block;
-    img{
-        float:left;
-        margin-right:1em;
-        display:inline-block;
-        width:25%;
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: max-content max-content;
+    grid-gap: 0 1em;
+    grid-template-areas: "portfolio_card_title portfolio_card_title" "portfolio_card_img portfolio_card_text";
+  
+    .portfolio_card_title {
+      grid-area: portfolio_card_title;
+      a {
+        color: var(--muted-blue);
+      }
     }
+  
+    .portfolio_card_img {
+      grid-area: portfolio_card_img;
+      img {
+        width:100%;
+      }
+    }
+  
+    .portfolio_card_text {
+      grid-area: portfolio_card_text;
+      
+      p.portfolio_card_link {
+        text-align: right;
+        a {
+          color: var(--muted-blue-light);
+        }
+      }
+    }
+}
+
+@media only screen and (max-width: 650px) {
+  .portfolio_card {
+    grid-template-columns: 1fr;
+    grid-template-row: max-content max-content max-content;
+    grid-template-areas: "portfolio_card_title" "portfolio_card_img" "portfolio_card_text";
+  }
+}
+
+// Portfolio entry page
+
+p.portfolio_external_link {
+  text-align: right;
+  a {
+    color: var(--muted-blue-light);
+  }
 }

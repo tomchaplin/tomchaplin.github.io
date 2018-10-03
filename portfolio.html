@@ -5,13 +5,20 @@ title: Portfolio
 ---
 {% for portfolio in site.portfolio_entries %}
 <div class="portfolio_card">
-    <a href="{{ portfolio.url }}"><h3>{{ portfolio.title }}</h3></a>
+    <div class="portfolio_card_title">
+        <a href="{{ portfolio.url }}"><h3>{{ portfolio.title }}</h3></a>
+    </div>
     {% if portfolio.featured_img %}
-    <a href="{{ portfolio.url }}"><img src="{{ portfolio.featured_img }}" alt="{{ portfolio.title }}"></a>
+    <div class="portfolio_card_img">
+        <a href="{{ portfolio.url }}"><img src="{{ portfolio.featured_img }}" alt="{{ portfolio.title }}"></a>
+    </div>
     {% endif %}
-    <p>{{ portfolio.excerpt }}</p>
-    <p><a href="{{ portfolio.url }}">Read more...</a></p>
+    <div class="portfolio_card_text">
+        {{ portfolio.excerpt }}
+        <p class="portfolio_card_link"><a href="{{ portfolio.url }}">Read more</a></p>
+        {% if portfolio.external_link %}
+        <p class="portfolio_card_link"><a href="{{ portfolio.external_link }}">View project live</a></p>
+        {% endif %}
+    </div>
 </div>
 {% endfor %}
-
-<p><a href="/portfolio/index">Portfolio Index</a></p>

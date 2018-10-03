@@ -1,5 +1,3 @@
----
----
 # tomchaplin.github.io
 Personal blog and portfolio site.
 
