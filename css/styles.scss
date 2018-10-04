@@ -408,24 +408,24 @@ h2.post_title{
     grid-template-rows: max-content max-content;
     grid-gap: 0 1em;
     grid-template-areas: "portfolio_card_title portfolio_card_title" "portfolio_card_img portfolio_card_text";
-  
+
     .portfolio_card_title {
       grid-area: portfolio_card_title;
       a {
         color: var(--muted-blue);
       }
     }
-  
+
     .portfolio_card_img {
       grid-area: portfolio_card_img;
       img {
         width:100%;
       }
     }
-  
+
     .portfolio_card_text {
       grid-area: portfolio_card_text;
-      
+
       p.portfolio_card_link {
         text-align: right;
         a {
@@ -450,4 +450,32 @@ p.portfolio_external_link {
   a {
     color: var(--muted-blue-light);
   }
+}
+
+
+figure{
+    margin:0 2em;
+    .side_by_side{
+        display: flex;
+        div{
+            flex: 0 1 auto;
+            margin: 1em;
+            img{
+
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    figcaption {
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+    }
+}
+@media only screen and (max-width: 650px) {
+    figure{
+        margin: 0;
+    }
 }
