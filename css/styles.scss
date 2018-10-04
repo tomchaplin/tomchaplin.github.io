@@ -457,6 +457,7 @@ figure{
     margin:0 2em;
     .side_by_side{
         display: flex;
+        justify-content: space-around;
         div{
             flex: 0 1 auto;
             margin: 1em;

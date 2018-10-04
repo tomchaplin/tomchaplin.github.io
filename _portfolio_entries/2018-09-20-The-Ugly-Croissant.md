@@ -61,6 +61,15 @@ To store recipe content, the new entry form features three Markdown editors usin
 
 One standout feature of the user interface is the tag system; when publishing a recipe or blog post, the author is able to add tags to their post. This is accomplished through an AJAX live search box which searches the datbase for pre-existing tags as the author types. We created a PHP file which excepts the query through the <code>GET</code> method and returns a table of results from the database. Then, when the contents of the search box are updated a HTTP request is made to this file and the content received is embedded into the page. This provides a seamless experience for the author as there are no page reloads so tags can be quickly added and removed before posting.
 
+<figure>
+    <hr class="midrule">
+    <div class="side_by_side">
+        <div><img src="/assets/portfolio/2018-09-20-The-Ugly-Croissant/tuc_admin_demo.gif" alt="TUC Admin Section demo"></div>
+    </div>
+    <figcaption>Demonstration of the admin section</figcaption>
+    <hr class="midrule">
+</figure>
+
 ### Lessons Learned
 
 This project provided a great opportunity to develop my understanding of the funadmentals of the web; HTML, CSS and JavaScript. Moreover, I had the opportunity to learn PHP and MySQL which are fantastic tools for quickly creating dynamic sites which can easily scale to accomodate more content. Learning about the basics of security was a valuable experience, as I had to ensure the site was protected against common attacks such as SQL injection and cross-site scripting.
