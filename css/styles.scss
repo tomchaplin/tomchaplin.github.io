@@ -475,8 +475,21 @@ figure{
         font-weight: bold;
     }
 }
+
 @media only screen and (max-width: 650px) {
     figure{
         margin: 0;
+    }
+}
+
+// About page
+figure.float_right{
+  float: right;
+}
+
+@media only screen and (max-width: 650px) {
+    figure.float_right{
+      display: block;
+      width:100%;
     }
 }
