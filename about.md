@@ -10,7 +10,7 @@ But I must explain to you how all this mistaken idea of denouncing pleasure and 
 <figure class="float_right">
   <hr class="midrule">
   <div>
-    <img src="http://picsum.photos/300/400" alt="Thomas Chaplin">
+    <img src="/assets/tom_portrait.jpg" alt="Thomas Chaplin">
   </div>
   <hr class="midrule">
 </figure>
