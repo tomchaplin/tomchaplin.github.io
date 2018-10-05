@@ -9,7 +9,9 @@ But I must explain to you how all this mistaken idea of denouncing pleasure and 
 
 <figure class="float_right">
   <hr class="midrule">
-  <img src="http://picsum.photos/200/300" alt="Thomas Chaplin">
+  <div>
+    <img src="http://picsum.photos/200/300" alt="Thomas Chaplin">
+  </div>
   <hr class="midrule">
 </figure>
 
