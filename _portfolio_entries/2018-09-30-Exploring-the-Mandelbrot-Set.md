@@ -5,5 +5,5 @@ display_latex: true
 ---
 Future home for Mandelbrot set portfolio entry.
 {% raw %}
-\\[ a^2 + b^2 = c^2 \\]
+\\[ f_c(z) = z^2 + c \\]
 {% endraw %}
