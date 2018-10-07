@@ -1,6 +1,7 @@
 ---
 layout: portfolio
 featured_img: /assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/jeb.jpg
+display_latex: true
 ---
 Drone and quadcopter usage is at an all time high with no indication of slowing down, but controlling them isn't exactly plain sailing. In a theoretical setting, applying equal power to each motor should cause the vessel to rise straight up. In practice, with inevitable discrpencies in design and manufacture, producing such a perfectly symmetric system is impossible. So the question arises, how can we vary the speeds of each motor to stabilise and control the aircraft? Such questions are normally answered in an environment such as MATLAB with Simulink but the video game Kerbal Space Program and addon KRPC provide a fun sandbox in which to experiment.
 <!--more-->
@@ -37,7 +38,32 @@ Figure 2 defines the basic model of the quadcopter that we will be flying, inclu
 
 ### Control systems
 
+The basic problem presented is how to control the thrust of each engine \\( T_i \\) over time in order to achieve some desired state (normally referred to as the set state). In this case for simplicity, we aim for a set state with both zero pitch and roll, and altitude at a fixed height. In a noisy system finding an analytic solution to this problem is impossible, there are simply too many variables which cannot be accurately measured or predicted. The solution must therefore be reactive; the system will have to be constantly measuring the state of the vessel and making adjustments accordingly. As shown in Figure 3, we must design a controller which accepts our set state and the current state and adjusts the engines accordingly.
 
+<figure>
+    <hr class="midrule">
+    <div class="side_by_side">
+        <div><img src="/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/feedback_loop.png" alt="Feedback loop diagram"></div>
+    </div>
+    <figcaption>Figure 3 : Feedback loop for quadcopter control system</figcaption>
+    <hr class="midrule">
+</figure>
+
+How to design such a controller? A first idea would be a proportional controller; the current error in the system is multiplied by some pre-defined constant (or gain) and the output is the control signal sent to the engines. Denoting the current state as \\( x_t \\), the set state as \\( x_* \\) we can express the control signal outputted to the engines as
+\\[c_t := k_p (x_* - x_t)\\]
+for some given gain \\( k_p \\).
+To test out this idea, I did a quick test in MATALB. To simplify the problem, we reduce to a 1 dimensional system; a point which starts at \\( x = 10 \\) and is aiming for state \\( x = 0 \\). At each time step the state is updated and then the acceleration of the point is set to the control signal of the proportional controller. [Click here](/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/p_controller.m) to download the m-file I used.
+
+<figure>
+    <hr class="midrule">
+    <div class="side_by_side">
+        <div><img src="/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/p_controller.jpg" alt="Proportional Control Model" style = "width:500px"></div>
+    </div>
+    <figcaption>Figure 4 : Modelling a proportional controller</figcaption>
+    <hr class="midrule">
+</figure>
+
+Figure 4 shows how this system as evolves over time.    
 
 #### PID control
 
