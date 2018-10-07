@@ -57,7 +57,7 @@ To test out this idea, I did a quick test in MATALB. To simplify the problem, we
 <figure>
     <hr class="midrule">
     <div class="side_by_side">
-        <div><img src="/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/p_controller.jpg" alt="Proportional Control Model" style = "width:500px"></div>
+        <div><img src="/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/p_controller.jpg" alt="Proportional Control Model"></div>
     </div>
     <figcaption>Figure 4 : Modelling a proportional controller</figcaption>
     <hr class="midrule">
