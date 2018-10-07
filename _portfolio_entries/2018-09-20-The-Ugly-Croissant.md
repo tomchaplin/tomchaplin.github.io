@@ -1,6 +1,6 @@
 ---
 layout: portfolio
-featured_img: /assets/portfolio/2018-09-20-The-Ugly-Croissant/desktop_index.png
+featured_img: /assets/portfolio/2018-09-20-The-Ugly-Croissant/desktop_index.jpg
 external_link: https://www.theuglycroissant.com
 ---
 The Ugly Croissant presented the opportunity to learn the fundamentals of the web, focusing on responsive design. I used PHP to produce a basic content management system which could handle both recipes and blog posts, and implemented a tagging system to help organise the content. Throughout the process I worked closely with the client to get the design right for her and her audience.
@@ -21,8 +21,8 @@ From the start of the project, responsive design was at the top of the agenda. T
 <figure>
     <hr class="midrule">
     <div class="side_by_side">
-        <div><img src="/assets/portfolio/2018-09-20-The-Ugly-Croissant/desktop_index.png" alt="TUC Home Page on a Mobile Device"></div>
-        <div><img src="/assets/portfolio/2018-09-20-The-Ugly-Croissant/mobile_index.png" alt="TUC Home Page on a Mobile Device"></div>
+        <div><img src="/assets/portfolio/2018-09-20-The-Ugly-Croissant/desktop_index.jpg" alt="TUC Home Page on a Mobile Device"></div>
+        <div><img src="/assets/portfolio/2018-09-20-The-Ugly-Croissant/mobile_index.jpg" alt="TUC Home Page on a Mobile Device"></div>
     </div>
     <figcaption>Desktop vs. mobile layout</figcaption>
     <hr class="midrule">
@@ -76,7 +76,7 @@ This project provided a great opportunity to develop my understanding of the fun
 
 Working with PHP had its strengths and weaknesses, the language offers excellent integration with databases out of the box, making it ideal for web development. The massive community, and manual make troubleshooting relatively painless in most cases. The dynamic typing of PHP allows the devloper to spend less time dealing with pedantic issues such as changing the type of a single variable throughout an entire code base. However, static typing makes for inherintly more rigorous code which reduces the likelihood of careless errors at the cost of writing arguably over-verbose code. Moreover, using the naive approach to PHP development of basic scripts nestled amonst HTML, code can quickly become disorganised and difficult to maintain.
 
-If using PHP in a larger future project, I would attempt to use an object-oriented approach from the start as it allows the developer to foster a more organised code base which is more managable as the project grows. Moreover, using a PHP framework such as Laravel would allow for swifter, more elegant coding, through greater conformity to the MVC pattern which is prolofic in modern web development. On a similar note, in order to create a more organised style sheet, I would use a CSS pre-processor such as SCSS for its nesting and logic. The front-end codebase of this project was intentionally small to reduce the load on mobile devices so JavaScript frameworks were avoided. However, in larger projects, more dependent on their front-end, the power of JavaScript frameworks makes them an attractive option. 
+If using PHP in a larger future project, I would attempt to use an object-oriented approach from the start as it allows the developer to foster a more organised code base which is more managable as the project grows. Moreover, using a PHP framework such as Laravel would allow for swifter, more elegant coding, through greater conformity to the MVC pattern which is prolofic in modern web development. On a similar note, in order to create a more organised style sheet, I would use a CSS pre-processor such as SCSS for its nesting and logic. The front-end codebase of this project was intentionally small to reduce the load on mobile devices so JavaScript frameworks were avoided. However, in larger projects, more dependent on their front-end, the power of JavaScript frameworks makes them an attractive option.
 
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbLTg0NTMxOTQxOCwxMzMxMTUxODMyLDE1ND
