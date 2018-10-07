@@ -49,8 +49,8 @@ The basic problem presented is how to control the thrust of each engine \\( T_i 
     <hr class="midrule">
 </figure>
 
-How to design such a controller? A first idea would be a proportional controller; the current error in the system is multiplied by some pre-defined constant (or gain) and the output is the control signal sent to the engines. Denoting the current state as \\( x_t \\), the set state as \\( x_* \\) we can express the control signal outputted to the engines as
-\\[c_t := k_p (x_* - x_t)\\]
+How to design such a controller? A first idea would be a proportional controller; the current error in the system is multiplied by some pre-defined constant (or gain) and the output is the control signal sent to the engines. Denoting the current error as \\( e(t) \\), we can express the control signal outputted to the engines as
+\\[c(t) := k_p e(t)\\]
 for some given gain \\( k_p \\).
 To test out this idea, I did a quick test in MATALB. To simplify the problem, we reduce to a 1 dimensional system; a point which starts at \\( x = 10 \\) and is aiming for state \\( x = 0 \\). At each time step the state is updated and then the acceleration of the point is set to the control signal of the proportional controller. [Click here](/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/p_controller.m) to download the m-file I used.
 
@@ -63,12 +63,36 @@ To test out this idea, I did a quick test in MATALB. To simplify the problem, we
     <hr class="midrule">
 </figure>
 
-Figure 4 shows how this system as evolves over time.    
+Figure 4 shows how this system as evolves over time, there is a clear issue. The controller is only aware of the current error in the system so it keeps wildly overshooting the set state and the point ends up oscillating around the set state. After finely tuning the gain, this might be acceptable in some applications but it would make for a very nauseating flight for Jeb and may even shake the craft apart.
 
 #### PID control
 
+A PID control system aims to remedy the issue with the proportional controller demonstrated above. The name of this control system represents its constituent parts; the proportional, integral and derrivative terms. The PID control system can be expressed mathematically as
+{% raw %}
+\\[c(t) = k_p\,e(t) + k_i \int_0^t e(x)\;dx + k_d \frac{de(t)}{dt} \\]
+{% endraw %}
+where \\(e(t)\\) is the error at time \\(t\\), \\(c(t)\\) is the output control signal at time \\(t\\), and \\(k_p\\), \\(k_i\\) and \\(k_d\\) are the proportional, integral and derrivative gains respectively. Note, the proportional term of this system is identical to before, this term deals with the current error in the system. The next term is the integral term. Intuitively, this term adds up all previous erros in the system and so represents past error. The final term is the derrivative term which calculates how quickly the error is changing. This term is very important because it is the only term which predicts the future and can be viewed as the braking term because it will reduce the acceleration as the system appraoches it desired state.
+
+PID controllers are featured in many modern drones across numerous applications and thus it was the natural choice for this project. For this project we will only need 3 PID controllers, one for pitch, one for roll and one for altitude, but real drones would also include a PID controller for yaw. The next question to answer is how these control signals should be combined to control the engines. Note if we wish to increase the altitude of our craft we should increase the power of all engines. To increase the roll of our craft we should increase \\(T_0\\) and \\(T_2\\) while decreasing \\(T_1\\) and \\(T_3\\). Finally, to increase the pitch of our craft we should increase \\(T_0\\) and \\(T_1\\) while decreasing \\(T_2\\) and \\(T_3\\). This gives us the following powers for each of the engine
+{% raw %}
+\\[
+\begin{align}
+T_0 &= -c_{pitch}(t) - c_{yaw}(t) - c_{alt}(t), \\\\ T_1 &= -c_{pitch}(t) + c_{yaw}(t) - c_{alt}(t), \\\\ T_2 &= +c_{pitch}(t) - c_{yaw}(t) - c_{alt}(t), \\\\ T_3 &= +c_{pitch}(t) + c_{yaw}(t) - c_{alt}(t). \\\\
+\end{align}
+\\]
+{% endraw %}
+
+The final problem is how to tune the gains \\(k_p\\), \\(k_i\\) and \\(k_d\\) for each of the controllers.
+
 ### Working example
+
+* Talk about clamping
+* Include Python file
+* Result GIF/FLV
 
 ### Next steps
 
-I'm going to include a link to the [Python file](/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/pid_control.py).
+* Cascade control
+* Apply to rockets (spaceX style)
+* Other control systems
+* Kalman filter?
