@@ -22,7 +22,7 @@ For the design I will be using, please see Figure 1. This design has one conside
     <hr class="midrule">
 </figure>
 
-Next, we need some way of measuring the current state of the vessel, processing that information somehow, and then adjusting the thrust on each engine accordingly. There are two competing methods for achieving this goal, namely the two mods kRPC and kOS. kOS is arguably simpler to implement but all scripts must be written in its custom programming language. Conversley, kRPC allows you integrating with C++, Java, Python amongst many other languages. In this project, I will be using kRPC with Python.
+Next, we need some way of measuring the current state of the vessel, processing that information somehow, and then adjusting the thrust on each engine accordingly. There are two competing methods for achieving this goal, namely the two mods [kRPC](https://krpc.github.io/krpc/index.html) and [kOS](https://ksp-kos.github.io/KOS/). kOS is arguably simpler to implement but all scripts must be written in its custom programming language. Conversley, kRPC allows you to write your scripts in C++, Java, Python or many other languages. In this project, I will be using kRPC with Python.
 
 <figure>
     <hr class="midrule">
@@ -77,22 +77,28 @@ PID controllers are featured in many modern drones across numerous applications 
 {% raw %}
 \\[
 \begin{align}
-T_0 &= -c_{pitch}(t) - c_{yaw}(t) - c_{alt}(t), \\\\ T_1 &= -c_{pitch}(t) + c_{yaw}(t) - c_{alt}(t), \\\\ T_2 &= +c_{pitch}(t) - c_{yaw}(t) - c_{alt}(t), \\\\ T_3 &= +c_{pitch}(t) + c_{yaw}(t) - c_{alt}(t). \\\\
+T_0 &= -c_{pitch}(t) - c_{roll}(t) - c_{alt}(t), \\\\ T_1 &= -c_{pitch}(t) + c_{roll}(t) - c_{alt}(t), \\\\ T_2 &= +c_{pitch}(t) - c_{roll}(t) - c_{alt}(t), \\\\ T_3 &= +c_{pitch}(t) + c_{roll}(t) - c_{alt}(t). \\\\
 \end{align}
 \\]
 {% endraw %}
 
-The final problem is how to tune the gains \\(k_p\\), \\(k_i\\) and \\(k_d\\) for each of the controllers.
+The final problem is how to tune the gains \\(k_p\\), \\(k_i\\) and \\(k_d\\) for each of the controllers. In the world of quadcopters the PID tuning of your craft is a very personal choice and reflects how responsive or smooth you want the vessel to be so there is not necessarily a correct tuning for a given craft let alone across all craft. There are [plenty of good resources](https://oscarliang.com/quadcopter-pid-explained-tuning/) online that guide you through the process of tuning these gains. Likewise, there are plenty of competing algorithms (including [using a genetic algorithm](https://www.hindawi.com/journals/aai/2014/791230/)) for automatically tuning PID controllers with various different goals in mind.
 
 ### Working example
 
-* Talk about clamping
-* Include Python file
+This system has one problem which became apparent fairly quickly in testing. The problem arises if you ask the drone to hover at an altitude of 100m and then release it an altitude of 5km. The drone now has a massive error in its altitude so \\(c_{alt}(t)\\) becomes very large and negative. This has the effect of drowning out the pitch and roll control signals so the engines will not fire. Consequently, the drone will tumble out of the sky out of control which may be impossible to recover from, resulting in catastrophic failure. The solution was to clamp \\(c_{alt}(t)\\) between -0.8 and 0.8 to keep the signal from becoming overwhelming.
+
+If you would like to download the Python file which controls the quadcopter in Kerbal Space Program please [click here](/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/pid_control.py). To use this script you will need to have Python installed locally and the [kRPC](https://krpc.github.io/krpc/index.html) mod installed in your instance of KSP. Also, so that the script can properly detect the engines, you will need to set an initial thrust limiter on the engines where engine \\(T_i\\) has a thrust limiter of \\(i/10\\).
+
 * Result GIF/FLV
 
 ### Next steps
 
-* Cascade control
-* Apply to rockets (spaceX style)
+So far, all this system is capable of is maintining a given pitch, roll and altitude. It would be possible to control these 3 variables manually to maneuever the vessel but, especially without yaw control, it would be challenging. Ideally, we would like to be able to give the controller a point in 3D space which it would navigate to autonomously. This is another program which is difficult to solve analytically which could potentially solved by another PID loop. This new system would calculate the vector to the target position and feed this into a PID loop which would produce the new set state for the pitch, roll and altitude which would then be achieved by another PID loop. Such a system is called [cascade control](https://www.controleng.com/single-article/fundamentals-of-cascade-control.html). Moreover, as the control system is reactive, the target point need not be stationary so the drone could be programmed to chase a target vehicle.
+
+In Kerbal Space Program, a PID control system could be used to execute a powered descent in order to safely bring a rocket first stage back to the ground, similarly to SpaceX's Falcon 9 series of rockets. A cascade control system could also be used to guide the rocket back to the intial launchpad or another safe landing site. Although, how to do this in the most fuel-efficient way (which is crucial for lowering the costs of a resuable launch system) is more of a question for optimal control theory.
+
+Another possible extension to this project would be to use the accelerometer in a mobile device as an input device for the set state so that the quadcopter would mimic the orientation of the device. kRPC opens a server for interacting with the game which can be accessible on the entire network, so this control system could run entirely as a self-contained application on the mobile device. Although, this may incur latency issues depending on the speed of the network.
+
 * Other control systems
 * Kalman filter?
