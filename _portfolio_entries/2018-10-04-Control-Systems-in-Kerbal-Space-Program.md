@@ -52,12 +52,12 @@ The basic problem presented is how to control the thrust of each engine \\( T_i 
 How to design such a controller? A first idea would be a proportional controller; the current error in the system is multiplied by some pre-defined constant (or gain) and the output is the control signal sent to the engines. Denoting the current error as \\( e(t) \\), we can express the control signal outputted to the engines as
 \\[c(t) := k_p e(t)\\]
 for some given gain \\( k_p \\).
-To test out this idea, I did a quick test in MATALB. To simplify the problem, we reduce to a 1 dimensional system; a point which starts at \\( x = 5 \\) and is aiming for state \\( x = 0 \\). At each time step the state is updated and then the acceleration of the point is set to the control signal of the proportional controller plus a gravity and air resistance term. [Click here](/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/p_controller.m) to download the m-file I used.
+To test out this idea, I did a quick test in MATALB. To simplify the problem, we reduce to a 1 dimensional system; a point which starts at \\( x = 5 \\) and is aiming for state \\( x = 0 \\). At each time step the state is updated and then the acceleration of the point is set to the control signal of the proportional controller plus an "air resistance" term. [Click here](/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/p_controller.m) to download the m-file I used.
 
 <figure>
     <hr class="midrule">
     <div class="side_by_side">
-        <div><img src="/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/p_controller_grav+resist.png" alt="Proportional Control Model"></div>
+        <div><img src="/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/p_controller_resist.png" alt="Proportional Control Model"></div>
     </div>
     <figcaption>Figure 4 : Modelling a proportional controller</figcaption>
     <hr class="midrule">
