@@ -52,18 +52,18 @@ The basic problem presented is how to control the thrust of each engine \\( T_i 
 How to design such a controller? A first idea would be a proportional controller; the current error in the system is multiplied by some pre-defined constant (or gain) and the output is the control signal sent to the engines. Denoting the current error as \\( e(t) \\), we can express the control signal outputted to the engines as
 \\[c(t) := k_p e(t)\\]
 for some given gain \\( k_p \\).
-To test out this idea, I did a quick test in MATALB. To simplify the problem, we reduce to a 1 dimensional system; a point which starts at \\( x = 10 \\) and is aiming for state \\( x = 0 \\). At each time step the state is updated and then the acceleration of the point is set to the control signal of the proportional controller. [Click here](/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/p_controller.m) to download the m-file I used.
+To test out this idea, I did a quick test in MATALB. To simplify the problem, we reduce to a 1 dimensional system; a point which starts at \\( x = 5 \\) and is aiming for state \\( x = 0 \\). At each time step the state is updated and then the acceleration of the point is set to the control signal of the proportional controller plus a gravity and air resistance term. [Click here](/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/p_controller.m) to download the m-file I used.
 
 <figure>
     <hr class="midrule">
     <div class="side_by_side">
-        <div><img src="/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/p_controller.jpg" alt="Proportional Control Model"></div>
+        <div><img src="/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/p_controller_grav+resist.png" alt="Proportional Control Model"></div>
     </div>
     <figcaption>Figure 4 : Modelling a proportional controller</figcaption>
     <hr class="midrule">
 </figure>
 
-Figure 4 shows how this system as evolves over time, there is a clear issue. The controller is only aware of the current error in the system so it keeps wildly overshooting the set state and the point ends up oscillating around the set state. After finely tuning the gain, this might be acceptable in some applications but it would make for a very nauseating flight for Jeb and may even shake the craft apart.
+Figure 4 shows how this system as evolves over time, there is a clear issue. The controller is only aware of the current error in the system so it keeps wildly overshooting the set state and the point ends up oscillating around the set state. The reduction of the amplitude of these oscillations is due only to the damping in the system from air resistance. After finely tuning the gain, a proportional controller might be acceptable in some applications, but it would make for a very nauseating flight for Jeb and may even shake the craft apart.
 
 #### PID control
 
@@ -99,6 +99,8 @@ So far, all this system is capable of is maintining a given pitch, roll and alti
 In Kerbal Space Program, a PID control system could be used to execute a powered descent in order to safely bring a rocket first stage back to the ground, similarly to SpaceX's Falcon 9 series of rockets. A cascade control system could also be used to guide the rocket back to the intial launchpad or another safe landing site. Although, how to do this in the most fuel-efficient way (which is crucial for lowering the costs of a resuable launch system) is more of a question for optimal control theory.
 
 Another possible extension to this project would be to use the accelerometer in a mobile device as an input device for the set state so that the quadcopter would mimic the orientation of the device. kRPC opens a server for interacting with the game which can be accessible on the entire network, so this control system could run entirely as a self-contained application on the mobile device. Although, this may incur latency issues depending on the speed of the network.
+
+Another direction
 
 * Other control systems
 * Kalman filter?
