@@ -71,12 +71,14 @@ A PID control system aims to remedy the issue with the proportional controller d
 {% raw %}
 \\[c(t) = k_p\,e(t) + k_i \int_0^t e(x)\;dx + k_d \frac{de(t)}{dt} \\]
 {% endraw %}
-where \\(e(t)\\) is the error at time \\(t\\), \\(c(t)\\) is the output control signal at time \\(t\\), and \\(k_p\\), \\(k_i\\) and \\(k_d\\) are the proportional, integral and derrivative gains respectively. Note, the proportional term of this system is identical to before, this term deals with the current error in the system. The next term is the integral term. Intuitively, this term adds up all previous erros in the system and so represents past error. The final term is the derrivative term which calculates how quickly the error is changing. This term is very important because it is the only term which predicts the future and can be viewed as the braking term because it will reduce the acceleration as the system appraoches it desired state.
+where \\(e(t)\\) is the error at time \\(t\\), \\(c(t)\\) is the output control signal at time \\(t\\), and \\(k_p\\), \\(k_i\\) and \\(k_d\\) are the proportional, integral and derrivative gains respectively. Note, the proportional term of this system is identical to before, this term deals with the current error in the system. The next term is the integral term. Intuitively, this term adds up all previous errors in the system and so represents past error. The final term is the derrivative term which calculates how quickly the error is changing. This term is very important because it is the only term which predicts the future and can be viewed as the braking term because it will reduce the acceleration as the system appraoches it desired state.
+
+We can model this controller in a similar way to the proportional controller to see how they compare.
 
 <figure>
     <hr class="midrule">
     <div class="side_by_side">
-        <div><img src="/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/pid_controller.png" alt="PID Control Model"></div>
+        <div><img src="/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/pid_controller_tuned.png" alt="PID Control Model"></div>
     </div>
     <figcaption>Figure 5 : Modelling a PID controller</figcaption>
     <hr class="midrule">
