@@ -20,7 +20,7 @@ collections:
         permalink: /blog/:year_:month_:day/:title/
     portfolio_entries:
         output: true
-        permalink: /portfolio/:year_:month_:day/:title/
+        permalink: /portfolio/:title/
 
 kramdown:
  input: markdown
