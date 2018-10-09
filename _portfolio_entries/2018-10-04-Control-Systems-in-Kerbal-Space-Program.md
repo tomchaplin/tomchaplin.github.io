@@ -49,7 +49,7 @@ The basic problem presented is how to control the thrust of each engine \\( T_i 
     <hr class="midrule">
 </figure>
 
-How to design such a controller? A first idea would be a proportional controller; the current error in the system is multiplied by some pre-defined constant (or gain) and the output is the control signal sent to the engines. Denoting the current error as \\( e(t) \\), we can express the control signal outputted to the engines as
+How to design such a controller? A first idea would be a proportional controller; the current error in the system is multiplied by some pre-defined constant (or gain) and the output is the control signal sent to the engines. Denoting the current error as \\( e(t) = x_* - x(t) \\) where \\(x_*\\) is the desired set state, we can express the control signal outputted to the engines as
 \\[c(t) := k_p e(t)\\]
 for some given gain \\( k_p \\).
 To test out this idea, I did a quick test in MATALB. To simplify the problem, we reduce to a 1 dimensional system; a point which starts at \\( x = 5 \\) and is aiming for state \\( x = 0 \\). At each time step the state is updated and then the acceleration of the point is set to the control signal of the proportional controller plus an \"air resistance\" term. [Click here](/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/p_controller.m) to download the m-file I used.
@@ -102,4 +102,4 @@ Another possible extension to this project would be to use the accelerometer in 
 
 Another direction for this project would be to explore different control systems. One such system to explore could be the linear-quadratic regulator (LQR). An LQR seeks to minimise a quadratic cost function subject to a system of linear differential equations. The difficulty in designing such a system is properly defining the cost function and is usually an iterative proccess, similar to tuning a PID controller.
 
-In Kerbal Space Program its probably safe to assume that the telemetry readings are accurate but in the real world we are not blessed with such reliable sensors. A Kalman filter takes the readings from the sensors and combines that information with a model for the craft to provide a \"best guess\" as to the actual orientation and position of the craft. 
+In Kerbal Space Program its probably safe to assume that the telemetry readings are accurate but in the real world we are not blessed with such reliable sensors. A Kalman filter takes the readings from the sensors and combines that information with a model for the craft to provide a \"best guess\" as to the actual orientation and position of the craft. This allows the control system to filter out noise from unreliable sensors and provide a much more stable flight which isn't as reactive to random noise in the system.
