@@ -63,7 +63,7 @@ To test out this idea, I did a quick test in MATALB. To simplify the problem, we
     <hr class="midrule">
 </figure>
 
-Figure 4 shows how this system as evolves over time, there is a clear issue. The controller is only aware of the current error in the system so it keeps wildly overshooting the set state and the point ends up oscillating around the set state. The reduction of the amplitude of these oscillations is due only to the damping in the system from air resistance. After finely tuning the gain, a proportional controller might be acceptable in some applications, but it would make for a very nauseating flight for Jeb and may even shake the craft apart.
+Figure 4 shows how this system evolves over time; there is a clear issue. The controller is only aware of the current error in the system so it keeps wildly overshooting the set state and the point ends up oscillating around the set state. The reduction of the amplitude of these oscillations is due only to the damping in the system from air resistance. After finely tuning the gain, a proportional controller might be acceptable in some applications, but it would make for a very nauseating flight for Jeb and may even shake the craft apart.
 
 #### PID control
 
@@ -100,7 +100,6 @@ In Kerbal Space Program, a PID control system could be used to execute a powered
 
 Another possible extension to this project would be to use the accelerometer in a mobile device as an input device for the set state so that the quadcopter would mimic the orientation of the device. kRPC opens a server for interacting with the game which can be accessible on the entire network, so this control system could run entirely as a self-contained application on the mobile device. Although, this may incur latency issues depending on the speed of the network.
 
-Another direction
+Another direction for this project would be to explore different control systems. One such system to explore could be the linear-quadratic regulator (LQR). An LQR seeks to minimise a quadratic cost function subject to a system of linear differential equations. The difficulty in designing such a system is properly defining the cost function and is usually an iterative proccess, similar to tuning a PID controller.
 
-* Other control systems
-* Kalman filter?
+In Kerbal Space Program its probably safe to assume that the telemetry readings are accurate but in the real world we are not blessed with such reliable sensors. A Kalman filter takes the readings from the sensors and combines that information with a model for the craft to provide a \"best guess\" as to the actual orientation and position of the craft. 
