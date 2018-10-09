@@ -3,7 +3,7 @@ layout: portfolio
 featured_img: /assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/jeb.jpg
 display_latex: true
 ---
-Drone and quadcopter usage is at an all time high with no indication of slowing down, but controlling them isn't exactly plain sailing. In a theoretical setting, applying equal power to each motor should cause the vessel to rise straight up. In practice, with inevitable discrpencies in design and manufacture, producing such a perfectly symmetric system is impossible. So the question arises, how can we vary the speeds of each motor to stabilise and control the aircraft? Such questions are normally answered in an environment such as MATLAB with Simulink but the video game Kerbal Space Program and addon KRPC provide a fun sandbox in which to experiment.
+Drone and quadcopter usage is at an all time high with no indication of slowing down, but controlling them isn't exactly plain sailing. In a theoretical setting, applying equal power to each motor should cause the vessel to rise straight up. In practice, with inevitable discrpencies in design and manufacture, producing such a perfectly symmetric system is impossible. So the question arises, how can we vary the speeds of each motor to stabilise and control the aircraft? Such questions are normally answered in an environment such as MATLAB with Simulink but the video game Kerbal Space Program and addon kRPC provide a fun sandbox in which to experiment.
 <!--more-->
 
 ### The setup
@@ -52,7 +52,7 @@ The basic problem presented is how to control the thrust of each engine \\( T_i 
 How to design such a controller? A first idea would be a proportional controller; the current error in the system is multiplied by some pre-defined constant (or gain) and the output is the control signal sent to the engines. Denoting the current error as \\( e(t) \\), we can express the control signal outputted to the engines as
 \\[c(t) := k_p e(t)\\]
 for some given gain \\( k_p \\).
-To test out this idea, I did a quick test in MATALB. To simplify the problem, we reduce to a 1 dimensional system; a point which starts at \\( x = 5 \\) and is aiming for state \\( x = 0 \\). At each time step the state is updated and then the acceleration of the point is set to the control signal of the proportional controller plus an "air resistance" term. [Click here](/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/p_controller.m) to download the m-file I used.
+To test out this idea, I did a quick test in MATALB. To simplify the problem, we reduce to a 1 dimensional system; a point which starts at \\( x = 5 \\) and is aiming for state \\( x = 0 \\). At each time step the state is updated and then the acceleration of the point is set to the control signal of the proportional controller plus an \"air resistance\" term. [Click here](/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/p_controller.m) to download the m-file I used.
 
 <figure>
     <hr class="midrule">
