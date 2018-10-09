@@ -73,6 +73,15 @@ A PID control system aims to remedy the issue with the proportional controller d
 {% endraw %}
 where \\(e(t)\\) is the error at time \\(t\\), \\(c(t)\\) is the output control signal at time \\(t\\), and \\(k_p\\), \\(k_i\\) and \\(k_d\\) are the proportional, integral and derrivative gains respectively. Note, the proportional term of this system is identical to before, this term deals with the current error in the system. The next term is the integral term. Intuitively, this term adds up all previous erros in the system and so represents past error. The final term is the derrivative term which calculates how quickly the error is changing. This term is very important because it is the only term which predicts the future and can be viewed as the braking term because it will reduce the acceleration as the system appraoches it desired state.
 
+<figure>
+    <hr class="midrule">
+    <div class="side_by_side">
+        <div><img src="/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/pid_controller.png" alt="PID Control Model"></div>
+    </div>
+    <figcaption>Figure 5 : Modelling a PID controller</figcaption>
+    <hr class="midrule">
+</figure>
+
 PID controllers are featured in many modern drones across numerous applications and thus it was the natural choice for this project. For this project we will only need 3 PID controllers, one for pitch, one for roll and one for altitude, but real drones would also include a PID controller for yaw. The next question to answer is how these control signals should be combined to control the engines. Note if we wish to increase the altitude of our craft we should increase the power of all engines. To increase the roll of our craft we should increase \\(T_0\\) and \\(T_2\\) while decreasing \\(T_1\\) and \\(T_3\\). Finally, to increase the pitch of our craft we should increase \\(T_0\\) and \\(T_1\\) while decreasing \\(T_2\\) and \\(T_3\\). This gives us the following powers for each of the engines:
 {% raw %}
 \\[
