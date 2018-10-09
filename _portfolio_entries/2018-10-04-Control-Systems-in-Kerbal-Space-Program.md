@@ -101,7 +101,16 @@ This system has one problem which became apparent fairly quickly in testing. The
 
 If you would like to download the Python file which controls the quadcopter in Kerbal Space Program please [click here](/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/pid_control.py). To use this script you will need to have Python installed locally and the [kRPC](https://krpc.github.io/krpc/index.html) mod installed in your instance of KSP. Also, so that the script can properly detect the engines, you will need to set an initial thrust limiter on the engines where engine \\(T_i\\) has a thrust limiter of \\(i/10\\).
 
-* Result GIF/FLV
+<figure>
+    <hr class="midrule">
+    <div class="side_by_side">
+        <div><img src="/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/results.gif" alt="KSP quadcopter demonstration"></div>
+    </div>
+    <figcaption>Figure 6 : Jeb's quadcopter in action</figcaption>
+    <hr class="midrule">
+</figure>
+
+<!-- Talk about the GIF here -->
 
 ### Next steps
 
