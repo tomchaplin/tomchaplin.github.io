@@ -63,7 +63,7 @@ One standout feature of the user interface is the tag system; when publishing a 
 
 <figure>
     <hr class="midrule">
-    <div class="side_by_side">
+    <div>
         <div><img src="/assets/portfolio/2018-09-20-The-Ugly-Croissant/tuc_admin_demo.gif" alt="TUC Admin Section demo"></div>
     </div>
     <figcaption>Demonstration of the admin section</figcaption>

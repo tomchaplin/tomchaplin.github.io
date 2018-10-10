@@ -26,7 +26,7 @@ Next, we need some way of measuring the current state of the vessel, processing 
 
 <figure>
     <hr class="midrule">
-    <div class="side_by_side">
+    <div>
         <div><img src="/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/model.png" alt="Model of Quadcopter"></div>
     </div>
     <figcaption>Figure 2 : Basic model of quadcopter</figcaption>
@@ -42,7 +42,7 @@ The basic problem presented is how to control the thrust of each engine \\( T_i 
 
 <figure>
     <hr class="midrule">
-    <div class="side_by_side">
+    <div>
         <div><img src="/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/feedback_loop.png" alt="Feedback loop diagram"></div>
     </div>
     <figcaption>Figure 3 : Feedback loop for quadcopter control system</figcaption>
@@ -56,7 +56,7 @@ To test out this idea, I did a quick test in MATALB. To simplify the problem, we
 
 <figure>
     <hr class="midrule">
-    <div class="side_by_side">
+    <div>
         <div><img src="/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/p_controller_resist.png" alt="Proportional Control Model"></div>
     </div>
     <figcaption>Figure 4 : Modelling a proportional controller</figcaption>
@@ -77,7 +77,7 @@ We can model this controller in a similar way to the proportional controller, to
 
 <figure>
     <hr class="midrule">
-    <div class="side_by_side">
+    <div>
         <div><img src="/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/pid_controller_tuned.png" alt="PID Control Model"></div>
     </div>
     <figcaption>Figure 5 : Modelling a PID controller</figcaption>
@@ -103,7 +103,7 @@ If you would like to download the Python file which controls the quadcopter in K
 
 <figure>
     <hr class="midrule">
-    <div class="side_by_side">
+    <div>
         <div><img src="/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/results.gif" alt="KSP quadcopter demonstration"></div>
     </div>
     <figcaption>Figure 6 : Jeb's quadcopter in action</figcaption>
