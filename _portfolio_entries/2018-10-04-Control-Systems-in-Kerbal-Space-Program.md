@@ -12,7 +12,7 @@ The goal of this project was to design, build and attempt to control a rudimenta
 
 For the design I will be using, please see Figure 1. This design has one considerable drawback over a conventional quadcopter, in that there is no way to control the yaw of the craft. This will be discussed more later, but controlling this axis shouldn't be necessary to achieve stable flight. Moreover, it should be possible to maneuever the craft in 3D space without having any control of the yaw axis (although it will be pointing in a random direction).
 
-<figure>
+<figure class = "in_article">
     <hr class="midrule">
     <div class="side_by_side">
         <div><img src="/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/quad.jpg" alt="Quadcopter front view"></div>
@@ -24,7 +24,7 @@ For the design I will be using, please see Figure 1. This design has one conside
 
 Next, we need some way of measuring the current state of the vessel, processing that information somehow, and then adjusting the thrust on each engine accordingly. There are two competing methods for achieving this goal, namely the two mods [kRPC](https://krpc.github.io/krpc/index.html) and [kOS](https://ksp-kos.github.io/KOS/). kOS is arguably simpler to implement but all scripts must be written in its custom programming language. Conversley, kRPC allows you to write your scripts in C++, Java, Python or many other languages. In this project, I will be using kRPC with Python.
 
-<figure>
+<figure class = "in_article">
     <hr class="midrule">
     <div>
         <div><img src="/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/model.png" alt="Model of Quadcopter"></div>
@@ -40,7 +40,7 @@ Figure 2 defines the basic model of the quadcopter that we will be flying, inclu
 
 The basic problem presented is how to control the thrust of each engine \\( T_i \\) over time in order to achieve some desired state (normally referred to as the set state). In this case for simplicity, we aim for a set state with both zero pitch and roll, and altitude at a fixed height. In a noisy system finding an analytic solution to this problem is impossible, there are simply too many variables which cannot be accurately measured or predicted. The solution must therefore be reactive; the system will have to be constantly measuring the state of the vessel and making adjustments accordingly. As shown in Figure 3, we must design a controller which accepts our set state and the current state and adjusts the engines accordingly.
 
-<figure>
+<figure class = "in_article">
     <hr class="midrule">
     <div>
         <div><img src="/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/feedback_loop.png" alt="Feedback loop diagram"></div>
@@ -54,7 +54,7 @@ How to design such a controller? A first idea would be a proportional controller
 for some given gain \\( k_p \\).
 To test out this idea, I did a quick test in MATALB. To simplify the problem, we reduce to a 1 dimensional system; a point which starts at \\( x = 5 \\) and is aiming for state \\( x = 0 \\). At each time step the state is updated and then the acceleration of the point is set to the control signal of the proportional controller plus an \"air resistance\" term. [Click here](/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/p_controller.m) to download the m-file I used to model this control system.
 
-<figure>
+<figure class = "in_article">
     <hr class="midrule">
     <div>
         <div><img src="/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/p_controller_resist.png" alt="Proportional Control Model"></div>
@@ -75,7 +75,7 @@ where \\(e(t)\\) is the error at time \\(t\\), \\(c(t)\\) is the output control 
 
 We can model this controller in a similar way to the proportional controller, to see how they compare. Viewing the simulation in Figure 5, we clearly see that the PID controller is doing a much better job. The system has setlled down into the set state in under 2 oscillations, and before time \\(t = 4 \\times 10^4\\), whereas the proportional controller was still oscillating around the set state with a large amplitude at time \\(t = 5 \\times 10^5 \\). [Click here](/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/pid_controller.m) to download the m-file I used to model this control system.  
 
-<figure>
+<figure class = "in_article">
     <hr class="midrule">
     <div>
         <div><img src="/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/pid_controller_tuned.png" alt="PID Control Model"></div>
@@ -101,7 +101,7 @@ This system has one problem which became apparent fairly quickly in testing. The
 
 If you would like to download the Python file which controls the quadcopter in Kerbal Space Program please [click here](/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/pid_control.py). To use this script you will need to have Python installed locally and the [kRPC](https://krpc.github.io/krpc/index.html) mod installed in your instance of KSP. Also, so that the script can properly detect the engines, you will need to set an initial thrust limiter on the engines where engine \\(T_i\\) has a thrust limiter of \\(i/10\\).
 
-<figure>
+<figure class = "in_article">
     <hr class="midrule">
     <div>
         <div><img src="/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/results.gif" alt="KSP quadcopter demonstration"></div>

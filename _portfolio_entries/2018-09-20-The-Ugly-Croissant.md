@@ -18,7 +18,7 @@ The Ugly Croissant presented the opportunity to learn the fundamentals of the we
 ### Development Approach
 
 From the start of the project, responsive design was at the top of the agenda. The client had already amassed a following on social media and was seeking a website in order to grow her presence and display her recipes to her followers. As such, the website had to be designed with a mobile first approach from day one as the vast majority of traffic would be mobile. This was achieved through the use of the <code>viewport</code> meta tag, CSS media queries and CSS grids.
-<figure>
+<figure class = "in_article">
     <hr class="midrule">
     <div class="side_by_side">
         <div><img src="/assets/portfolio/2018-09-20-The-Ugly-Croissant/desktop_index.jpg" alt="TUC Home Page on a Mobile Device"></div>
@@ -61,7 +61,7 @@ To collect recipe content, the new entry form features three Markdown editors us
 
 One standout feature of the user interface is the tag system; when publishing a recipe or blog post, the author is able to add tags to their post. This is accomplished through an AJAX live search box which searches the datbase for pre-existing tags as the author types. The first step, was to create a PHP file which excepts the query through the <code>GET</code> method and echoes a table of results from the database. Then, when the contents of the search box are updated, a HTTP request is made to this file and the content received is embedded into the page. This provides a seamless experience for the author as there are no page reloads, making tags quicker and easier to add before posting.
 
-<figure>
+<figure class = "in_article">
     <hr class="midrule">
     <div>
         <div><img src="/assets/portfolio/2018-09-20-The-Ugly-Croissant/tuc_admin_demo.gif" alt="TUC Admin Section demo"></div>
