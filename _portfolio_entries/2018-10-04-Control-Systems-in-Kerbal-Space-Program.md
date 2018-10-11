@@ -3,14 +3,14 @@ layout: portfolio
 featured_img: /assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/jeb.jpg
 display_latex: true
 ---
-Drone and quadcopter usage is at an all time high, but controlling them isn't exactly plain sailing. In a theoretical setting, applying equal power to each motor should cause the vessel to rise straight up. In practice, with inevitable discrepencies in design and manufacture, producing such a perfectly symmetric system is impossible. So the question arises, how can we vary the speeds of each motor to stabilise and control the aircraft? Such questions are normally answered in an environment such as MATLAB with Simulink but the video game Kerbal Space Program and addon kRPC provide a fun sandbox in which to experiment.
+Drone and quadcopter usage is at an all time high, but controlling them isn't exactly plain sailing. In a theoretical setting, applying equal power to each motor should cause the vessel to rise straight up. In practice, with inevitable discrepancies in design and manufacture, producing such a perfectly symmetric system is impossible. So the question arises, how can we vary the speeds of each motor to stabilise and control the aircraft? Such questions are normally answered in an environment such as MATLAB with Simulink but the video game Kerbal Space Program and addon kRPC provide a fun sandbox in which to experiment.
 <!--more-->
 
 ### The setup
 
 The goal of this project was to design, build and attempt to control a rudimentary "quadcopter" in the video game Kerbal Space Program. To be in with the best chance, the vessel should satisfy a few design requirements. Firstly, the craft should be as symmetric and balanced as possible; more precisely, the centre of mass and centre of thrust should be as close as possible so that the craft doesn't flip over straight away. Secondly, we need the engines to be highly responsive to change in thrust because we will be constantly altering them to keep the craft flying level. In Kerbal Space Program, this means sticking with liquid rocket engines such as the 48-7S "Spark". Note, we don't need any engine gimballing because we will steer the craft by varying the thrust across the 4 engines.
 
-For the design I will be using, please see Figure 1. This design has one considerable drawback over a conventional quadcopter, in that there is no way to control the yaw of the craft. This will be discussed more later, but controlling this axis shouldn't be necessary to achieve stable flight. Moreover, it should be possible to maneuever the craft in 3D space without having any control of the yaw axis (although it will be pointing in a random direction).
+For the design I will be using, please see Figure 1. This design has one considerable drawback over a conventional quadcopter, in that there is no way to control the yaw of the craft. This will be discussed more later, but controlling this axis shouldn't be necessary to achieve stable flight. Moreover, it should be possible to maneuver the craft in 3D space without having any control of the yaw axis (although it will be pointing in a random direction).
 
 <figure class = "in_article">
     <hr class="midrule">
@@ -22,7 +22,7 @@ For the design I will be using, please see Figure 1. This design has one conside
     <hr class="midrule">
 </figure>
 
-Next, we need some way of measuring the current state of the vessel, processing that information somehow, and then adjusting the thrust on each engine accordingly. There are two competing methods for achieving this goal, namely the two mods [kRPC](https://krpc.github.io/krpc/index.html) and [kOS](https://ksp-kos.github.io/KOS/). kOS is arguably simpler to implement but all scripts must be written in its custom programming language. Conversley, kRPC allows you to write your scripts in C++, Java, Python or many other languages. In this project, I will be using kRPC with Python.
+Next, we need some way of measuring the current state of the vessel, processing that information somehow, and then adjusting the thrust on each engine accordingly. There are two competing methods for achieving this goal, namely the two mods [kRPC](https://krpc.github.io/krpc/index.html) and [kOS](https://ksp-kos.github.io/KOS/). kOS is arguably simpler to implement but all scripts must be written in its custom programming language. Conversely, kRPC allows you to write your scripts in C++, Java, Python or many other languages. In this project, I will be using kRPC with Python.
 
 <figure class = "in_article">
     <hr class="midrule">
@@ -34,7 +34,7 @@ Next, we need some way of measuring the current state of the vessel, processing 
 </figure>
 
 
-Figure 2 defines the basic model of the quadcopter that we will be flying, including the numbering of the engines 0 through 3 and the defintions of pitch, roll and yaw.
+Figure 2 defines the basic model of the quadcopter that we will be flying, including the numbering of the engines 0 through 3 and the definitions of pitch, roll and yaw.
 
 ### Control systems
 
@@ -49,7 +49,7 @@ The basic problem presented is how to control the thrust of each engine \\( T_i 
     <hr class="midrule">
 </figure>
 
-How do we design such a controller? A first idea would be a proportional controller; the current error in the system is multiplied by some pre-defined constant (or gain) and the output is the control signal sent to the engines. Denoting the current error as \\( e(t) = x_* - x(t) \\) where \\(x_*\\) is the desired set state, we can express the control signal outputted to the engines as
+How do we design such a controller? A first idea would be a proportional controller; the current error in the system is multiplied by some predefined constant (or gain) and the output is the control signal sent to the engines. Denoting the current error as \\( e(t) = x_* - x(t) \\) where \\(x_*\\) is the desired set state, we can express the control signal outputted to the engines as
 \\[c(t) := k_p e(t)\\]
 for some given gain \\( k_p \\).
 To test out this idea, I did a quick test in MATLAB. To simplify the problem, we reduce to a 1 dimensional system; a point which starts at \\( x = 5 \\) and is aiming for state \\( x = 0 \\). At each time step the state is updated and then the acceleration of the point is set to the control signal of the proportional controller plus an \"air resistance\" term. [Click here](/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/p_controller.m) to download the m-file I used to model this control system.
@@ -97,7 +97,7 @@ The final problem is how to tune the gains \\(k_p\\), \\(k_i\\) and \\(k_d\\) fo
 
 ### Working example
 
-This system has one problem which became apparent fairly quickly in testing. The problem arises if you release the drone at a great height (say 5km) and ask it to achieve a low atltiude (say 100m). Now, the difference between the drone's target altitude and actual altitude is massive so \\(c_{alt}(t)\\) becomes very large and negative. This has the effect of drowning out the pitch and roll control signals so the engines will not fire at all. Consequently, the drone will tumble out of the sky out of control which may be impossible to recover from, resulting in catastrophic failure. The solution was to clamp \\(c_{alt}(t)\\) between -0.8 and 0.8 to keep the signal from becoming overwhelming.
+This system has one problem which became apparent fairly quickly in testing. The problem arises if you release the drone at a great height (say 5km) and ask it to achieve a low altitude (say 100m). Now, the difference between the drone's target altitude and actual altitude is massive so \\(c_{alt}(t)\\) becomes very large and negative. This has the effect of drowning out the pitch and roll control signals so the engines will not fire at all. Consequently, the drone will tumble out of the sky out of control which may be impossible to recover from, resulting in catastrophic failure. The solution was to clamp \\(c_{alt}(t)\\) between -0.8 and 0.8 to keep the signal from becoming overwhelming.
 
 If you would like to download the Python file which controls the quadcopter in Kerbal Space Program please [click here](/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/pid_control.py). To use this script you will need to have Python installed locally and the [kRPC](https://krpc.github.io/krpc/index.html) mod installed in your instance of KSP. Also, so that the script can properly detect the engines, you will need to set an initial thrust limiter on the engines where engine \\(T_i\\) has a thrust limiter of \\(i/10\\).
 
@@ -114,12 +114,12 @@ If you would like to download the Python file which controls the quadcopter in K
 
 ### Next steps
 
-So far, all this system is capable of is maintaining a given pitch, roll and altitude. It would be possible to control these 3 variables manually to maneuever the vessel but, especially without yaw control, it would be challenging. Ideally, we would like to be able to give the controller a point in 3D space which it would navigate to autonomously. This is another program which is difficult to solve analytically and so could potentially solved by another PID loop. This new system would calculate the vector to the target position and feed this into a PID loop, producing the new set state for the pitch, roll and altitude which would then be achieved by another PID loop. Such a system is called [cascade control](https://www.controleng.com/single-article/fundamentals-of-cascade-control.html). Moreover, as the control system is based on a feedback loop, the target point need not be stationary so the drone could be programmed to chase a target vehicle.
+So far, all this system is capable of is maintaining a given pitch, roll and altitude. It would be possible to control these 3 variables manually to maneuver the vessel but, especially without yaw control, it would be challenging. Ideally, we would like to be able to give the controller a point in 3D space which it would navigate to autonomously. This is another program which is difficult to solve analytically and so could potentially solved by another PID loop. This new system would calculate the vector to the target position and feed this into a PID loop, producing the new set state for the pitch, roll and altitude which would then be achieved by another PID loop. Such a system is called [cascade control](https://www.controleng.com/single-article/fundamentals-of-cascade-control.html). Moreover, as the control system is based on a feedback loop, the target point need not be stationary so the drone could be programmed to chase a target vehicle.
 
-In Kerbal Space Program, a PID control system could be used to execute a powered descent in order to safely bring a rocket first stage back to the ground, similarly to SpaceX's Falcon 9 series of rockets. A cascade control system could also be used to guide the rocket back to the intial launchpad or another safe landing site. Although, how to do this in the most fuel-efficient way (which is crucial for lowering the costs of a resuable launch system) is more of a question for optimal control theory.
+In Kerbal Space Program, a PID control system could be used to execute a powered descent in order to safely bring a rocket first stage back to the ground, similarly to SpaceX's Falcon 9 series of rockets. A cascade control system could also be used to guide the rocket back to the initial launchpad or another safe landing site. Although, how to do this in the most fuel-efficient way (which is crucial for lowering the costs of a reusable launch system) is more of a question for optimal control theory.
 
 Another possible extension to this project would be to use the accelerometer in a mobile device as an input device for the set state so that the quadcopter would mimic the orientation of the device. kRPC opens a server for interacting with the game which can be accessible on the entire network, so this control system could run entirely as a self-contained application on the mobile device. Although, this may incur latency issues depending on the speed of the network.
 
-Another direction for this project would be to explore different control systems. One such system to explore could be the linear-quadratic regulator (LQR). An LQR seeks to minimise a quadratic cost function subject to a system of linear differential equations. The difficulty in designing such a system is properly defining the cost function and is usually an iterative proccess, similar to tuning a PID controller.
+Another direction for this project would be to explore different control systems. One such system to explore could be the linear-quadratic regulator (LQR). An LQR seeks to minimise a quadratic cost function subject to a system of linear differential equations. The difficulty in designing such a system is properly defining the cost function and is usually an iterative process, similar to tuning a PID controller.
 
 In Kerbal Space Program it's probably safe to assume that the telemetry readings are accurate but in the real world we are not blessed with such reliable sensors. A Kalman filter takes the readings from the sensors and combines that information with a model for the craft to provide a \"best guess\" as to the actual orientation and position of the craft. This allows the control system to filter out noise from unreliable sensors and provide a much more stable flight which isn't as reactive to random noise in the system.
