@@ -24,5 +24,6 @@ During my A-levels and moving into univeristy, this prior programming experience
 * Control Theory
 * Fractal Geometry
 * Non-Euclidean Geometry
-* Parallel Computing?
+* Parallel Computing
+* Machine Learning
     
