@@ -14,7 +14,7 @@ Hi, I'm a third year mathematics student from the UK with a keen interest in pro
   <hr class="midrule">
 </figure>
 
-I first started programming, using basic Lua scripts to automate tasks in Minecraft with the mod ComputerCraft. This was a great introduction to the craft and was motivated entirely through practical projects, an approach I still use to this day. After years of playing with this mod I eventually started using object-oriented programming to create more reusable code, such as creating GUIs on in-game touch screen displays.
+I first started programming, using basic Lua scripts to automate tasks in Minecraft with the mod ComputerCraft. This was a great introduction to development and was motivated entirely through practical projects, an approach I still use to this day. After years of playing with this mod I eventually started using object-oriented programming to create more reusable code, such as creating GUIs on in-game touch screen displays.
 
 During my A-levels and moving into univeristy, this prior programming experience became an invaluable tool for visualising mathematics and simulating statistical problems. Alongside my study, I continued exploring personal programming projects such as control systems in Kerbal Space Program and animating zooms into the Mandelbrot set. Programming has continually provided a practical aplication of the problem solving skills I've gained through my degree.
 
@@ -26,4 +26,3 @@ During my A-levels and moving into univeristy, this prior programming experience
 * Non-Euclidean Geometry
 * Parallel Computing
 * Machine Learning
-    
