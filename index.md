@@ -25,7 +25,6 @@ During my A-levels and moving into univeristy, this prior programming experience
 * Fractal Geometry
 * Non-Euclidean Geometry
 * Parallel Computing
-* Machine Learning
 
 #### Personal interests
 
