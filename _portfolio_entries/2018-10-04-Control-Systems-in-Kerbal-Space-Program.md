@@ -103,14 +103,12 @@ If you would like to download the Python file which controls the quadcopter in K
 
 <figure class = "in_article">
     <hr class="midrule">
-    <div>
-        <div><img src="/assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/results.gif" alt="KSP quadcopter demonstration"></div>
-    </div>
+        <div class="vid_wrapper"><iframe src="https://www.youtube.com/embed/Wg2XMyRUEnE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
     <figcaption>Figure 6 : Jeb's quadcopter in action</figcaption>
     <hr class="midrule">
 </figure>
 
-<!-- Talk about the GIF here -->
+Figure 6 shows a demonstration of the PID loop. First Jeb gets launched upwards with all engines firing equally, and natural asymmetry in the craft causes the quadcopter to start pitching down. Then we activate the PID controllers and the flight levels out, settling at an altitude of 100m. By setting the target altitude to ground level (approximately 35m here) we can land Jeb safely back on the ground. Throughout this video you can see the thrust limiters of each engine being automatically adjusted by the control system to keep the craft at the set state. Note I have set the derivative gain on the altitude loop rather high (2.0) because overshooting the altitude on a descent could prove fatal.
 
 ### Next steps
 
