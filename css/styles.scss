@@ -467,7 +467,9 @@ figure.in_article{
                 height: 100%;
             }
         }
-
+        &.side_by_side div {
+            flex: 0 1 auto;
+        }
     }
     div.vid_wrapper{
         display: block;
@@ -484,9 +486,7 @@ figure.in_article{
             height: 100%;
         }
     }
-    &.side_by_side div {
-        flex: 0 1 auto;
-    }
+
     figcaption {
         width: 100%;
         text-align: center;
