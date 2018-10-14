@@ -32,3 +32,4 @@ During my A-levels and moving into univeristy, this prior programming experience
 * Scuba diving
 * Photography
 * Bread making
+* Acoustic guitar
