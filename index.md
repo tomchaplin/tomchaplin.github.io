@@ -4,7 +4,7 @@ selected: about
 title: About
 show_page_title: false
 ---
-Hi, I'm a third year mathematics student from the UK with a keen interest in programming. This website is intended to host a number of my personal projects that I've completed over recent years. These projects will cover a wide range of topics but most will include some sort of programming and/or mathematics aspect. [View my portfolio here](/portfolio).
+Hi, I'm a third year mathematics student from the Univeristy of Warwick, with a keen interest in programming. This website is intended to host a number of my personal projects that I've completed over recent years. These projects will cover a wide range of topics but most will include some sort of programming and/or mathematics aspect. [View my portfolio here](/portfolio).
 
 <figure class="float_right">
   <hr class="midrule">
