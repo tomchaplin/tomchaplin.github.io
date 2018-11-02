@@ -69,7 +69,7 @@ Figure 4 shows how this system evolves over time; there is a clear issue. The co
 
 A PID control system aims to remedy the issue with the proportional controller demonstrated above. The name of this control system represents its constituent parts; the proportional, integral and derivative terms. The PID control system can be expressed mathematically as
 {% raw %}
-\\[c(t) = k_p\,e(t) + k_i \int_0^t e(x)\;dx + k_d \frac{de(t)}{dt} \\]
+\\[c(t) := k_p\,e(t) + k_i \int_0^t e(x)\;dx + k_d \frac{de(t)}{dt} \\]
 {% endraw %}
 where \\(e(t)\\) is the error at time \\(t\\), \\(c(t)\\) is the output control signal at time \\(t\\), and \\(k_p\\), \\(k_i\\) and \\(k_d\\) are the proportional, integral and derivative gains respectively. Note, the proportional term of this system is identical to before, this term deals with the current error in the system. The next term is the integral term. Intuitively, this term adds up all previous errors in the system and so represents past error. The final term is the derivative term which calculates how quickly the error is changing. This term is very important because it is the only term which predicts the future. It can be viewed as the braking term because it will reduce the acceleration as the system approaches it desired state.
 
