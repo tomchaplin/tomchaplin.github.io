@@ -1,5 +1,5 @@
 # tomchaplin.github.io
-Personal blog and portfolio site.
+Personal blog and portfolio site. [View the site here](https://tomchaplin.github.io).
 
 ## License
 This blog is produced by [Jekyll](https://jekyllrb.com/). The custom theme, Jekyll configuration and all other software for presenting the content is under the [MIT license](https://choosealicense.com/licenses/mit/).
