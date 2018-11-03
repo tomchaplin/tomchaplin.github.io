@@ -10,8 +10,14 @@ layout: default
 {% if page.external_link %}
     <p class="portfolio_external_link"><a href="{{ page.external_link }}">View project live</a></p>
 {% endif %}
+{% if page.github_link %}
+    <p class="portfolio_external_link"><a href="{{ page.github_link }}">View GitHub repo</a></p>
+{% endif %}
 {{content}}
 {% if page.external_link %}
     <p class="portfolio_external_link"><a href="{{ page.external_link }}">View project live</a></p>
+{% endif %}
+{% if page.github_link %}
+    <p class="portfolio_external_link"><a href="{{ page.github_link }}">View GitHub repo</a></p>
 {% endif %}
 </main>
