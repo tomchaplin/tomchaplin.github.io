@@ -20,6 +20,7 @@ During my A-levels and moving into univeristy, this prior programming experience
 
 #### Academic interests
 
+* Dynamical Systems
 * Topology
 * Control Theory
 * Fractal Geometry
