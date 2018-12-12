@@ -86,7 +86,7 @@ The main content lies in [the C++ Mandelbrot class](https://www.github.com/tomch
 <figure class = "in_article">
     <hr class="midrule">
         <div class="vid_wrapper"><iframe src="https://www.youtube.com/embed/oKmXogi64Jg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
-    <figcaption>A selection smoothly coloured zooms into the Mandelbrot set</figcaption>
+    <figcaption>A selection of smoothly coloured zooms into the Mandelbrot set</figcaption>
     <hr class="midrule">
 </figure>
 
