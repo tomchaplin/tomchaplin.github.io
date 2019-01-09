@@ -79,7 +79,7 @@ In this project, I used a [simple single-header C++ library which implements the
 
 ### Working Code
 
-In [the GitHub repo for this project](https://www,github.com/tomchaplin/Multithreaded_Mandelbrot), I have included a Python file which implements the Hisogram colouring algorithm in a serial fashion. This is quite a slow script due to the natural limitations of Python and lack of parallelisation.
+In [the GitHub repo for this project](https://www.github.com/tomchaplin/Multithreaded_Mandelbrot), I have included a Python file which implements the Hisogram colouring algorithm in a serial fashion. This is quite a slow script due to the natural limitations of Python and lack of parallelisation.
 
 The main content lies in [the C++ Mandelbrot class](https://www.github.com/tomchaplin/Multithreaded_Mandelbrot/blob/master/Cpp/mandelbrot.cpp). This is a flexible class that allows you to easily draw pictures of the Mandelbrot set to a GIF, using any one of the colouring algorithms described above and any number of threads. For an example of how to use this class, please consult the README on the GitHub repo. Below I have provided examples of zooms into the Mandelbrot set using the smooth histogram colouring algorithm.
 
