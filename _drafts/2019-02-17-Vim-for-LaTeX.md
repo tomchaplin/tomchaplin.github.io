@@ -29,5 +29,5 @@ github_link: https://github.com/tomchaplin/dotfiles
   * underbrace
   * Fractions
 * References
-  * [Luke Smith on LaTeX for Vim](https://www.youtube.com/watch?v=Mphdtdv2_xs&t=217s)
+  * [Luke Smith on Vim for LaTeX](https://www.youtube.com/watch?v=Mphdtdv2_xs&t=217s)
   * [vimtex on GitHub](https://github.com/lervag/vimtex#alternatives)
