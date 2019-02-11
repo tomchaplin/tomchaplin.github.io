@@ -22,21 +22,22 @@ github_link: https://github.com/tomchaplin/dotfiles
   * (vim-tex-fold)[https://github.com/matze/vim-tex-fold]
     * Default folding to better organise tex file content
     * Custom folding possible to organise preamble
-* Custom settings/mappings
+* Custom settings
   * Keep in ftplugin/tex.vim to keep vimrc clean
   * Automatic compile on entry
   * Spellcheck
+* Custom mappings
   * <++> placeholder (,, to navigate)
+    * Creating templates (integration with ranger file maanger)
   * Arbitrary environment mapping
   * Standard environments
   * underbrace
   * Fractions
-* Closing remarks
-  * Integration with ranger (templates using <++>)
-  * Next steps
-    * Continue to add to mappings
-    * Close mupdf on vim exit
-    * Send signal to i3-gaps to remove gaps for full screen real estate
+* Next steps
+  * Continue to add to mappings
+  * Close mupdf on vim exit
+  * Send signal to i3-gaps to remove gaps for full screen real estate
+  * Setting up Vim for C++ development
 * References
   * [Luke Smith on Vim for LaTeX](https://www.youtube.com/watch?v=Mphdtdv2_xs&t=217s)
   * [vimtex on GitHub](https://github.com/lervag/vimtex)
