@@ -90,11 +90,30 @@ The main content lies in [the C++ Mandelbrot class](https://www.github.com/tomch
     <hr class="midrule">
 </figure>
 
+### Update (circular colouring)
+
+I have implemented some more colouring algorithms into the C++ class.
+These are all circular colouring algorithms which loop the provided colour palette around the origin as shown in the picture below.
+The colour is chosen based on the hue and saturation from the colour palette and then luminance is chosen based on iteration count so that we can see the Mandelbrot structure.
+I have implemented this with a normal colouring algorithm as first described, as well as a histogram version and smooth version using similar techniques to before.
+
+<figure class = "in_article">
+    <hr class="midrule">
+    <div>
+        <div><img src="/assets/portfolio/2018-11-02-Exploring-the-Mandelbrot-Set/statics/circular_test18.png" alt="Smooth circular coloruing algorithm"></div>
+    </div>
+    <figcaption>Smooth circular colouring algorithm</figcaption>
+    <hr class="midrule">
+</figure>
+
+In the above picture I used a palette which loops around hue from 0 to 360 degrees with saturation fixed at 50%.
+Obviously the colouring effect is centred at the origin so as you zoom in the colouring will become monochromatic, but the shading will still reveal the structure of the Mandelbrot set.
+
 ### Next Steps
 
 This C++ class could be used to implement an interactive explorer ([similar to this online explorer](https://guciek.github.io/web_mandelbrot.html#-0.5;0;2;1000)) which would be able to leverage the power of parallel computing to explore the structure of the Mandelbrot set. Moreover, this explorer could first render the images in a lower resolution, allowing the user to quickly plot a path. The program could then trace back along this path at a higher resolution to produce an interesting zoom.
 
-When animating zooms into the Mandelbrot set, choosing a centre point is rather crucial to obtaining a satifactory result. If poorly chosen, the animation will often result in an indefinite zoom into blackness. For example, zooming directly into the centre of the Mandelbrot set would be somewhat dull. To fix this, we could implement a system which analyses the previous frame and subsequently makes small adjustments to the centre point in order to ensure that we keep zooming into something of interest. The system could then be left computing with less supervision, zooming into the Mandelbrot set until it ran into errors due to floating point precision. This would also require suitably increasing the maximum number of iterations per pixel as we zoom in, so as to ensure that we retain some level of detail.
+When animating zooms into the Mandelbrot set, choosing a centre point is rather crucial to obtaining a satisfactory result. If poorly chosen, the animation will often result in an indefinite zoom into blackness. For example, zooming directly into the centre of the Mandelbrot set would be somewhat dull. To fix this, we could implement a system which analyses the previous frame and subsequently makes small adjustments to the centre point in order to ensure that we keep zooming into something of interest. The system could then be left computing with less supervision, zooming into the Mandelbrot set until it ran into errors due to floating point precision. This would also require suitably increasing the maximum number of iterations per pixel as we zoom in, so as to ensure that we retain some level of detail.
 
 To further increase the computation speed of this program, one could use the worker pool design pattern to distribute work across a cluster of computers such as Raspberry Pis. Alternatively, or even additionally, the program could be rewritten to leverage GPU acceleration, although such a program would inherently be more tailored to a specific computer. Another way to speed up computation of the Mandelbrot set is through perbutation theory. [Ultra Fractal](https://www.ultrafractal.com/) now supports the 'perbutation calculation algorithm' which allows you to approximately calculate the iteration for points close to a point that has already been calculated. This algorithm was first discovered and implemented by K.I. Martin and the mathematics and algorithm are detailed on the [SuperFractalThing website](http://www.superfractalthing.co.nf/).
 

@@ -4,6 +4,7 @@
 :root {
   --muted-blue: #20407c;
   --muted-blue-light: #8291af;
+  --code-grey: #ededed; 
   --soft-grey: #c4c4c4;
   --middle-grey: #666666;
   --accent-blue: #8eb9ff;
@@ -205,7 +206,7 @@ button:focus {
     overflow: hidden;
   }
 
-  ul.topnav {
+  ul.topnav {;
     position: fixed;
     top: 0;
     right: 0;
@@ -449,6 +450,26 @@ h2.post_title{
 
 // Portfolio entry page
 
+code {
+	font-family : monospace;
+	display: inline-block;
+	white-space: pre-wrap;
+	background-color: var(--code-grey);
+	padding: 0 2px;
+	border-radius: 2px;
+}
+
+pre {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	code {
+		border-left: 3px solid var(--muted-blue-light);
+		padding:5px 15px;
+		width: 80%;
+	}
+}
+
 p.portfolio_external_link {
   text-align: right;
   a {
@@ -506,6 +527,10 @@ figure.in_article{
             flex-direction: column;
         }
     }
+
+	pre code{
+		width: 100%
+	}
 }
 
 // About page
