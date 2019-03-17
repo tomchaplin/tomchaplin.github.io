@@ -142,7 +142,7 @@ In previous editors, starting an environment would automatically create the appr
 The solution was some more mappings, using placeholders where environments took optional arguments.
 
 	inoremap ,t \begin{theorem}<Enter><Enter>\end{theorem}<Esc>ki
-	inoremap ,T \begin{theorem}<Enter><++><Enter>\end{theorem}<Esc>?\]<Enter>i
+	inoremap ,T \begin{theorem}<Enter>[]<++><Enter>\end{theorem}<Esc>?\]<Enter>i
 	inoremap ,p \begin{proof}<Enter><Enter>\end{proof}<Esc}ki
 
 For the most part this worked but sometimes I wanted to insert an environment that I did not use sufficiently often to warrant its own mapping.
