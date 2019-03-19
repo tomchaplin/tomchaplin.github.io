@@ -148,8 +148,8 @@ The solution was some more mappings, using placeholders where environments took 
 For the most part this worked but sometimes I wanted to insert an environment that I did not use sufficiently often to warrant its own mapping.
 So I created the following mappings to create arbitrary environments, potentially with options, by typing their name followed by `,be` or `,BE`.
 
-	inoremap ,be <Esc>By$^i\begin{<Esc>$a}<Enter>;<Enter>\end{}<Esc>hp?\;<Enter>xi
-	inoremap ,BE <ESC>By$^i\begin{<Esc}$a}[]<Enter><++><Enter>\end{}<Esc>hp?\]<Enter>i
+	inoremap ,be <Esc>^y$^i\begin{<Esc>$a}<Enter>;<Enter>\end{}<Esc>hp?\;<Enter>xi
+	inoremap ,BE <Esc>^y$^i\begin{<Esc>$a}[]<Enter><++><Enter>\end{}<Esc>hp?\]<Enter>i
 
 Note I am currently just yanking the environment name but I should probably yank it to a specific register to avoid conflicting with any text I am currently copying.
 
