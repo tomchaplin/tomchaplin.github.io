@@ -36,10 +36,10 @@ function setup() {
 	button.addClass('std_button');
 }
 
-//function windowResized(){
-//	canvasSize = Math.min(windowWidth, windowHeight)* 0.9;
-//	resizeCanvas(canvasSize, canvasSize);
-//}
+function windowResized(){
+	canvasSize = Math.min(windowWidth, windowHeight)* 0.9;
+	resizeCanvas(canvasSize, canvasSize);
+}
 
 function draw() {
 	strokeOpacRatio = strokeOpacSlider.value()
