@@ -54,6 +54,10 @@ body {
   margin: 0 calc( (2/5) * (100vw - 800px + (0.02 * 800px) ) );
 }
 
+ul:not(.topnav) {
+	list-style-type: square;
+}
+
 ul.topnav {
   list-style: none;
   display: flex;

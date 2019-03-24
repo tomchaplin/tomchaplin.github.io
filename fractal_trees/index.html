@@ -10,21 +10,92 @@ title: Random Fractal Trees
 			<div id="strokeOpacSlider"></div>
 			<div id="strokeOpacReadout"></div>
 		</div>
-		<div><b>Stroke Ratio: </b>
+		<div><b>Stroke Weight Ratio: </b>
 			<div id="strokeSlider"></div>
 			<div id="strokeReadout"></div>
+		</div>
+		<div><b>Branch Length Ratio: </b>
+			<div id="lenRatioSlider"></div>
+			<div id="lenRatioReadout"></div>
 		</div>
 		<div><b>Angle Range: </b>
 			<div id="angleSlider"></div>
 			<div id="angleReadout"></div>
 		</div>
+		<div><b>Minimum Length: </b>
+			<div id="minLengthSlider"></div>
+			<div id="minLengthReadout"></div>
+		</div>
+	</div>
+	<div class = "options_holder">
+		<div><b>Lower Colour: </b><br>
+			<input class="jscolor" value="4c4237" id="lower_colour">
+		</div>
+		<div><b>Upper Colour: </b><br>
+			<input class="jscolor" value="8fe22f" id="upper_colour">
+		</div>
+		<div><b>Background Colour: </b><br>
+			<input class="jscolor" value="428ddf" id="background_colour">
+		</div>
+		<div><b>Transition Level:</b>
+			<div id="transitionSlider"></div>
+			<div id="transitionReadout"></div>
+		</div>
 	</div>
 	<div class="options_holder">
 		<div id="create_button"></div>
 	</div>
+	<div class="options_holder">
+		<p>To reset parameters simply refresh the page.</p>
+	</div>
+	<h3>Explanation</h3>
+	<p>For a full explanation of what is being drawn here, please refer to my <a href="/portfolio/">main portfolio entry</a>.
+	In this sketch I have made the following parameters available for tweaking:</p>
+	<ul>
+		<li><b>Stroke Opacity Ratio: </b>
+			<p>At each level of the fractal tree we have more and more branches.
+			Inevitably these branches will overlap and indeed it is this that produces the leaf-like effect at the top of the tree.
+			To make this overlap look more natural, we make the opacity of each level a fraction of the opacity of the previous level.
+			This parameter controls the strength of this effect (1 is no effect and 0 is maximum effect).
+			</p>
+		<li><b>Stroke Weight Ratio: </b>
+			<p>Another way to make the branches look more natural at higher levels is decrease the thickness of the lines in the same way.
+			Again setting this parameter to 1 turns off this effect.
+			</p>
+		<li><b>Branch Length Ratio: </b>
+			<p>
+			At each level of the tree we must decrease the side length so that we tend towards a shape contained in a finite area.
+			This doesn't effect the geometry of the tree too much because it is essentially a rescaling.
+			If you choose to increase this ratio be sure to increase the minimum length to maintain performance.
+			</p>
+		<li><b>Angle Range: </b>
+			<p>At the end of each level we draw a random number of branches which are placed alternately on the left and right of the previous branch, at random angles.
+			To prevent branches going back on themselves we bound these numbers.
+			This parameter determines the maximum angle between any two branches.
+			</p>
+		<li><b>Minimum Length: </b>
+			<p>In theory this fractal tree would have infinitely many layers.
+			In practice all good things must come to an end.
+			At each level the branch length reduces by a given ratio and we keep drawing new layers until a new branch would be less than the specified minimum length (in pixels).
+			At a branch length ratio of 0.67, higher performance devices can probably manage to around 4 pixels whereas mobile devices should probably stay around 10.
+			Your mileage may vary.
+			</p>
+		<li><b>Colours: </b>
+			<p>Trees and flowers are rarely monochromatic so, in order to create more artistic images, it may be desirable to colour the top and bottom of the tree in separate colours.
+			There is also the option to change the background colour.
+			</p>
+		<li><b>Transition Level: </b>
+			<p>This determines the last level which will be coloured by "Lower Colour".</p>
+	</ul>
+	<h3>Acknowledgements</h3>
+	<p>
+	This sketch was completed using the <a href="https://p5js.org/">p5.js</a> JavaScript library (<a href="https://github.com/processing/p5.js/blob/master/license.txt">license here</a>) which provides an excellent framework for visual coding projects such as this.
+	I also used <a href="http://jscolor.com/">jscolor</a> (<a href="http://www.gnu.org/licenses/gpl-3.0.txt">license here</a>) for selecting the colours.
+	This project was greatly inspired by <a href="https://www.youtube.com/watch?v=0jjeOYMjmDU">The Coding Train's video</a>.
+	</p>
 	<script language="javascript" type="text/javascript" src="js/vendor/p5.js"></script>
 	<script language="javascript" src="js/vendor/p5.dom.js"></script>
-	<!--<script language="javascript" src="js/vendor/p5.sound.js"></script>-->
 	<script src="js/rand_tree.js"></script>
+	<script src="js/vendor/jscolor.js"></script>
 </body>
 
