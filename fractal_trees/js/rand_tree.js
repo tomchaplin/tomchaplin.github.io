@@ -12,6 +12,8 @@ var minLength = 10;
 var transitionLevel = 6;
 var backCol = 255;
 var canvasSize = 400;
+var lowerCol;
+var upperCol;
 
 function setup() {
 	canvasSize = Math.min(windowWidth, windowHeight)*0.9;
@@ -56,6 +58,8 @@ function draw() {
 	lenRatio = lenRatioSlider.value();
 	document.getElementById('lenRatioReadout').innerHTML = lenRatio;
 	backCol = "#" + document.getElementById("background_colour").value;
+	lowerCol = hexToRGB(document.getElementById("lower_colour").value);
+	upperCol = hexToRGB(document.getElementById("upper_colour").value);
 }
 
 function drawTree(){
@@ -102,10 +106,8 @@ function hexToRGB(hex) {
 function getColour(level) {
 	var opacity = Math.pow(strokeOpacRatio, level - 1);
 	if (level < transitionLevel) {
-		var c = hexToRGB(document.getElementById("lower_colour").value);
-		return 'rgba(' + c.r + "," + c.g + "," + c.b + "," + opacity + ")";
+		return 'rgba(' + lowerCol.r + "," + lowerCol.g + "," + lowerCol.b + "," + opacity + ")";
 	} else {
-		var c = hexToRGB(document.getElementById("upper_colour").value);
-		return 'rgba(' + c.r + "," + c.g + "," + c.b + "," + opacity + ")";
+		return 'rgba(' + upperCol.r + "," + upperCol.g + "," + upperCol.b + "," + opacity + ")";
 	}
 }
