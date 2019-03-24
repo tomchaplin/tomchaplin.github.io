@@ -4,6 +4,7 @@ var strokeOpacSlider;
 var transitionSlider;
 var minLengthSlider;
 var lenRatioSlider;
+//var drawingIndicator;
 var strokeOpacRatio = 0.95;
 var strokeRatio = 0.6;
 var lenRatio = 0.67;
@@ -37,6 +38,9 @@ function setup() {
 	//button.mousePressed(drawTree);
 	button.touchStarted(drawTree);
 	button.addClass('std_button');
+	//drawingIndicator = createP("Drawing...");
+	//drawingIndicator.parent('drawing_indicator_holder');
+	//drawingIndicator.style('color','white');
 }
 
 function windowResized(){
@@ -63,9 +67,11 @@ function draw() {
 }
 
 function drawTree(){
+	//drawingIndicator.style('color','black');
 	background(backCol)
 	translate(width/2,height);
 	drawBranch(canvasSize/4,1);
+	//drawingIndicator.style('color','white');
 }
 
 function drawBranch(len, level) {
