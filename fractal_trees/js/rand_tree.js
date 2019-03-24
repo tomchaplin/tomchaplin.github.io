@@ -33,6 +33,7 @@ function setup() {
 	button = createButton('Draw tree');
 	button.parent('create_button');
 	button.mousePressed(drawTree);
+	button.touchStarted(drawTree);
 	button.addClass('std_button');
 }
 
