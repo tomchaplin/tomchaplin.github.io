@@ -1,0 +1,39 @@
+
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+		<link rel = "stylesheet" href="css/fractal_tree.css">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Random Fractal Trees</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+
+		<h1> Random Fractal Trees </h1>
+		<div id="canvas-holder"></div>
+		<div class = "options_holder">
+			<div><b>Stroke Opacity Ratio: </b>
+				<div id="strokeOpacSlider"></div>
+				<div id="strokeOpacReadout"></div>
+			</div>
+			<div><b>Stroke Ratio: </b>
+				<div id="strokeSlider"></div>
+				<div id="strokeReadout"></div>
+			</div>
+			<div><b>Angle Range: </b>
+				<div id="angleSlider"></div>
+				<div id="angleReadout"></div>
+			</div>
+		</div>
+		<div class="options_holder">
+			<div id="create_button"></div>
+		</div>
+        <script language="javascript" type="text/javascript" src="js/vendor/p5.js"></script>
+        <script language="javascript" src="js/vendor/p5.dom.js"></script>
+        <!--<script language="javascript" src="js/vendor/p5.sound.js"></script>-->
+        <script src="js/rand_tree.js"></script>
+    </body>
+</html>
+
