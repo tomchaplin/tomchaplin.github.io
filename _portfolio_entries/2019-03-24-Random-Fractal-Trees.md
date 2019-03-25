@@ -100,5 +100,6 @@ For example, we could:
 
 * Choose the branching angles from an appropriate normal distribution.
 * Colour the branches based on a colour gradient between the upper and lower angles.
+* Add a parameter to control how the maximum number of branches increases at each level (to control "bushiness" at the top of the tree).
 * Animate the trees by allowing each branch to sway more easily and perhaps more chaotically in the wind based on their thickness.
 * Implement this algorithm in Java or C++ for better performance.
