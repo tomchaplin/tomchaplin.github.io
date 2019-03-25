@@ -1,12 +1,26 @@
 ---
 layout: page
 selected: portfolio
-title: Random Fractal Trees
+title: Windy Random Fractal Trees
 ---
 <body>
 	<div id="canvas-holder"></div>
 	<div class="options_holder">
 		<div id="create_button"></div>
+	</div>
+	<div class ="options_holder">
+		<div><b>Wind Speed (x): </b>
+			<div id="windSliderX"></div>
+			<div id="windXReadout"></div>
+		</div>
+		<div><b>Wind Speed (y): </b>
+			<div id="windSliderY"></div>
+			<div id="windYReadout"></div>
+		</div>
+		<div><b>Tree Strength: </b>
+			<div id="strengthSlider"></div>
+			<div id="strengthReadout"></div>
+		</div>
 	</div>
 	<div class = "options_holder">
 		<div><b>Stroke Opacity Ratio: </b>
@@ -37,29 +51,36 @@ title: Random Fractal Trees
 		</div>
 	</div>
 	<div class = "options_holder">
-		<div><b>Lower Colour: </b><br>
-			<input class="jscolor" value="4c4237" id="lower_colour">
-		</div>
-		<div><b>Upper Colour: </b><br>
-			<input class="jscolor" value="8fe22f" id="upper_colour">
-		</div>
-		<div><b>Background Colour: </b><br>
-			<input class="jscolor" value="428ddf" id="background_colour">
-		</div>
-		<div><b>Transition Level:</b>
-			<div id="transitionSlider"></div>
-			<div id="transitionReadout"></div>
-		</div>
+	<div><b>Lower Colour: </b><br>
+		<input class="jscolor" value="4c4237" id="lower_colour">
+	</div>
+	<div><b>Upper Colour: </b><br>
+		<input class="jscolor" value="8fe22f" id="upper_colour">
+	</div>
+	<div><b>Background Colour: </b><br>
+		<input class="jscolor" value="428ddf" id="background_colour">
+	</div>
+	<div><b>Transition Level:</b>
+		<div id="transitionSlider"></div>
+		<div id="transitionReadout"></div>
+	</div>
 	</div>
 	<div class="options_holder">
 		<p>To reset parameters simply refresh the page.</p>
 	</div>
 	<h3>Explanation</h3>
 	<p>For a full explanation of what is being drawn here, please refer to my <a href="/portfolio/Random-Fractal-Trees/">main portfolio entry</a>.
-	I have also implemented a version of this generator that incudles a wind simulation.
-	For this please <a href="/fractal_trees/windy/">click here</a>.
+	If you would like a fractal tree generator that does not implement any wind please <a href="/fractal_trees/">click here</a>.
 	In this sketch I have made the following parameters available for tweaking:</p>
 	<ul>
+		<li><b>Wind Speeds: </b>
+			<p>These parameters control the speed of the wind in the x and y direction with x increasing towards the right of the page and y increasing towards the top.
+			</p>
+		<li><b>Tree Strength: </b>
+			<p>This parameter determines the strength of the restorative force which attempts to return each branch to its starting angle.
+			Increasing this parameter will make the tree more resistant to the wind.
+			Large wind speeds and tree strength offer essentialy the same dynamics as poportionally lower winds speeds and tree strengths with the downside of considerable performance impact.
+
 		<li><b>Stroke Opacity Ratio: </b>
 			<p>At each level of the fractal tree we have more and more branches.
 			Inevitably these branches will overlap and indeed it is this that produces the leaf-like effect at the top of the tree.
@@ -90,7 +111,7 @@ title: Random Fractal Trees
 			<p>In theory this fractal tree would have infinitely many layers.
 			In practice all good things must come to an end.
 			At each level the branch length reduces by a given ratio and we keep drawing new layers until a new branch would be less than the specified minimum length (in pixels).
-			At a branch length ratio of 0.67, higher performance devices can probably manage to around 4 pixels whereas mobile devices should probably stay around 10.
+			At a branch length ratio of 0.67, higher performance devices can probably manage to around 10 pixels whereas mobile devices should probably stay around 15.
 			Your mileage may vary.
 			</p>
 		<li><b>Colours: </b>
@@ -108,7 +129,9 @@ title: Random Fractal Trees
 	</p>
 	<script language="javascript" type="text/javascript" src="js/vendor/p5.js"></script>
 	<script language="javascript" src="js/vendor/p5.dom.js"></script>
-	<script src="js/rand_tree.js"></script>
+	<!--<script language="javascript" src="js/vendor/p5.sound.js"></script>-->
+	<script src="js/Fractal_Tree.js"></script>
+	<script src="js/sketch.js"></script>
 	<script src="js/vendor/jscolor.js"></script>
 </body>
 

@@ -1,23 +1,24 @@
 ---
 layout: portfolio
-featured_img: /assets/portfolio/2019-03-24-Random-Fractal-Trees/fractal_tree6_variation02_crop.png
-external_link: https://tomchaplin.github.io/fractal_trees
+featured_img: /assets/portfolio/2019-03-24-Windy-Random-Fractal-Trees/fractal_tree6_variation02_crop.png
+external_link: https://tomchaplin.github.io/fractal_trees/windy
 display_latex: true
 ---
 Continuing on the theme of fractals, I was inspired by a Coding Train video to try my hand at drawing fractal trees using the fantastic [p5.js library](https://p5js.org/) for Javascript.
 To get a more natural result I introduced some randomness in a variety of places in the algorithm, and changed the paintbrush as I drew further along the tree.
+To give the trees some life I simulated the effect of wind acting on the trees.
 <!--more-->
 
 ### What is a Fractal Tree?
 
 The best way to get a feel for what a fractal tree is, is to have a go at drawing your own.
-To this end, I encourage you to go and play with the [fractal tree generator](https://tomchaplin.github.io/fractal_trees) that I have created as part of this project.
+To this end, I encourage you to go and play with the [static fractal tree generator](https://tomchaplin.github.io/fractal_trees) that I have created as part of this project.
 To understand the basic definition better make sure you turn down the branch length variation to 0.
 
 <figure class = "in_article">
     <hr class="midrule">
     <div>
-        <div><img src="/assets/portfolio/2019-03-24-Random-Fractal-Trees/fractal_tree_no_random.png" alt="A basic fractal tree with no randomness"></div>
+        <div><img src="/assets/portfolio/2019-03-24-Windy-Random-Fractal-Trees/fractal_tree_no_random.png" alt="A basic fractal tree with no randomness"></div>
     </div>
     <figcaption>A basic fractal tree with no randomness</figcaption>
     <hr class="midrule">
@@ -69,17 +70,31 @@ Moreover, leaves are generally a different colour to the trunk and main branches
 To this end, we can colour the first \\(n \\) levels in one colour and the remaining levels in another colour.
 This vastly increases the artistic possibilities.
 
+### Simulating Wind
+
+In order to breathe life into these trees, I decided to simulate the effect of wind on these structures.
+In order to do this each branch of the tree is subjected to three forces:
+
+* One force pushes the branch towards the angle of the wind speed.
+* Another force pulls the branch back to its initial angle to counteract the effect of the wind.
+* The last force acts opposite to the current velocity of the branch, acting like wind resistance to slow the branches down.
+
+These force acts cumulatively on each branch which is given a mass based on its level in the tree.
+One could give each branch a mass based on its length but this would involve costly division.
+To generate a fractal tree and simulate this wind algorithm <a href="/fractal_trees/windy">click here.</a>
+Note this is quite a resource intensive simulation so mobile devices may struggle.
+
 ### Finished Result and Next Steps
 
-If you'd like to play with this algorithm and make some artistic fractal trees please check out [my generator](https://tomchaplin.github.io/fractal_trees), which is implemented in the p5.js library.
-Note this runs in Javascript entirely in the browser and so is not the most performant generator.
+If you'd like to play with this algorithm and make some artistic fractal trees please check out [my static generator](https://tomchaplin.github.io/fractal_trees) and [windy generator](https://tomchaplin.github.io/fractal_trees/windy), which are implemented in the p5.js library.
+Note these run in Javascript entirely in the browser and so is not the most performant generator.
 Below are some examples I have made with the generator.
 
 <figure class = "in_article">
 	<hr class="midrule">
 	<div class="side_by_side">
-		<div><img src="/assets/portfolio/2019-03-24-Random-Fractal-Trees/featured_tree3.png" alt="Example of a random fractal tree"></div>
-		<div><img src="/assets/portfolio/2019-03-24-Random-Fractal-Trees/featured_tree.png" alt="Example of a random fractal tree"></div>
+		<div><img src="/assets/portfolio/2019-03-24-Windy-Random-Fractal-Trees/featured_tree3.png" alt="Example of a random fractal tree"></div>
+		<div><img src="/assets/portfolio/2019-03-24-Windy-Random-Fractal-Trees/featured_tree.png" alt="Example of a random fractal tree"></div>
 	</div>
 	<figcaption>Some examples of random fractal trees</figcaption>
 	<hr class="midrule">
@@ -88,8 +103,8 @@ Below are some examples I have made with the generator.
 <figure class = "in_article">
 	<hr class="midrule">
 	<div class="side_by_side">
-		<div><img src="/assets/portfolio/2019-03-24-Random-Fractal-Trees/fractal_tree6_variation01.png" alt="Example of a random fractal tree"></div>
-		<div><img src="/assets/portfolio/2019-03-24-Random-Fractal-Trees/fractal_tree7.png" alt="Example of a random fractal tree"></div>
+		<div><img src="/assets/portfolio/2019-03-24-Windy-Random-Fractal-Trees/fractal_tree6_variation01.png" alt="Example of a random fractal tree"></div>
+		<div><img src="/assets/portfolio/2019-03-24-Windy-Random-Fractal-Trees/fractal_tree7.png" alt="Example of a random fractal tree"></div>
 	</div>
 	<figcaption>Some examples of random fractal trees</figcaption>
 	<hr class="midrule">
@@ -101,5 +116,4 @@ For example, we could:
 * Choose the branching angles from an appropriate normal distribution.
 * Colour the branches based on a colour gradient between the upper and lower angles.
 * Add a parameter to control how the maximum number of branches increases at each level (to control "bushiness" at the top of the tree).
-* Animate the trees by allowing each branch to sway more easily and perhaps more chaotically in the wind based on their thickness.
 * Implement this algorithm in Java or C++ for better performance.
