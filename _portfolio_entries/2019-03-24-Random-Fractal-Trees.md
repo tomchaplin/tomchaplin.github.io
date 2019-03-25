@@ -23,7 +23,7 @@ To understand the basic definition better make sure you turn down the branch len
     <hr class="midrule">
 </figure>
 
-Formally, a fractal tree can be seen as an [iterated function system](http://mathworld.wolfram.com/IteratedFunctionSystem.html).
+Formally, a fractal tree can be seen as the invariant set of an [iterated function system](http://mathworld.wolfram.com/IteratedFunctionSystem.html).
 Intuitively, we can draw a fractal tree by first drawing a branch of some length directly upwards.
 We then draw two scaled down copies of the fractal tree at angles \\(\alpha\\) and \\(-\alpha\\) (say \\(\alpha=\pi/6\\)).
 It may seem as though this definition is tautological but in fact it does give us a mathematically well-defined set.
@@ -51,7 +51,7 @@ In this algorithm, the number of branches is chosen uniformly at random from the
 
 Now that we have a randomly chosen number of branches we could space them equally over a given angle range.
 To introduce more randomness, and create more natural looking images, the angle of rotation for each branch is chosen again at random within a given range.
-However, this can sometimes lead to lob-sided trees where both initial branches are chosen on the left side of the main trunk.
+However, this can sometimes lead to lopsided trees where both initial branches are chosen on the left side of the main trunk.
 To alleviate this, random numbers are chosen at random from half the range and then branches are drawn alternately on the left and right side.
 
 #### Branch length
