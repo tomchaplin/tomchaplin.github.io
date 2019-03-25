@@ -4,10 +4,12 @@ var strokeOpacSlider;
 var transitionSlider;
 var minLengthSlider;
 var lenRatioSlider;
+var lenSDSLider;
 //var drawingIndicator;
 var strokeOpacRatio = 0.95;
 var strokeRatio = 0.6;
 var lenRatio = 0.67;
+var lenSD = 0;
 var angleRange = 0;
 var minLength = 10;
 var transitionLevel = 6;
@@ -33,6 +35,8 @@ function setup() {
 	transitionSlider.parent('transitionSlider');
 	minLengthSlider = createSlider(1,20,minLength,1);
 	minLengthSlider.parent('minLengthSlider');
+	lenSDSlider = createSlider(0,1,lenSD,0.01);
+	lenSDSlider.parent('lenSDSlider');
 	button = createButton('Draw tree');
 	button.parent('create_button');
 	//button.mousePressed(drawTree);
@@ -61,6 +65,8 @@ function draw() {
 	document.getElementById('minLengthReadout').innerHTML = minLength;
 	lenRatio = lenRatioSlider.value();
 	document.getElementById('lenRatioReadout').innerHTML = lenRatio;
+	lenSD = lenSDSlider.value();
+	document.getElementById('lenSDReadout').innerHTML = lenSD;
 	backCol = "#" + document.getElementById("background_colour").value;
 	lowerCol = hexToRGB(document.getElementById("lower_colour").value);
 	upperCol = hexToRGB(document.getElementById("upper_colour").value);
@@ -75,22 +81,36 @@ function drawTree(){
 }
 
 function drawBranch(len, level) {
+	// Set up our brush
 	strokeWeight(4*Math.pow(strokeRatio,level-1));
 	stroke(getColour(level));
-	line(0,0,0,-len);
-	translate(0,-len);
+	// Draw the line
+	var branchLength;
+	if(lenSD == 0) {
+		branchLength = len;
+	} else {
+		branchLength = randomGaussian()*lenSD*len + len;
+	}
+	line(0,0,0,-branchLength);
+	// Move to the end of the line
+	translate(0,-branchLength);
+	// Check if we're done
 	if(len < minLength) {
 		return;
 	}
+	// Calculate how many branches to draw
 	var numBranches;
 	var drawAngle;
 	numBranches = Math.floor(Math.random()*Math.log(level) + 2) + 1 ;
 	var left_side = false;
 	for (var i = 0; i < numBranches; i++) {
+		// Get random drawn angle
 		draw_angle = Math.random()*angleRange/2;
+		// Alternate between left and right
 		if(left_side) {
 			draw_angle = -draw_angle;
 		}
+		// Draw new branch
 		push();
 		rotate(draw_angle);
 		drawBranch(len*lenRatio, level + 1);
