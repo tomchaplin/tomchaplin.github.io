@@ -54,6 +54,11 @@ function setup() {
 	reloadTree();
 }
 
+function windowResized(){
+	canvasSize = Math.min(windowWidth, windowHeight)* 0.9;
+	resizeCanvas(canvasSize, canvasSize);
+}
+
 function reloadTree(){
 	strokeOpacRatio = strokeOpacSlider.value()
 	strokeRatio = strokeSlider.value();
