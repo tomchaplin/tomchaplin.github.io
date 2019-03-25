@@ -10,7 +10,6 @@ var strokeOpacRatio = 0.95;
 var strokeRatio = 0.6;
 var lenRatio = 0.67;
 var lenSD = 0;
-var angleRange = 0;
 var minLength = 10;
 var transitionLevel = 6;
 var backCol = 255;
