@@ -74,7 +74,8 @@ title: Random Fractal Trees
 			</p>
 		<li><b>Branch Length Variation:</b>
 			<p>Most trees do not every branch at the same level of exactly the same length.
-			To create a more natural look, branches are chosen from a Gaussian distribution with mean equal to the length the branch would usually be and standard deviation equal to the normal branch length at this level multiplied by this parameter.
+			To create a more natural look, branches are chosen from a Gaussian distribution with mean equal to the length the branch would usually be and standard deviation proportional to the usual branch length.
+			This parameter is that constant of proportionality.
 			Select 0 variation to turn off this effect so that all branches at the same level have the same length.
 		<li><b>Angle Range: </b>
 			<p>At the end of each level we draw a random number of branches which are placed alternately on the left and right of the previous branch, at random angles.
