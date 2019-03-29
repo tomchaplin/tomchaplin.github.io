@@ -1,5 +1,5 @@
 class Fractal_Tree{
-	constructor(cum_angle, base_angle, level, mean_len, lenSD, strength) {
+	constructor(cum_angle, base_angle, level, mean_len, lenSD, strength,parent) {
 		this.cum_angle = cum_angle;
 		this.base_angle = base_angle;
 		this.current_angle = base_angle;
@@ -13,13 +13,19 @@ class Fractal_Tree{
 		this.xWindVel = 0;
 		this.yWindVel = 0;
 		this.children = [];
+		this.parent = parent;
+		this.log = false
 	}
 
 	update(){
 		// Need better angle calaculation!
+		var currentCumAngle = this.makeAngle(this.getCurrentCumAngle());
 		// Compute the new acceleration
 		var windMag2 = this.xWindVel * this.xWindVel + this.yWindVel * this.yWindVel;
-		var windAngle = this.makeAngle(this.cum_angle - Math.atan2(this.yWindVel, this.xWindVel));
+		var windAngle = PI - this.computeAngle(Math.atan2(this.yWindVel, this.xWindVel),currentCumAngle);
+		if(this.log) {
+			console.log(windAngle);
+		}
 		this.acc = this.strength * this.computeAngle(this.current_angle,this.base_angle) + windMag2 * this.computeAngle(this.current_angle,windAngle);
 		// Some wind resistance
 		this.acc += -Math.sign(this.vel) * (this.vel * this.vel);
@@ -31,6 +37,14 @@ class Fractal_Tree{
 		var child;
 		for(child of this.children) {
 			child.update();
+		}
+	}
+
+	getCurrentCumAngle() {
+		if(this.level ==1) {
+			return this.cum_angle;
+		} else {
+			return this.parent.getCurrentCumAngle() + this.current_angle;
 		}
 	}
 
@@ -94,7 +108,7 @@ class Fractal_Tree{
 				drawAngle = - drawAngle;
 			}
 			// Construct new tree
-			this.children.push(new Fractal_Tree(cum_angle,drawAngle,this.level + 1, mean_len,this.lenSD,this.strength));
+			this.children.push(new Fractal_Tree(cum_angle,drawAngle,this.level + 1, mean_len,this.lenSD,this.strength,this));
 			left_side = !left_side;
 		}
 		// Get new trees to construct their own trees

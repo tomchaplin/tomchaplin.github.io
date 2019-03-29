@@ -83,7 +83,7 @@ function reloadTree(){
 
 function draw() {
 	windSpeedX = windSliderX.value();
-	windSpeedY = windSliderY.value();
+	windSpeedY = -windSliderY.value();
 	treeStrength = strengthSlider.value();
 	// Update slider readouts
 	//strokeOpacRatio = strokeOpacSlider.value()
@@ -94,7 +94,7 @@ function draw() {
 	//lenRatio = lenRatioSlider.value();
 	//lenSD = lenSDSlider.value();
 	document.getElementById('windXReadout').innerHTML = windSpeedX;
-	document.getElementById('windYReadout').innerHTML = windSpeedY;
+	document.getElementById('windYReadout').innerHTML = -windSpeedY;
 	document.getElementById('strengthReadout').innerHTML = treeStrength
 	// Draw tree
 	background(backCol);
@@ -103,6 +103,7 @@ function draw() {
 	tree.giveWind(windSpeedX*0.01,windSpeedY*0.01);
 	tree.update();
 	tree.render(strokeOpacRatio, 4, strokeRatio, lowerCol, upperCol, transitionLevel);
+	tree.children[1].log=true;
 }
 
 function hexToColour(hex) {
