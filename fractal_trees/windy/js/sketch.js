@@ -103,7 +103,6 @@ function draw() {
 	tree.giveWind(windSpeedX*0.01,windSpeedY*0.01);
 	tree.update();
 	tree.render(strokeOpacRatio, 4, strokeRatio, lowerCol, upperCol, transitionLevel);
-	tree.children[1].log=true;
 }
 
 function hexToColour(hex) {

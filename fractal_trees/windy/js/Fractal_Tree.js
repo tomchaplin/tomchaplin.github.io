@@ -14,7 +14,6 @@ class Fractal_Tree{
 		this.yWindVel = 0;
 		this.children = [];
 		this.parent = parent;
-		this.log = false
 	}
 
 	update(){
@@ -23,9 +22,6 @@ class Fractal_Tree{
 		// Compute the new acceleration
 		var windMag2 = this.xWindVel * this.xWindVel + this.yWindVel * this.yWindVel;
 		var windAngle = PI - this.computeAngle(Math.atan2(this.yWindVel, this.xWindVel),currentCumAngle);
-		if(this.log) {
-			console.log(windAngle);
-		}
 		this.acc = this.strength * this.computeAngle(this.current_angle,this.base_angle) + windMag2 * this.computeAngle(this.current_angle,windAngle);
 		// Some wind resistance
 		this.acc += -Math.sign(this.vel) * (this.vel * this.vel);
