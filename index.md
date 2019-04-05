@@ -16,7 +16,7 @@ Hi, I'm a third year mathematics student from the Univeristy of Warwick, with a 
 
 I first started programming using basic Lua scripts to automate tasks in Minecraft with the mod ComputerCraft. This was a great introduction to software development as everything was motivated through solving actual problems. After years of playing with this mod I eventually started using object-oriented programming to create more reusable code, such as creating GUIs on in-game touch screen displays.
 
-During my A-levels and moving into univeristy, this prior programming experience became an invaluable tool for visualising mathematics and simulating statistical problems. Alongside my study, I continued exploring personal programming projects such as control systems in Kerbal Space Program and animating zooms into the Mandelbrot set. Programming has continually provided a practical application of the problem solving skills I've gained through my degree, making for a fun hobby and a useful skill.
+During my A-levels and moving into university, this prior programming experience became an invaluable tool for visualising mathematics and simulating statistical problems. Alongside my study, I continued exploring personal programming projects such as control systems in Kerbal Space Program and animating zooms into the Mandelbrot set. Programming has continually provided a practical application of the problem solving skills I've gained through my degree, making for a fun hobby and a useful skill.
 
 #### Academic interests
 
