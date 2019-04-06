@@ -5,13 +5,14 @@ function toggleMenu() {
   if (menuElem.className == "topnav openMenu") {
     document.getElementById("topnav").className = "topnav";
     document.getElementById("myBody").className = "";
-    document.getElementById("menu_icon").innerHTML = "menu";
+    document.getElementById("menu_icon").className = "fas fa-bars";
   } else {
     document.getElementById("topnav").className = "topnav openMenu";
     document.getElementById("myBody").className = "openMenu";
-    document.getElementById("menu_icon").innerHTML = "close";
+    document.getElementById("menu_icon").className = "fas fa-times";
   }
 }
+
 
 // Deals with revealing menu button on scroll and hiding on resize
 
