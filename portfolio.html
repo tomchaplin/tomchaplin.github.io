@@ -15,13 +15,15 @@ title: Portfolio
     {% endif %}
     <div class="portfolio_card_text">
         {{ portfolio.excerpt }}
-        <p class="portfolio_card_link"><a href="{{ portfolio.url }}">Read more</a></p>
-        {% if portfolio.external_link %}
-        <p class="portfolio_card_link"><a href="{{ portfolio.external_link }}">View project live</a></p>
-        {% endif %}
-        {% if portfolio.github_link %}
-            <p class="portfolio_card_link"><a href="{{ portfolio.github_link }}">View GitHub repo</a></p>
-        {% endif %}
+		<div class="portfolio_card_links">
+			<a href="{{ portfolio.url }}"><button class="c2a inline">Read more</button></a>
+			{% if portfolio.external_link %}
+			<a href="{{ portfolio.external_link }}"><button class="c2a inline">View project live</button></a>
+			{% endif %}
+			{% if portfolio.github_link %}
+			<a href="{{ portfolio.github_link }}"><button class="c2a inline">View GitHub repo</button></a>
+			{% endif %}
+		</div>
     </div>
 </div>
 {% endfor %}

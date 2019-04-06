@@ -8,16 +8,40 @@ layout: default
     <hr class="midrule">
 {% endunless %}
 {% if page.external_link %}
-    <p class="portfolio_external_link"><a href="{{ page.external_link }}">View project live</a></p>
+    <div class="portfolio_external_link">
+		<a href="{{ page.external_link }}">
+			<button class="c2a inline">
+				View project live
+			</button>
+		</a>
+	</div>
 {% endif %}
 {% if page.github_link %}
-    <p class="portfolio_external_link"><a href="{{ page.github_link }}">View GitHub repo</a></p>
+    <div class="portfolio_external_link">
+		<a href="{{ page.github_link }}">
+			<button class="c2a inline">
+				View GitHub repo
+			</button>
+		</a>
+	</div>
 {% endif %}
 {{content}}
 {% if page.external_link %}
-    <p class="portfolio_external_link"><a href="{{ page.external_link }}">View project live</a></p>
+    <div class="portfolio_external_link">
+		<a href="{{ page.external_link }}">
+			<button class="c2a inline">
+				View project live
+			</button>
+		</a>
+	</div>
 {% endif %}
 {% if page.github_link %}
-    <p class="portfolio_external_link"><a href="{{ page.github_link }}">View GitHub repo</a></p>
+    <div class="portfolio_external_link">
+		<a href="{{ page.github_link }}">
+			<button class="c2a inline">
+				View GitHub repo
+			</button>
+		</a>
+	</div>
 {% endif %}
 </main>

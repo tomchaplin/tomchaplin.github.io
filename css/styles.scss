@@ -419,6 +419,13 @@ button.c2a{
 		background:var(--muted-blue-light);
 		color: white;
 	}
+	a {
+		text-decoration: none;
+	}
+	&.inline{
+		font-size: 0.8em;
+		padding: 5px;
+	}
 }
 
 // About page
@@ -598,12 +605,11 @@ h2.post_title{
       p {
           margin: 0;
       }
-      p.portfolio_card_link {
-        margin: 5px 0px;
+      .portfolio_card_links {
         text-align: right;
-        a {
-          color: var(--muted-blue-light);
-        }
+		button.c2a {
+			margin: 5px 0 ;
+		}
       }
     }
 }
@@ -638,11 +644,8 @@ pre {
 	}
 }
 
-p.portfolio_external_link {
+.portfolio_external_link {
   text-align: right;
-  a {
-    color: var(--muted-blue-light);
-  }
 }
 
 
