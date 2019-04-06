@@ -414,7 +414,7 @@ button.c2a{
 	font-family: "Montserrat", sans-serif;
 	color: var(--muted-blue);
 	padding: 10px;
-	transition: background $element-fade-in-time, color $element-fade-in-time;
+	transition: background $animation-time, color $animation-time;
 	&:hover{
 		background:var(--muted-blue-light);
 		color: white;
