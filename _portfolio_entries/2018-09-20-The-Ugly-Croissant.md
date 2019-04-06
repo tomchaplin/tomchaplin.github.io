@@ -1,7 +1,8 @@
 ---
 layout: portfolio
-featured_img: /assets/portfolio/2018-09-20-The-Ugly-Croissant/desktop_index.jpg
+featured_img: /assets/portfolio/2018-09-20-The-Ugly-Croissant/featured_img.png
 external_link: https://www.theuglycroissant.com
+featured: true
 ---
 The Ugly Croissant presented the opportunity to learn the fundamentals of the web, focusing on responsive design. I used PHP to produce a basic content management system which could handle both recipes and blog posts, and implemented a tagging system to help organise the content. Throughout the process I worked closely with the client to get the design right for her and her audience.
 <!--more-->

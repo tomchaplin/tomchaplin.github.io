@@ -3,6 +3,7 @@ layout: portfolio
 featured_img: /assets/portfolio/2018-10-04-Control-Systems-in-Kerbal-Space-Program/jeb.jpg
 display_latex: true
 github_link: https://github.com/tomchaplin/KSP_Control_Systems
+featured: true
 ---
 Drone and quadcopter usage is at an all time high, but controlling them isn't exactly plain sailing. In a theoretical setting, applying equal power to each motor should cause the vessel to rise straight up. In practice, with inevitable discrepancies in design and manufacture, producing such a perfectly symmetric system is impossible. So the question arises, how can we vary the speeds of each motor to stabilise and control the aircraft? Such questions are normally answered in an environment such as MATLAB with Simulink but the video game Kerbal Space Program and addon kRPC provide a fun sandbox in which to experiment.
 <!--more-->

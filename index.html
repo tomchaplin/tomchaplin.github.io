@@ -1,0 +1,59 @@
+---
+layout: page
+selected: about
+title: About
+show_page_title: false
+---
+<div class="two_column">
+	<div class="figure_container">
+		<div class="image_container">
+			<hr class="midrule">
+			<img src="/assets/tom_portrait_square.jpg" alt="Thomas Chaplin">
+			<hr class="midrule">
+		</div>
+	</div>
+	<div class="word_container">
+		<p class="opening_line_1">
+			Hello, I'm Tom.
+		</p>
+		<p class="opening_line_2">
+			First and foremost, I'm a mathematician.
+			I'm passionate about using programming as a tool for teaching, learning and problem solving.
+		</p>
+			<hr class="little_rule">
+		<p class="opening_line_3">
+			As a third year undergraduate at the University of Warwick, my academic interests lie predominantly in algebraic topology and ergodic theory.
+			In my spare time, I'm a keen rock climber, scuba diver and acoustic guitarist.
+		</p>
+		<p class="opening_line_4">
+			Please check out some of my recent projects below.
+		</p>
+	</div>
+</div>
+<div class="featured_projects">
+	<div class="featured_projects_title">
+		<h2>Featured Projects</h2>
+		<hr class="midrule">
+	</div>
+	{% assign featured = site.portfolio_entries | where : 'featured', 'true' %}
+	{% for portfolio in featured reversed %}
+	<div class="featured_project_card">
+		<div class="featured_image_holder">
+			<a href="{{ portfolio.url }}"><img src="{{ portfolio.featured_img }}" alt="{{ portfolio.title }}"></a>
+		</div>
+		<a href="{{ portfolio.url }}">
+			<div class="featured_title_overlay">
+				<p>{{ portfolio.title}}</p>
+			</div>
+		</a>
+		<a class="mobile_only_link" href="{{ portfolio.url }}">{{ portfolio.title }}</a>
+	</div>
+	{% endfor %}
+	<div class="featured_see_more">
+		<a href="/portfolio">
+			<button class="c2a">
+				See more like this
+			</button>
+		</a>
+	</div>
+</div>

@@ -76,12 +76,14 @@ ul.topnav {
     letter-spacing: 2px;
     cursor: pointer;
     padding: 5px 10px;
+	text-align: center;
     &.active_link {
       font-weight: 500;
     }
   }
 
   li {
+	width: 175px;
     padding: 0 20px;
     &.menu_icon {
       display: none;
@@ -153,8 +155,8 @@ ul.topnav {
 }
 
 h2, h3, h4, h5 {
-	font-family: 'Montserrat', sans-serif;
-	letter-spacing: 1px;
+	font-family: 'Source Sans Pro', sans-serif;
+	//letter-spacing: 1px;
 }
 
 /* Button styling reset */
@@ -226,6 +228,10 @@ button:not(.std_button):focus {
     // Bring menu on top of everything in case position relative elements are on same layer
     z-index: 999;
     transition: all $menu-time;
+
+	a {
+		text-align:right;
+	}
 
     &.openMenu {
       width: 100vw;
@@ -364,7 +370,7 @@ button:not(.std_button):focus {
 
 // General
 main {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 1em;
   line-height: 1.25em;
 }
@@ -400,6 +406,160 @@ hr.midrule {
     background: var(--soft-grey);
     border: 0;
     height: $rule-thickness;
+}
+
+button.c2a{
+	border-radius: 0px;
+	border: 1px solid var(--muted-blue-light);
+	font-family: "Montserrat", sans-serif;
+	color: var(--muted-blue);
+	padding: 10px;
+	transition: background $element-fade-in-time, color $element-fade-in-time;
+	&:hover{
+		background:var(--muted-blue-light);
+		color: white;
+	}
+}
+
+// About page
+
+.two_column{
+	width:100%;
+	display:grid;
+	grid-template-columns: [words] 2fr  [figure] 1fr;
+	grid-template-rows: 1fr;
+	grid-template-areas: "words figure";
+	.word_container{
+		grid-area: words;
+		display: flex;
+		flex-direction:column;
+		justify-content: center;
+		text-align: left;
+		padding-right: 5%;
+		padding-top: 5%;
+		padding-bottom: 5%;
+		p.opening_line_1{
+			font-size: 1.5em;
+			margin:0;
+			font-weight: bold;
+		}
+		p.opening_line_2{
+			font-size:1.125em;
+		}
+		p.opening_line_4{
+			margin: 0;
+		}
+		hr.little_rule {
+			width:25%;
+			background: var(--soft-grey);
+			border: 0;
+			margin: 0;
+			height: $rule-thickness;
+		}
+	}
+	.figure_container{
+		grid-area: figure;
+		display:flex;
+		justify-content: space-around;
+		align-items: center;
+		.image_container{
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			img{
+				max-height:100%;
+				max-width: 100%;
+			}
+		}
+	}
+}
+
+.featured_projects {
+	display: grid;
+	grid-auto-flow: row;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 75px 1fr 1fr 40px;
+	grid-gap: 20px;
+	.featured_projects_title {
+		grid-column: 1 / span 2;
+		h2 {
+			text-align: center;
+		}
+	}
+	.featured_project_card {
+		width:100%;
+		height: 100%;
+		text-align: center;
+		position: relative;
+		.featured_image_holder {
+			img{
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+		}
+		.featured_title_overlay {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			text-align: left;
+			width: 100%;
+			height: 100%;
+			background-color: black; 
+			opacity: 0;
+			transition: opacity $element-fade-in-time;
+			&:hover {
+				opacity: 0.85;
+			}
+			p {
+				position: absolute;
+				bottom:5px;
+				left:10px;
+				margin: 0;
+				font-size: 1.125em;
+				text-decoration: none;
+				color: white;
+			}
+		}
+		.mobile_only_link {
+			display: none;
+		}
+	}
+	.featured_see_more {
+		grid-column: 1 /span 2;
+		text-align:center;
+	}
+}
+
+@media only screen and (max-width: 550px) {
+	.two_column {
+		display: flex;
+		flex-direction: column;
+		.word_container hr.little_rule{
+			margin: auto;
+		}
+	}
+	.featured_projects{
+		grid-template-columns: 1fr;
+		grid-template-rows: 75px repeat(4, 1fr) 40px;
+		.featured_projects_title {
+			grid-column: 1;
+		}
+		.featured_project_card {
+			.featured_title_overlay:hover{
+				opacity: 0;
+			}
+			.mobile_only_link {
+				font-size: 1.125em;
+				color: var(--muted-blue);
+				padding-top:5px;
+				display: block;
+			}
+		}
+		.featured_see_more{
+			grid-column: 1;
+		}
+	}
 }
 
 // Blogpost page
@@ -539,20 +699,6 @@ figure.in_article{
 	pre code{
 		width: 100%
 	}
-}
-
-// About page
-figure.float_right{
-  margin:0 10px;
-  float: right;
-  div{
-    display:block;
-
-    img {
-        max-width: 300px;
-        height: auto;
-    }
-  }
 }
 
 @media only screen and (max-width: 650px) {

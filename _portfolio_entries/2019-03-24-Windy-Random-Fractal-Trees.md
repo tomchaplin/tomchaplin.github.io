@@ -3,6 +3,7 @@ layout: portfolio
 featured_img: /assets/portfolio/2019-03-24-Windy-Random-Fractal-Trees/fractal_tree6_variation02_crop.png
 external_link: https://tomchaplin.github.io/fractal_trees/windy
 display_latex: true
+featured: true
 ---
 Continuing on the theme of fractals, I was inspired by a Coding Train video to try my hand at drawing fractal trees using the fantastic [p5.js library](https://p5js.org/) for Javascript.
 To get a more natural result I introduced some randomness in a variety of places in the algorithm, and changed the paintbrush as I drew further along the tree.

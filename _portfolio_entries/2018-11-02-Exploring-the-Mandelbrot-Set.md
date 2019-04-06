@@ -3,6 +3,7 @@ layout: portfolio
 featured_img: /assets/portfolio/2018-11-02-Exploring-the-Mandelbrot-Set/statics/zoom1/smooth_histogram.gif
 display_latex: true
 github_link: https://github.com/tomchaplin/Multithreaded_Mandelbrot
+featured: true
 ---
 The Mandelbrot set has become an ambassador for the beauty of mathematics. Its hypnotic, complex structure has astounded mathematicians and non-mathematicians alike, and has been a subject of mathematical research for decades. Interested in the structure and behaviour of the Mandelbrot set, I used Python to animate zooms into this captivating fractal. The limitations of interpreted lagnuages like Python soon became clear so I turned to multi-threaded techniques and C++ to speed things up.
 <!--more-->
