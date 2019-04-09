@@ -1,6 +1,6 @@
 ---
 layout: portfolio
-featured_img: /assets/portfolio/2018-11-02-Exploring-the-Mandelbrot-Set/statics/zoom1/smooth_histogram.gif
+featured_img: /assets/portfolio/2018-11-02-Exploring-the-Mandelbrot-Set/statics/zoom1/smooth_histogram_small.jpg
 display_latex: true
 github_link: https://github.com/tomchaplin/Multithreaded_Mandelbrot
 featured: true

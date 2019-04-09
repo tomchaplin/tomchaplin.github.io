@@ -1,6 +1,6 @@
 ---
 layout: portfolio
-featured_img: /assets/portfolio/2019-03-24-Windy-Random-Fractal-Trees/fractal_tree6_variation02_crop.png
+featured_img: /assets/portfolio/2019-03-24-Windy-Random-Fractal-Trees/fractal_tree6_variation02_crop_small.jpg
 external_link: https://tomchaplin.github.io/fractal_trees/windy
 display_latex: true
 featured: true

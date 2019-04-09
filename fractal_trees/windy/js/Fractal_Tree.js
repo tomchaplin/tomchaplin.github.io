@@ -1,11 +1,21 @@
-class Fractal_Tree{
-	constructor(cum_angle, base_angle, level, mean_len, lenSD, strength,parent) {
+// @format
+
+class Fractal_Tree {
+	constructor(
+		cum_angle,
+		base_angle,
+		level,
+		mean_len,
+		lenSD,
+		strength,
+		parent
+	) {
 		this.cum_angle = cum_angle;
 		this.base_angle = base_angle;
 		this.current_angle = base_angle;
 		this.level = level;
 		this.mean_len = mean_len;
-		this.len = randomGaussian()*lenSD*mean_len + mean_len;
+		this.len = randomGaussian() * lenSD * mean_len + mean_len;
 		this.lenSD = lenSD;
 		this.strength = strength;
 		this.vel = 0;
@@ -16,13 +26,22 @@ class Fractal_Tree{
 		this.parent = parent;
 	}
 
-	update(){
+	update() {
 		// Need better angle calaculation!
 		var currentCumAngle = this.makeAngle(this.getCurrentCumAngle());
 		// Compute the new acceleration
-		var windMag2 = this.xWindVel * this.xWindVel + this.yWindVel * this.yWindVel;
-		var windAngle = PI - this.computeAngle(Math.atan2(this.yWindVel, this.xWindVel),currentCumAngle);
-		this.acc = this.strength * this.computeAngle(this.current_angle,this.base_angle) + windMag2 * this.computeAngle(this.current_angle,windAngle);
+		var windMag2 =
+			this.xWindVel * this.xWindVel + this.yWindVel * this.yWindVel;
+		var windAngle =
+			PI -
+			this.computeAngle(
+				Math.atan2(this.yWindVel, this.xWindVel),
+				currentCumAngle
+			);
+		this.acc =
+			this.strength *
+				this.computeAngle(this.current_angle, this.base_angle) +
+			windMag2 * this.computeAngle(this.current_angle, windAngle);
 		// Some wind resistance
 		this.acc += -Math.sign(this.vel) * (this.vel * this.vel);
 		// Update the velocity (based on mass of branch)
@@ -31,26 +50,26 @@ class Fractal_Tree{
 		this.current_angle += this.vel;
 		this.current_angle = this.makeAngle(this.current_angle);
 		var child;
-		for(child of this.children) {
+		for (child of this.children) {
 			child.update();
 		}
 	}
 
 	getCurrentCumAngle() {
-		if(this.level ==1) {
+		if (this.level == 1) {
 			return this.cum_angle;
 		} else {
 			return this.parent.getCurrentCumAngle() + this.current_angle;
 		}
 	}
 
-	computeAngle(from,to) {
+	computeAngle(from, to) {
 		//return (to - from);
 		from = this.makeAngle(from);
 		to = this.makeAngle(to);
 		var difference = to - from;
 		var alternate = TWO_PI - difference;
-		if(Math.abs(difference) < Math.abs(alternate)) {
+		if (Math.abs(difference) < Math.abs(alternate)) {
 			return difference;
 		} else {
 			return -alternate;
@@ -58,59 +77,70 @@ class Fractal_Tree{
 	}
 
 	makeAngle(num) {
-		while(num > PI) {
+		while (num > PI) {
 			num -= TWO_PI;
 		}
-		while(num < -PI) {
+		while (num < -PI) {
 			num += TWO_PI;
 		}
-		return num
+		return num;
 	}
 
 	giveWind(xvel, yvel) {
 		this.xWindVel = xvel;
 		this.yWindVel = yvel;
 		var child;
-		for(child of this.children) {
+		for (child of this.children) {
 			child.giveWind(xvel, yvel);
 		}
 	}
 
 	addAngle(num) {
 		this.current_angle += num;
-		var child
-		for(child of this.children) {
+		var child;
+		for (child of this.children) {
 			child.addAngle(num);
 		}
 	}
 
-	constructTree(minLength,lenRatio,angleRange) {
+	constructTree(minLength, lenRatio, angleRange) {
 		// Compute the new items we'll need for construction
 		var cum_angle = this.cum_angle + this.base_angle;
 		var mean_len = this.mean_len * lenRatio;
 		// Check we're not supposed to stop
-		if(mean_len < minLength){
+		if (mean_len < minLength) {
 			return;
 		}
 		// Choose a random number of branches
-		var numBranches = Math.floor(Math.random()*Math.log(this.level) + 2) + 2;
+		var numBranches =
+			Math.floor(Math.random() * Math.log(this.level) + 2) + 2;
 		var left_side = false;
 		var drawAngle;
-		for (var i=0 ; i < numBranches; i++) {
+		for (var i = 0; i < numBranches; i++) {
 			// Get random draw angle
-			drawAngle = Math.random()*angleRange/2;
+			drawAngle = (Math.random() * angleRange) / 2;
 			// Alternate betweeen left and right
-			if(left_side) {
-				drawAngle = - drawAngle;
+			if (left_side) {
+				drawAngle = -drawAngle;
 			}
 			// Construct new tree
-			this.children.push(new Fractal_Tree(cum_angle,drawAngle,this.level + 1, mean_len,this.lenSD,this.strength,this));
+			this.children.push(
+				new Fractal_Tree(
+					cum_angle,
+					drawAngle,
+					this.level + 1,
+					mean_len,
+					this.lenSD,
+					this.strength,
+					this
+				)
+			);
 			left_side = !left_side;
 		}
 		// Get new trees to construct their own trees
 		var child;
-		for(child of this.children){
-			child.constructTree(minLength,lenRatio,angleRange);
+		for (child of this.children) {
+			child.constructTree(minLength, lenRatio, angleRange);
 		}
 	}
 
@@ -118,39 +148,64 @@ class Fractal_Tree{
 		this.children = [];
 	}
 
-	render(strokeOpacRatio, startWeight, strokeWeightRatio, lowerColour, upperColour, tLevel) {
-		var opacity = Math.pow(strokeOpacRatio, this.level -1);
-		if(this.level < tLevel) {
-			stroke(this.getColour(lowerColour,opacity));
+	render(
+		strokeOpacRatio,
+		startWeight,
+		strokeWeightRatio,
+		lowerColour,
+		upperColour,
+		tLevel
+	) {
+		var opacity = Math.pow(strokeOpacRatio, this.level - 1);
+		if (this.level < tLevel) {
+			stroke(this.getColour(lowerColour, opacity));
 		} else {
-			stroke(this.getColour(upperColour,opacity));
+			stroke(this.getColour(upperColour, opacity));
 		}
-		strokeWeight(Math.pow(strokeWeightRatio, this.level -1) * startWeight)
-		line(0,0,0,-this.len);
-		translate(0,-this.len);
+		strokeWeight(Math.pow(strokeWeightRatio, this.level - 1) * startWeight);
+		line(0, 0, 0, -this.len);
+		translate(0, -this.len);
 		var child;
-		for(child of this.children){
+		for (child of this.children) {
 			push();
 			rotate(child.current_angle);
-			child.render(strokeOpacRatio, startWeight, strokeWeightRatio, lowerColour, upperColour, tLevel);
+			child.render(
+				strokeOpacRatio,
+				startWeight,
+				strokeWeightRatio,
+				lowerColour,
+				upperColour,
+				tLevel
+			);
 			pop();
 		}
 	}
 
 	getColour(colour, opacity) {
-		return 'rgba(' + colour.r + "," + colour.g + "," + colour.b + "," + opacity + ")";
+		return (
+			"rgba(" +
+			colour.r +
+			"," +
+			colour.g +
+			"," +
+			colour.b +
+			"," +
+			opacity +
+			")"
+		);
 	}
 
-	reloadTree(minLength,lenRatio,angleRange) {
-		this.len = randomGaussian()*this.lenSD*this.mean_len + this.mean_len;
+	reloadTree(minLength, lenRatio, angleRange) {
+		this.len =
+			randomGaussian() * this.lenSD * this.mean_len + this.mean_len;
 		this.deleteTree();
-		this.constructTree(minLength,lenRatio,angleRange);
+		this.constructTree(minLength, lenRatio, angleRange);
 	}
 
 	setStrength(newStrength) {
 		this.strength = newStrength;
 		var child;
-		for(child of this.children){
+		for (child of this.children) {
 			child.setStrength(newStrength);
 		}
 	}
@@ -158,7 +213,7 @@ class Fractal_Tree{
 	setLenSD(newSD) {
 		this.lenSD = newSD;
 		var child;
-		for(child of this.children){
+		for (child of this.children) {
 			child.setLenSD(newSD);
 		}
 	}
