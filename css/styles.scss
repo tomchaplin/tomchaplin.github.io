@@ -555,8 +555,11 @@ button.c2a{
 	.two_column {
 		display: flex;
 		flex-direction: column;
-		.word_container hr.little_rule{
-			margin: auto;
+		.word_container {
+			padding-right:0%;
+			hr.little_rule{
+				margin: auto;
+			}
 		}
 	}
 	.featured_projects{
