@@ -20,6 +20,7 @@
 
 $rule-thickness: 1px;
 
+
 // Menu Variables
 
 $element-fade-in-time: 0.5s;
@@ -373,6 +374,9 @@ main {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 1em;
   line-height: 1.25em;
+  &.article{
+	  margin:0 100px;
+  }
 }
 h1.site_title {
   text-align: center;
@@ -428,6 +432,11 @@ button.c2a{
 	}
 }
 
+@media only screen and (max-width: 550px) {
+	main.article{
+		margin: 0 0 ;
+	}
+}
 // About page
 
 .two_column{
