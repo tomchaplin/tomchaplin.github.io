@@ -48,7 +48,7 @@ $win.on("resize",function() {
       $('#menu_button').hide();
       $('#myBody').removeClass("openMenu");
       $('#topnav').removeClass("openMenu");
-      $('#menu_icon').html("menu");
+      $('#menu_icon').attr("class", "fas fa-bars");
     } else{
       // If we resize to mobile then fade the button in
       $('#menu_button').fadeIn(fadeInTime);
