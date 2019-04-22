@@ -51,6 +51,7 @@ $end-border-color: var(--muted-blue-light);
 $socials-thickness: 1px;
 
 body {
+	font-size: 1.125em;
   background-color: $background-color;
   margin: 0 calc( (2/5) * (100vw - 800px + (0.02 * 800px) ) );
 }
@@ -433,6 +434,9 @@ button.c2a{
 }
 
 @media only screen and (max-width: 550px) {
+	body {
+		font-size: 1em;
+	}
 	main.article{
 		margin: 0 0 ;
 	}
