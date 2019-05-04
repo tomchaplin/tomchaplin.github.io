@@ -48,7 +48,7 @@ This produces a colourful image but we have now lost the property that one side 
 
 This is clearly a much better way to colour our Mandelbrot set if we wish to retain detail as we zoom into the set as we can guarantee that we will use the full range of colours in our palette. However, from an artistic viewpoint, these images are still lacking somewhat. Since we are colouring based on a discrete property (the number of iterations to escape), we end up with discrete jumps between colours in our palette, creating clear bands of colour. We would prefer to see a continuous change from one colour to the next so we need a property similar to iteration number which can take on any real value, not discrete integers.
 
-The property which solves this problem is known as the normalised iteration count. For an excellent explanation of this colouring algorithm, please see this [excellent post by Linas Vepstas](http://linas.org/art-gallery/escape/escape.html).
+The property which solves this problem is known as the normalised iteration count. For an explanation of this colouring algorithm, please see this [excellent post by Linas Vepstas](http://linas.org/art-gallery/escape/escape.html).
 
 <figure class = "in_article">
     <hr class="midrule">
