@@ -1,9 +1,7 @@
 ---
 layout: default
 ---
-{% include topnav.html selected="blog"%}
-<main>
-<h2 class="post_title">{{ page.title }}</h2>
-<hr class="midrule">
+{% include topnav.html selected=page.selected %}
+<main class="article">
 {{content}}
 </main>

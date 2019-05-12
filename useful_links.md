@@ -1,5 +1,5 @@
 ---
-layout: portfolio
+layout: post
 selected: about
 title: Useful Links
 katex: true
