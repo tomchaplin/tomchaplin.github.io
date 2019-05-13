@@ -19,3 +19,11 @@ A visual introduction to vector spaces, linear maps, matrix multiplication, dete
 * [Conformal](http://davidbau.com/conformal/#z) by David Bau -
 A useful tool for visualising functions on the complex plane.
 You can also use parameters to animate through families of complex functions or even apply your favourite complex function to the world map.
+
+## Software Development
+
+### Remote Development
+* [DuckDNS](http://duckdns.org/) - 
+A DyanmicDNS service set up by software developers.
+Completely free, without ads or the need to periodically renew account.
+Super easy to setup on a wide variety of operating systems or routers.
