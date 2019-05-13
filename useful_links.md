@@ -14,3 +14,8 @@ A visual introduction to vector spaces, linear maps, matrix multiplication, dete
 
 ### Topology
 * [From an octagon to a genus 2 surface](https://www.youtube.com/watch?v=G1yyfPShgqw) by Jos Leys
+
+### Complex Analysis
+* [Conformal](http://davidbau.com/conformal/#z) by David Bau -
+A useful tool for visualising functions on the complex plane.
+You can also use parameters to animate through families of complex functions or even apply your favourite complex function to the world map.
