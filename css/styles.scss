@@ -469,6 +469,11 @@ button.c2a{
 		p.opening_line_4{
 			margin: 0;
 		}
+		div.button_holder{
+			display:flex;
+			justify-content:center;
+			margin-top:18px;
+		}
 		hr.little_rule {
 			width:25%;
 			background: var(--soft-grey);
