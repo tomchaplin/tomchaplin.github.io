@@ -14,7 +14,7 @@ To give the trees some life I simulated the effect of wind acting on the trees.
 ### What is a Fractal Tree?
 
 The best way to get a feel for what a fractal tree is, is to have a go at drawing your own.
-To this end, I encourage you to go and play with the [static fractal tree generator](https://tomchaplin.github.io/fractal_trees) that I have created as part of this project.
+To this end, I encourage you to go and play with the [static fractal tree generator](https://tomchaplin.github.io/fractal_trees/static) that I have created as part of this project.
 To understand the basic definition better make sure you turn down the branch length variation to 0.
 
 <figure class = "in_article">
@@ -88,7 +88,7 @@ Note this is quite a resource intensive simulation so mobile devices may struggl
 
 ### Finished Result and Next Steps
 
-If you'd like to play with this algorithm and make some artistic fractal trees please check out [my static generator](https://tomchaplin.github.io/fractal_trees) and [windy generator](https://tomchaplin.github.io/fractal_trees/windy), which are implemented in the p5.js library.
+If you'd like to play with this algorithm and make some artistic fractal trees please check out [my static generator](https://tomchaplin.github.io/fractal_trees/static) and [windy generator](https://tomchaplin.github.io/fractal_trees/windy), which are implemented in the p5.js library.
 Note these run in Javascript entirely in the browser and so is not the most performant generator.
 Below are some examples I have made with the generator.
 
