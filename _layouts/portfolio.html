@@ -7,41 +7,49 @@ layout: default
     <h2 class="post_title">{{ page.title }}</h2>
     <hr class="midrule">
 {% endunless %}
-{% if page.external_link %}
-    <div class="portfolio_external_link">
-		<a href="{{ page.external_link }}">
-			<button class="c2a inline">
-				View project live
-			</button>
-		</a>
+{% if page.external_link or page.github_link %}
+	<div class="links_bar">
+	{% if page.external_link %}
+		<div class="portfolio_external_link">
+			<a href="{{ page.external_link }}">
+				<button class="c2a inline">
+					View project live
+				</button>
+			</a>
+		</div>
+	{% endif %}
+	{% if page.github_link %}
+		<div class="portfolio_external_link">
+			<a href="{{ page.github_link }}">
+				<button class="c2a inline">
+					View GitHub repo
+				</button>
+			</a>
+		</div>
+	{% endif %}
 	</div>
 {% endif %}
-{% if page.github_link %}
-    <div class="portfolio_external_link">
-		<a href="{{ page.github_link }}">
-			<button class="c2a inline">
-				View GitHub repo
-			</button>
-		</a>
-	</div>
-{% endif %}
-{{content}}
-{% if page.external_link %}
-    <div class="portfolio_external_link">
-		<a href="{{ page.external_link }}">
-			<button class="c2a inline">
-				View project live
-			</button>
-		</a>
-	</div>
-{% endif %}
-{% if page.github_link %}
-    <div class="portfolio_external_link">
-		<a href="{{ page.github_link }}">
-			<button class="c2a inline">
-				View GitHub repo
-			</button>
-		</a>
+	{{content}}
+{% if page.external_link or page.github_link %}
+	<div class="links_bar">
+	{% if page.external_link %}
+		<div class="portfolio_external_link">
+			<a href="{{ page.external_link }}">
+				<button class="c2a inline">
+					View project live
+				</button>
+			</a>
+		</div>
+	{% endif %}
+	{% if page.github_link %}
+		<div class="portfolio_external_link">
+			<a href="{{ page.github_link }}">
+				<button class="c2a inline">
+					View GitHub repo
+				</button>
+			</a>
+		</div>
+	{% endif %}
 	</div>
 {% endif %}
 </main>
