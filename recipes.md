@@ -1,4 +1,8 @@
-# Recipe List
+---
+layout: portfolio
+selected: about
+title: Recipe List
+---
 
 ## Breakfast
 
