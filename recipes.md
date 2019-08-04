@@ -6,7 +6,7 @@ title: Recipe List
 
 ## Breakfast
 
-* [American Pancakes](https://www.taste.com.au/recipes/egg-free-pancakes/d33e1979-3374-4dc8-a09f-8a7e406e86c7)
+* [American Pancakes](https://www.taste.com.au/recipes/egg-free-pancakes/d33e1979-3374-4dc8-a09f-8a7e406e86c7) - Add 150ml milk, mix then add 80ml (for 230ml total)
 * [French Crepes](http://noeggs.co.uk/egg-free-pancakes)
 * [Hash Browns](https://www.jennycancook.com/recipes/crispy-hash-browns/)
 
