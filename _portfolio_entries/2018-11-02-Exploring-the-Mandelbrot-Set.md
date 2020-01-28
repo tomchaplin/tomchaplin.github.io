@@ -120,6 +120,14 @@ I have implemented this with a normal colouring algorithm as first described, as
 In the above picture I used a palette which loops around hue from 0 to 360 degrees with saturation fixed at 50%.
 Obviously the colouring effect is centred at the origin so as you zoom in the colouring will become monochromatic, but the shading will still reveal the structure of the Mandelbrot set.
 
+### Update (MPI)
+
+I have recently built a small super-computer consisting of four Raspberry Pi 4s.
+As such, I have started the work of translating this code to MPI so that the workload can be distributed across a list of computers on the network via SSH.
+While this is still in its infancy, the code is available [here](https://github.com/tomchaplin/MPI_Mandelbrot).
+At the moment the code distributes the workload a row at a time>
+However, in principle, we could write the code in serial to compute an entire frame, based on command-line parameters, and then distribute the work via [GNU Parallel](https://www.gnu.org/software/parallel/).
+
 ### Useful Resources
 
 * [Renormalising the Mandelbrot Set](http://linas.org/art-gallery/escape/escape.html) - Read more about smooth colouring of the Mandelbrot set
