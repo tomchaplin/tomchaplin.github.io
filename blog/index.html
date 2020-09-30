@@ -1,30 +1,71 @@
 ---
 layout: page
 selected: blog
-title: Recent blogposts
+title: Blog
+show_page_title: false
 ---
-
-<!-- This loops through the paginated posts -->
 {% for post in paginator.posts %}
-  <a class="post_title_link" href="{{ post.url }}"><h2>{{ post.title }}</h2></a>
-  <div class="post_excerpt">{{ post.excerpt }}</div>
+<div class="portfolio_card">
+    <div class="portfolio_card_title">
+        <a href="{{ post.url }}"><h3>{{ post.title }}</h3></a>
+    </div>
+    {% if post.featured_img %}
+    <div class="portfolio_card_img">
+        <a href="{{ post.url }}"><img src="{{ post.featured_img }}" alt="{{ post.title }}"></a>
+    </div>
+    {% endif %}
+    <div class="portfolio_card_text">
+        {{ post.excerpt }}
+		<div class="portfolio_card_links">
+			<a href="{{ post.url }}"><button class="c2a inline">Read more</button></a>
+			{% if post.external_link %}
+			<a href="{{ post.external_link }}"><button class="c2a inline">View project live</button></a>
+			{% endif %}
+			{% if post.github_link %}
+			<a href="{{ post.github_link }}"><button class="c2a inline">View GitHub repo</button></a>
+			{% endif %}
+		</div>
+    </div>
+</div>
 {% endfor %}
-
-<!-- Pagination links -->
+{% if paginator.total_pages > 1 %}
 <div class="pagination">
   {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="previous">
-      Previous
-    </a>
+	<a href="{{ paginator.previous_page_path | relative_url }}">
+		<button class="c2a inline">
+		&laquo;
+		</button>
+	</a>
   {% else %}
-    <span class="previous">Previous</span>
+	<button class="c2a inline" disabled>&laquo;</button>
   {% endif %}
-  <span class="page_number ">
-    Page: {{ paginator.page }} of {{ paginator.total_pages }}
-  </span>
+
+  {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+      <button class="c2a inline" disabled>{{ page }}</button>
+    {% elsif page == 1 %}
+      <a href="{{ '/blog/' | relative_url }}">
+		<button class="c2a inline">
+		  {{ page }}
+		</button>
+	  </a>
+    {% else %}
+      <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">
+		<button class="c2a inline">
+		  {{ page }}
+		</button>
+	  </a>
+    {% endif %}
+  {% endfor %}
+
   {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+    <a href="{{ paginator.next_page_path | relative_url }}">
+	<button class="c2a inline">
+		&raquo;
+	</button>
+	</a>
   {% else %}
-    <span class="next ">Next</span>
+    <button class="c2a inline" disabled>&raquo;</button>
   {% endif %}
 </div>
+{% endif %}

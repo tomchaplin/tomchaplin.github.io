@@ -18,9 +18,6 @@ collections:
     posts:
         output: true
         permalink: /blog/:year_:month_:day/:title/
-    portfolio_entries:
-        output: true
-        permalink: /portfolio/:title/
 
 markdown: kramdown
 

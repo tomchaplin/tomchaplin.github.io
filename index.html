@@ -22,7 +22,7 @@ show_page_title: false
 		</p>
 			<hr class="little_rule">
 		<p class="opening_line_3">
-			As an MMath graduate, my academic interests lie predominantly in algebraic topology, topological data analysis and dynamical systems.
+			As a DPhil student, my academic interests lie predominantly in algebraic topology, topological data analysis and dynamical systems.
 			In my spare time, I'm a keen rock climber, scuba diver and bread baker.
 		</p>
 		<p class="opening_line_4">
@@ -36,11 +36,11 @@ show_page_title: false
 </div>
 <div class="featured_projects">
 	<div class="featured_projects_title">
-		<h2>Featured Projects</h2>
+		<h2>Featured Posts</h2>
 		<hr class="midrule">
 	</div>
-	{% assign featured = site.portfolio_entries | where : 'featured', 'true' %}
-	{% for portfolio in featured reversed %}
+	{% assign featured = site.posts | where : 'featured', 'true' %}
+	{% for portfolio in featured %}
 	<div class="featured_project_card">
 		<div class="featured_image_holder">
 			<a href="{{ portfolio.url }}"><img src="{{ portfolio.featured_img }}" alt="{{ portfolio.title }}"></a>
@@ -54,7 +54,7 @@ show_page_title: false
 	</div>
 	{% endfor %}
 	<div class="featured_see_more">
-		<a href="/portfolio">
+		<a href="/blog">
 			<button class="c2a">
 				See more like this
 			</button>

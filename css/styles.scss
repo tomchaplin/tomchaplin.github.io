@@ -398,7 +398,7 @@ h1.site_title {
 hr.toprule {
   margin-top:1em;
   width:95%;
-  animation: opacity_fade_in $element-fade-in-time;
+  /*animation: opacity_fade_in $element-fade-in-time;*/
   opacity: 1;
   height: $rule-thickness;
   border: 0;
@@ -420,7 +420,7 @@ button.c2a{
 	color: var(--muted-blue);
 	padding: 10px;
 	transition: background $animation-time, color $animation-time;
-	&:hover{
+	&:not([disabled]):hover{
 		background:var(--muted-blue-light);
 		color: white;
 	}
@@ -441,6 +441,22 @@ button.c2a{
 		margin: 0 0 ;
 	}
 }
+
+// Pagination
+
+.pagination {
+	display: flex;
+	justify-content: center;
+	button.c2a.inline {
+		margin: 0 5px;
+		padding: 5px 10px;
+		&:disabled {
+			color: var(--middle-grey);
+			border: 1px solid var(--soft-grey);
+		}
+	}
+}
+
 // About page
 
 .two_column{
