@@ -2,7 +2,7 @@
 layout: portfolio
 featured_img: /assets/portfolio/2019-02-10-Vim-for-LaTeX/feature_img.png
 github_link: https://github.com/tomchaplin/dotfiles
-featured: true
+featured: false
 ---
 
 As a maths student, I am often using LaTeX to type up my assignments or write notes for my classes.
